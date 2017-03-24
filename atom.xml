@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Kevinzjy&#39;s Blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://kevinzjy.github.io/"/>
+  <updated>2017-03-24T13:52:02.526Z</updated>
+  <id>https://kevinzjy.github.io/</id>
+  
+  <author>
+    <name>Jinyang Zhang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在服务器上安装GCC</title>
+    <link href="https://kevinzjy.github.io/2017/03/24/Install-c/"/>
+    <id>https://kevinzjy.github.io/2017/03/24/Install-c/</id>
+    <published>2017-03-24T13:46:27.000Z</published>
+    <updated>2017-03-24T13:52:02.526Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;下载gcc-6-3-0&quot;&gt;&lt;a href=&quot;#下载gcc-6-3-0&quot; class=&quot;headerlink&quot; title=&quot;下载gcc-6.3.0&quot;&gt;&lt;/a&gt;下载gcc-6.3.0&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Windows下使用Github pages + Hexo 搭建个人博客</title>
+    <link href="https://kevinzjy.github.io/2017/03/24/Install-hexo/"/>
+    <id>https://kevinzjy.github.io/2017/03/24/Install-hexo/</id>
+    <published>2017-03-24T13:16:34.000Z</published>
+    <updated>2017-03-24T13:47:50.689Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-依赖工具&quot;&gt;&lt;a href=&quot;#1-依赖工具&quot; class=&quot;headerlink&quot; title=&quot;1. 依赖工具&quot;&gt;&lt;/a&gt;1. 依赖工具&lt;/h2&gt;&lt;p&gt;在Windows下安装Git + Node.js + Cmder&lt;/p&gt;
+&lt;h3 id=&quot;安装Git&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Linux服务器上安装R</title>
+    <link href="https://kevinzjy.github.io/2017/03/24/Install-R/"/>
+    <id>https://kevinzjy.github.io/2017/03/24/Install-R/</id>
+    <published>2017-03-24T12:08:28.000Z</published>
+    <updated>2017-03-24T13:47:42.464Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;设置环境变量&quot;&gt;&lt;a href=&quot;#设置环境变量&quot; class=&quot;headerlink&quot; title=&quot;设置环境变量&quot;&gt;&lt;/a&gt;设置环境变量&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://kevinzjy.github.io/2017/03/24/hello-world/"/>
+    <id>https://kevinzjy.github.io/2017/03/24/hello-world/</id>
+    <published>2017-03-24T11:59:06.608Z</published>
+    <updated>2017-03-24T11:59:06.623Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
