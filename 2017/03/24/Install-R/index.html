@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Install-R | Hexo</title>
-  <meta name="author" content="John Doe">
+  <title>在Linux服务器上安装R | Kevinzjy&#39;s Blog</title>
+  <meta name="author" content="Jinyang Zhang">
 
+  
+  <meta name="description" content="生信狗的个人小站">
   
   
 
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Kevinzjy&#39;s Blog" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
@@ -43,7 +45,7 @@
   <header>
     
   
-    <h1 class="title">Install-R</h1>
+    <h1 class="title">在Linux服务器上安装R</h1>
   
 
     <time datetime="2017-03-24T12:08:28.000Z">
@@ -52,12 +54,24 @@
   </header>
   <div class="entry-content">
     
-      
+      <h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> R_HOME=/panfs/home/zhao/zhangjy/software/R</div><div class="line"><span class="built_in">export</span> R_SRC=/panfs/home/zhao/zhangjy/pacakges</div></pre></td></tr></table></figure>
+<h2 id="1-安装Dependencies"><a href="#1-安装Dependencies" class="headerlink" title="1. 安装Dependencies"></a>1. 安装Dependencies</h2><h3 id="zlib"><a href="#zlib" class="headerlink" title="zlib"></a>zlib</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$R_SRC</span></div><div class="line">wget https://nchc.dl.sourceforge.net/project/libpng/zlib/1.2.11/zlib-1.2.11.tar.gz</div><div class="line">tar zxvf zlib-1.2.11.tar.gz</div><div class="line"><span class="built_in">cd</span> zlib-1.2.11 </div><div class="line">./configure --prefix=<span class="variable">$R_HOME</span></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<h3 id="bzip2"><a href="#bzip2" class="headerlink" title="bzip2"></a>bzip2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$R_SRC</span></div><div class="line">wget http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz -O ./bzip2-1.0.6.tar.gz</div><div class="line">tar zxvf bzip2-1.0.6.tar.gz</div><div class="line"><span class="built_in">cd</span> bzip2</div><div class="line">make &amp;&amp; make install PREFIX=<span class="variable">$R_HOME</span></div></pre></td></tr></table></figure>
+<h3 id="liblzma"><a href="#liblzma" class="headerlink" title="liblzma"></a>liblzma</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$R_SRC</span></div><div class="line">wget http://tukaani.org/xz/xz-5.2.3.tar.gz </div><div class="line">tar zxvf xz-5.2.3.tar.gz</div><div class="line"><span class="built_in">cd</span> xz-5.2.3</div><div class="line">./configure --prefix=<span class="variable">$R_HOME</span></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<h3 id="pcre"><a href="#pcre" class="headerlink" title="pcre"></a>pcre</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$R_SRC</span></div><div class="line">wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.40.tar.gz</div><div class="line">tar zxvf pcre-8.40.tar.gz</div><div class="line"><span class="built_in">cd</span> pcre-8.40</div><div class="line">./configure --enable-utf8 --prefix=<span class="variable">$R_HOME</span></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<h3 id="libcurl"><a href="#libcurl" class="headerlink" title="libcurl"></a>libcurl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$R_SRC</span></div><div class="line">wget --no-check-certificate https://curl.haxx.se/download/curl-7.53.1.tar.gz</div><div class="line">tar zxvf curl-7.53.1.tar.gz</div><div class="line"><span class="built_in">cd</span> curl-7.53.1</div><div class="line">./configure --prefix=<span class="variable">$R_HOME</span></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<h2 id="2-配置R安装环境"><a href="#2-配置R安装环境" class="headerlink" title="2. 配置R安装环境"></a>2. 配置R安装环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=<span class="variable">$R_HOME</span>/include:<span class="variable">$LD_LIBRARY_PATH</span></div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$R_HOME</span>/bin:<span class="variable">$PATH</span></div><div class="line"><span class="built_in">export</span> CFLAGS=<span class="string">"-I<span class="variable">$R_HOME</span>/include"</span></div><div class="line"><span class="built_in">export</span> LDFLAGS=<span class="string">"-L<span class="variable">$R_HOME</span>/lib"</span></div></pre></td></tr></table></figure>
+<h2 id="3-编译和安装R"><a href="#3-编译和安装R" class="headerlink" title="3. 编译和安装R"></a>3. 编译和安装R</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> <span class="variable">$R_SRC</span></div><div class="line">wget https://mirrors.tuna.tsinghua.edu.cn/CRAN/src/base/R-3/R-3.3.3.tar.gz</div><div class="line">tar zxvf R-3.3.3.tar.gz</div><div class="line"><span class="built_in">cd</span> R-3.3.3</div><div class="line">./configure --prefix=<span class="variable">$R_HOME</span></div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<h3 id="修改-zshrc或者-bashrc"><a href="#修改-zshrc或者-bashrc" class="headerlink" title="修改.zshrc或者.bashrc"></a>修改.zshrc或者.bashrc</h3><p>在rc文件中增加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export PATH=/panfs/home/zhao/zhangjy/software/R/bin:$PATH</div><div class="line">export LD_LIBRARY_PATH=R_HOME=/panfs/home/zhao/zhangjy/software/R/lib:$LIBRARY_PATH</div></pre></td></tr></table></figure>
     
     
     <footer class="meta">
       
       
+  <div class="tags">
+<a href="/tags/Linux/">Linux</a></div>
+
       
     </footer>
     
@@ -73,7 +87,7 @@
 </div>
 <p>
   
-  &copy; 2017 John Doe
+  &copy; 2017 Jinyang Zhang
   
 </p>
 <div class="clearfix"></div></footer>
