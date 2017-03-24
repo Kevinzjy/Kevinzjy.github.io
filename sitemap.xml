@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kevinzjy.github.io/categories/index.html</loc>
+    
+    <lastmod>2017-03-24T16:37:50.361Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/about/index.html</loc>
+    
+    <lastmod>2017-03-24T16:37:23.951Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kevinzjy.github.io/404.html</loc>
     
     <lastmod>2017-03-24T16:23:21.075Z</lastmod>
@@ -9,23 +23,9 @@
   </url>
   
   <url>
-    <loc>https://kevinzjy.github.io/categories/index.html</loc>
-    
-    <lastmod>2017-03-24T16:22:27.616Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kevinzjy.github.io/tags/index.html</loc>
     
     <lastmod>2017-03-24T16:21:36.086Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/about/index.html</loc>
-    
-    <lastmod>2017-03-24T15:44:12.887Z</lastmod>
     
   </url>
   
