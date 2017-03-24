@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kevinzjy.github.io/tags/index.html</loc>
+    
+    <lastmod>2017-03-24T15:24:51.477Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/categories/index.html</loc>
+    
+    <lastmod>2017-03-24T15:24:31.788Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/ggplot/</loc>
+    
+    <lastmod>2017-03-24T15:14:09.416Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kevinzjy.github.io/about/index.html</loc>
     
     <lastmod>2017-03-24T14:42:28.144Z</lastmod>
