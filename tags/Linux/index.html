@@ -35,10 +35,10 @@
   <div id="content" class="inner">
 
 <header id="archive-header">
-  <h1 class="alignleft">Tag: Linux</h1>
+  <h1 class="alignleft">標籤：Linux</h1>
   <div class="search alignright">
     <form action="http://google.com/search" method="get" accept-charset="utf-8">
-      <input type="search" name="q" results="0" placeholder="Search">
+      <input type="search" name="q" results="0" placeholder="搜尋">
       <input type="hidden" name="q" value="site:kevinzjy.github.io">
     </form>
   </div>
@@ -122,7 +122,13 @@
 <script>
 (function(){
     var bp = document.createElement('script');
-    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
