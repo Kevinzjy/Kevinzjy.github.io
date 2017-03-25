@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/ggplot/</loc>
+    
+    <lastmod>2017-03-25T03:19:12.373Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/Install-hexo/</loc>
+    
+    <lastmod>2017-03-25T03:19:08.371Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/Install-R/</loc>
+    
+    <lastmod>2017-03-25T03:18:41.249Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/Install-c/</loc>
+    
+    <lastmod>2017-03-25T03:18:28.055Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kevinzjy.github.io/about/index.html</loc>
     
     <lastmod>2017-03-24T16:40:41.375Z</lastmod>
@@ -26,34 +54,6 @@
     <loc>https://kevinzjy.github.io/tags/index.html</loc>
     
     <lastmod>2017-03-24T16:21:36.086Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/03/24/ggplot/</loc>
-    
-    <lastmod>2017-03-24T15:14:09.416Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/03/24/Install-c/</loc>
-    
-    <lastmod>2017-03-24T13:52:02.526Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/03/24/Install-hexo/</loc>
-    
-    <lastmod>2017-03-24T13:47:50.689Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/03/24/Install-R/</loc>
-    
-    <lastmod>2017-03-24T13:47:42.464Z</lastmod>
     
   </url>
   
