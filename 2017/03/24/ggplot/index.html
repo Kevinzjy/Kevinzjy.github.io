@@ -89,18 +89,19 @@
 
 
 
-<meta name="description" content="Picture asset test">
+<meta name="description" content="ggsci颜色设置1234567891011121314151617181920library(&quot;ggsci&quot;)library(&quot;ggplot2&quot;)library(&quot;gridExtra&quot;)data(&quot;diamonds&quot;)p1 = ggplot(subset(diamonds, carat &amp;gt;= 2.2),       aes(x = table, y = price, colour = cu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ggplot">
+<meta property="og:title" content="ggplot作图">
 <meta property="og:url" content="https://kevinzjy.github.io/2017/03/24/ggplot/index.html">
 <meta property="og:site_name" content="Kevinzjy's Blog">
-<meta property="og:description" content="Picture asset test">
-<meta property="og:image" content="https://kevinzjy.github.io/2017/03/24/ggplot/head.png">
-<meta property="og:updated_time" content="2017-03-25T03:19:12.373Z">
+<meta property="og:description" content="ggsci颜色设置1234567891011121314151617181920library(&quot;ggsci&quot;)library(&quot;ggplot2&quot;)library(&quot;gridExtra&quot;)data(&quot;diamonds&quot;)p1 = ggplot(subset(diamonds, carat &amp;gt;= 2.2),       aes(x = table, y = price, colour = cu">
+<meta property="og:image" content="https://kevinzjy.github.io/2017/03/24/ggplot/ggsci_npg_scale.png">
+<meta property="og:image" content="https://kevinzjy.github.io/2017/03/24/ggplot/ggsci_npg_pal.png">
+<meta property="og:updated_time" content="2017-03-26T10:10:37.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ggplot">
-<meta name="twitter:description" content="Picture asset test">
-<meta name="twitter:image" content="https://kevinzjy.github.io/2017/03/24/ggplot/head.png">
+<meta name="twitter:title" content="ggplot作图">
+<meta name="twitter:description" content="ggsci颜色设置1234567891011121314151617181920library(&quot;ggsci&quot;)library(&quot;ggplot2&quot;)library(&quot;gridExtra&quot;)data(&quot;diamonds&quot;)p1 = ggplot(subset(diamonds, carat &amp;gt;= 2.2),       aes(x = table, y = price, colour = cu">
+<meta name="twitter:image" content="https://kevinzjy.github.io/2017/03/24/ggplot/ggsci_npg_scale.png">
 
 
 
@@ -134,7 +135,7 @@
 
 
 
-  <title> ggplot | Kevinzjy's Blog </title>
+  <title> ggplot作图 | Kevinzjy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -332,7 +333,7 @@
             
             
               
-                ggplot
+                ggplot作图
               
             
           </h1>
@@ -410,8 +411,11 @@
       
 
       
-        <p>Picture asset test<br><img src="/2017/03/24/ggplot/head.png" alt="head.png" title=""></p>
-
+        <h2 id="ggsci颜色设置"><a href="#ggsci颜色设置" class="headerlink" title="ggsci颜色设置"></a>ggsci颜色设置</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(<span class="string">"ggsci"</span>)</div><div class="line"><span class="keyword">library</span>(<span class="string">"ggplot2"</span>)</div><div class="line"><span class="keyword">library</span>(<span class="string">"gridExtra"</span>)</div><div class="line"></div><div class="line">data(<span class="string">"diamonds"</span>)</div><div class="line"></div><div class="line">p1 = ggplot(subset(diamonds, carat &gt;= <span class="number">2.2</span>),</div><div class="line">       aes(x = table, y = price, colour = cut)) +</div><div class="line">  geom_point(alpha = <span class="number">0.7</span>) +</div><div class="line">  geom_smooth(method = <span class="string">"loess"</span>, alpha = <span class="number">0.05</span>, size = <span class="number">1</span>, span = <span class="number">1</span>) +</div><div class="line">  theme_bw()</div><div class="line"></div><div class="line">p2 = ggplot(subset(diamonds, carat &gt; <span class="number">2.2</span> &amp; depth &gt; <span class="number">55</span> &amp; depth &lt; <span class="number">70</span>),</div><div class="line">       aes(x = depth, fill = cut)) +</div><div class="line">  geom_histogram(colour = <span class="string">"black"</span>, binwidth = <span class="number">1</span>, position = <span class="string">"dodge"</span>) +</div><div class="line">  theme_bw()</div><div class="line"></div><div class="line">p1_npg = p1 + scale_color_npg()</div><div class="line">p2_npg = p2 + scale_fill_npg()</div><div class="line">grid.arrange(p1_npg, p2_npg, ncol = <span class="number">2</span>)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<img src="/2017/03/24/ggplot/ggsci_npg_scale.png" alt="ggsci_npg_scale.png" title="">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mypal &lt;- pal_npg(&quot;nrc&quot;, alpha=0.7)(9)</div><div class="line"></div><div class="line">library(scales)</div><div class="line">show_col(mypal)</div></pre></td></tr></table></figure>
+<img src="/2017/03/24/ggplot/ggsci_npg_pal.png" alt="ggsci_npg_pal.png" title="">
       
     </div>
 
@@ -516,8 +520,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/assets/img/avatar.jpeg"
@@ -586,6 +599,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ggsci颜色设置"><span class="nav-number">1.</span> <span class="nav-text">ggsci颜色设置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

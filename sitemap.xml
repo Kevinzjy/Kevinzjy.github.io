@@ -2,44 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kevinzjy.github.io/2017/03/26/Linux-Tech/</loc>
+    <loc>https://kevinzjy.github.io/about/index.html</loc>
     
-    <lastmod>2017-03-26T09:34:11.377Z</lastmod>
+    <lastmod>2017-03-26T10:18:09.157Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kevinzjy.github.io/2017/03/24/Install-c/</loc>
+    <loc>https://kevinzjy.github.io/2017/03/26/Linux-Tech/</loc>
     
-    <lastmod>2017-03-26T09:23:02.020Z</lastmod>
+    <lastmod>2017-03-26T10:11:18.433Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kevinzjy.github.io/2017/03/24/Install-R/</loc>
     
-    <lastmod>2017-03-25T03:48:14.749Z</lastmod>
+    <lastmod>2017-03-26T10:11:08.537Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kevinzjy.github.io/2017/03/24/Install-hexo/</loc>
     
-    <lastmod>2017-03-25T03:44:21.049Z</lastmod>
+    <lastmod>2017-03-26T10:10:57.746Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/Install-c/</loc>
+    
+    <lastmod>2017-03-26T10:10:49.007Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://kevinzjy.github.io/2017/03/24/ggplot/</loc>
     
-    <lastmod>2017-03-25T03:19:12.373Z</lastmod>
+    <lastmod>2017-03-26T10:10:37.393Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://kevinzjy.github.io/about/index.html</loc>
+    <loc>https://kevinzjy.github.io/2017/03/24/hello-world/</loc>
     
-    <lastmod>2017-03-24T16:40:41.375Z</lastmod>
+    <lastmod>2017-03-26T10:10:23.743Z</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>https://kevinzjy.github.io/tags/index.html</loc>
     
     <lastmod>2017-03-24T16:21:36.086Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/03/24/hello-world/</loc>
-    
-    <lastmod>2017-03-24T11:59:06.623Z</lastmod>
     
   </url>
   
