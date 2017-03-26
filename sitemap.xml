@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/Install-c/</loc>
+    
+    <lastmod>2017-03-26T08:12:58.875Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kevinzjy.github.io/2017/03/24/Install-R/</loc>
     
     <lastmod>2017-03-25T03:48:14.749Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://kevinzjy.github.io/2017/03/24/Install-hexo/</loc>
     
     <lastmod>2017-03-25T03:44:21.049Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/03/24/Install-c/</loc>
-    
-    <lastmod>2017-03-25T03:20:41.373Z</lastmod>
     
   </url>
   
