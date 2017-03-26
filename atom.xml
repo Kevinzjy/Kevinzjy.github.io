@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-03-25T03:19:12.373Z</updated>
+  <updated>2017-03-26T09:34:11.377Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux服务器使用技巧</title>
+    <link href="https://kevinzjy.github.io/2017/03/26/Linux-Tech/"/>
+    <id>https://kevinzjy.github.io/2017/03/26/Linux-Tech/</id>
+    <published>2017-03-26T09:29:26.000Z</published>
+    <updated>2017-03-26T09:34:11.377Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;防止错误删除或重命名文件&quot;&gt;&lt;a href=&quot;#防止错误删除或重命名文件&quot; class=&quot;headerlink&quot; title=&quot;防止错误删除或重命名文件&quot;&gt;&lt;/a&gt;防止错误删除或重命名文件&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>ggplot</title>
@@ -39,15 +59,15 @@
   </entry>
   
   <entry>
-    <title>在Linux服务器上安装GCC</title>
+    <title>在Linux服务器上安装GCC和Boost</title>
     <link href="https://kevinzjy.github.io/2017/03/24/Install-c/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-c/</id>
     <published>2017-03-24T13:46:27.000Z</published>
-    <updated>2017-03-26T08:12:58.875Z</updated>
+    <updated>2017-03-26T09:23:02.020Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;下载gcc-6-3-0&quot;&gt;&lt;a href=&quot;#下载gcc-6-3-0&quot; class=&quot;headerlink&quot; title=&quot;下载gcc-6.3.0&quot;&gt;&lt;/a&gt;下载gcc-6.3.0&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table
+      &lt;h2 id=&quot;GCC的安装&quot;&gt;&lt;a href=&quot;#GCC的安装&quot; class=&quot;headerlink&quot; title=&quot;GCC的安装&quot;&gt;&lt;/a&gt;GCC的安装&lt;/h2&gt;&lt;h3 id=&quot;下载gcc-6-3-0&quot;&gt;&lt;a href=&quot;#下载gcc-6-3-0&quot; class=&quot;header
     
     </summary>
     

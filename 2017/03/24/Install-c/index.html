@@ -89,19 +89,19 @@
 
 
 
-<meta name="description" content="下载gcc-6.3.01234cd /panfs/home/zhao/zhangjy/software/src/gcc_src/wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-6.3.0/gcc-6.3.0.tar.gztar zxvf gcc-6.3.0.tar.gzcd gcc-6.3.0
-安装依赖的mpfr, gmp和">
+<meta name="description" content="GCC的安装下载gcc-6.3.01234cd /panfs/home/zhao/zhangjy/software/src/gcc_src/wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-6.3.0/gcc-6.3.0.tar.gztar zxvf gcc-6.3.0.tar.gzcd gcc-6.3.0
+安装依赖的mpfr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Linux服务器上安装GCC">
+<meta property="og:title" content="在Linux服务器上安装GCC和Boost">
 <meta property="og:url" content="https://kevinzjy.github.io/2017/03/24/Install-c/index.html">
 <meta property="og:site_name" content="Kevinzjy's Blog">
-<meta property="og:description" content="下载gcc-6.3.01234cd /panfs/home/zhao/zhangjy/software/src/gcc_src/wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-6.3.0/gcc-6.3.0.tar.gztar zxvf gcc-6.3.0.tar.gzcd gcc-6.3.0
-安装依赖的mpfr, gmp和">
-<meta property="og:updated_time" content="2017-03-26T08:12:58.875Z">
+<meta property="og:description" content="GCC的安装下载gcc-6.3.01234cd /panfs/home/zhao/zhangjy/software/src/gcc_src/wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-6.3.0/gcc-6.3.0.tar.gztar zxvf gcc-6.3.0.tar.gzcd gcc-6.3.0
+安装依赖的mpfr">
+<meta property="og:updated_time" content="2017-03-26T09:23:02.020Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Linux服务器上安装GCC">
-<meta name="twitter:description" content="下载gcc-6.3.01234cd /panfs/home/zhao/zhangjy/software/src/gcc_src/wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-6.3.0/gcc-6.3.0.tar.gztar zxvf gcc-6.3.0.tar.gzcd gcc-6.3.0
-安装依赖的mpfr, gmp和">
+<meta name="twitter:title" content="在Linux服务器上安装GCC和Boost">
+<meta name="twitter:description" content="GCC的安装下载gcc-6.3.01234cd /panfs/home/zhao/zhangjy/software/src/gcc_src/wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-6.3.0/gcc-6.3.0.tar.gztar zxvf gcc-6.3.0.tar.gzcd gcc-6.3.0
+安装依赖的mpfr">
 
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <title> 在Linux服务器上安装GCC | Kevinzjy's Blog </title>
+  <title> 在Linux服务器上安装GCC和Boost | Kevinzjy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -333,7 +333,7 @@
             
             
               
-                在Linux服务器上安装GCC
+                在Linux服务器上安装GCC和Boost
               
             
           </h1>
@@ -411,14 +411,17 @@
       
 
       
-        <h2 id="下载gcc-6-3-0"><a href="#下载gcc-6-3-0" class="headerlink" title="下载gcc-6.3.0"></a>下载gcc-6.3.0</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /panfs/home/zhao/zhangjy/software/src/gcc_src/</div><div class="line">wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-6.3.0/gcc-6.3.0.tar.gz</div><div class="line">tar zxvf gcc-6.3.0.tar.gz</div><div class="line"><span class="built_in">cd</span> gcc-6.3.0</div></pre></td></tr></table></figure>
-<h2 id="安装依赖的mpfr-gmp和mpc等依赖工具"><a href="#安装依赖的mpfr-gmp和mpc等依赖工具" class="headerlink" title="安装依赖的mpfr, gmp和mpc等依赖工具"></a>安装依赖的mpfr, gmp和mpc等依赖工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./contrib/download_prerequisites</div></pre></td></tr></table></figure>
-<h2 id="在新的目录下编译"><a href="#在新的目录下编译" class="headerlink" title="在新的目录下编译"></a>在新的目录下编译</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p /panfs/home/zhao/zhangjy/software/src/gcc_build</div><div class="line"><span class="built_in">cd</span> /panfs/home/zhao/zhangjy/software/src/gcc_build</div><div class="line">/panfs/home/zhao/zhangjy/software/src/gcc_src/gcc-6.3.0/configure --prefix=/panfs/home/zhao/zhangjy/software/gcc --disable-multilib</div></pre></td></tr></table></figure>
-<h2 id="配置环境变量，去掉在-LD-LIBRARY-PATH和-LIBRARY-PATH变量中最后的’-’"><a href="#配置环境变量，去掉在-LD-LIBRARY-PATH和-LIBRARY-PATH变量中最后的’-’" class="headerlink" title="配置环境变量，去掉在\$LD_LIBRARY_PATH和\$LIBRARY_PATH变量中最后的’:’"></a>配置环境变量，去掉在\$LD_LIBRARY_PATH和\$LIBRARY_PATH变量中最后的’:’</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> <span class="variable">$LD_LIBRARY_PATH</span>=/panfs/home/zhao/zhangjy/software/R/include:/panfs/home/zhao/zhangjy/software/R/lib:/public/software/mpi/openmpi-16-intel/lib:/public/software/intel/composer_xe_2011_sp1.7.256/compiler/lib/intel64:/public/software/intel/composer_xe_2011_sp1.7.256/mkl/lib/intel64:/opt/gridview//pbs/dispatcher/lib::/usr/<span class="built_in">local</span>/lib64:/usr/<span class="built_in">local</span>/lib</div><div class="line"><span class="built_in">export</span> <span class="variable">$LIBRARY_PATH</span>=/public/software/intel/composer_xe_2011_sp1.7.256/compiler/lib/intel64:/public/software/intel/composer_xe_2011_sp1.7.256/mkl/lib/intel64</div></pre></td></tr></table></figure>
-<h2 id="安装GCC"><a href="#安装GCC" class="headerlink" title="安装GCC"></a>安装GCC</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">make -j 10 <span class="comment"># make in 10 threads</span></div><div class="line">make install</div></pre></td></tr></table></figure>
-<h2 id="添加新安装的GCC到环境变量"><a href="#添加新安装的GCC到环境变量" class="headerlink" title="添加新安装的GCC到环境变量"></a>添加新安装的GCC到环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=/panfs/home/zhao/zhangjy/software/gcc/bin:<span class="variable">$PATH</span></div><div class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/panfs/home/zhao/zhangjy/software/gcc/lib/gcc/x86_64-pc-linux-gnu/6.3.0:/panfs/home/zhao/zhangjy/software/gcc/lib64:<span class="variable">$LD_LIBRARY_PATH</span></div></pre></td></tr></table></figure>
-<h2 id="当安装其他软件时，指定调用新版的GCC"><a href="#当安装其他软件时，指定调用新版的GCC" class="headerlink" title="当安装其他软件时，指定调用新版的GCC"></a>当安装其他软件时，指定调用新版的GCC</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> CC=/panfs/home/zhao/zhangjy/software/gcc/bin/gcc</div><div class="line"><span class="built_in">export</span> CXX=/panfs/home/zhao/zhangjy/software/gcc/bin/g++</div><div class="line">cmake <span class="variable">$YOUR_PATH</span></div></pre></td></tr></table></figure>
-
+        <h2 id="GCC的安装"><a href="#GCC的安装" class="headerlink" title="GCC的安装"></a>GCC的安装</h2><h3 id="下载gcc-6-3-0"><a href="#下载gcc-6-3-0" class="headerlink" title="下载gcc-6.3.0"></a>下载gcc-6.3.0</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /panfs/home/zhao/zhangjy/software/src/gcc_src/</div><div class="line">wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-6.3.0/gcc-6.3.0.tar.gz</div><div class="line">tar zxvf gcc-6.3.0.tar.gz</div><div class="line"><span class="built_in">cd</span> gcc-6.3.0</div></pre></td></tr></table></figure>
+<h3 id="安装依赖的mpfr-gmp和mpc等依赖工具"><a href="#安装依赖的mpfr-gmp和mpc等依赖工具" class="headerlink" title="安装依赖的mpfr, gmp和mpc等依赖工具"></a>安装依赖的mpfr, gmp和mpc等依赖工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./contrib/download_prerequisites</div></pre></td></tr></table></figure>
+<h3 id="在新的目录下编译"><a href="#在新的目录下编译" class="headerlink" title="在新的目录下编译"></a>在新的目录下编译</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -p /panfs/home/zhao/zhangjy/software/src/gcc_build</div><div class="line"><span class="built_in">cd</span> /panfs/home/zhao/zhangjy/software/src/gcc_build</div><div class="line">/panfs/home/zhao/zhangjy/software/src/gcc_src/gcc-6.3.0/configure --prefix=/panfs/home/zhao/zhangjy/software/gcc --disable-multilib</div></pre></td></tr></table></figure>
+<h3 id="配置环境变量，去掉在-LD-LIBRARY-PATH和-LIBRARY-PATH变量中最后的’-’"><a href="#配置环境变量，去掉在-LD-LIBRARY-PATH和-LIBRARY-PATH变量中最后的’-’" class="headerlink" title="配置环境变量，去掉在\$LD_LIBRARY_PATH和\$LIBRARY_PATH变量中最后的’:’"></a>配置环境变量，去掉在\$LD_LIBRARY_PATH和\$LIBRARY_PATH变量中最后的’:’</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> <span class="variable">$LD_LIBRARY_PATH</span>=/panfs/home/zhao/zhangjy/software/R/include:/panfs/home/zhao/zhangjy/software/R/lib:/public/software/mpi/openmpi-16-intel/lib:/public/software/intel/composer_xe_2011_sp1.7.256/compiler/lib/intel64:/public/software/intel/composer_xe_2011_sp1.7.256/mkl/lib/intel64:/opt/gridview//pbs/dispatcher/lib::/usr/<span class="built_in">local</span>/lib64:/usr/<span class="built_in">local</span>/lib</div><div class="line"><span class="built_in">export</span> <span class="variable">$LIBRARY_PATH</span>=/public/software/intel/composer_xe_2011_sp1.7.256/compiler/lib/intel64:/public/software/intel/composer_xe_2011_sp1.7.256/mkl/lib/intel64</div></pre></td></tr></table></figure>
+<h3 id="安装GCC"><a href="#安装GCC" class="headerlink" title="安装GCC"></a>安装GCC</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">make -j 10 <span class="comment"># make in 10 threads</span></div><div class="line">make install</div></pre></td></tr></table></figure>
+<h3 id="添加新安装的GCC到环境变量"><a href="#添加新安装的GCC到环境变量" class="headerlink" title="添加新安装的GCC到环境变量"></a>添加新安装的GCC到环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=/panfs/home/zhao/zhangjy/software/gcc/bin:<span class="variable">$PATH</span></div><div class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/panfs/home/zhao/zhangjy/software/gcc/lib/gcc/x86_64-pc-linux-gnu/6.3.0:/panfs/home/zhao/zhangjy/software/gcc/lib64:<span class="variable">$LD_LIBRARY_PATH</span></div></pre></td></tr></table></figure>
+<h3 id="当安装其他软件时，指定调用新版的GCC"><a href="#当安装其他软件时，指定调用新版的GCC" class="headerlink" title="当安装其他软件时，指定调用新版的GCC"></a>当安装其他软件时，指定调用新版的GCC</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> CC=/panfs/home/zhao/zhangjy/software/gcc/bin/gcc</div><div class="line"><span class="built_in">export</span> CXX=/panfs/home/zhao/zhangjy/software/gcc/bin/g++</div><div class="line">cmake <span class="variable">$YOUR_PATH</span></div></pre></td></tr></table></figure>
+<h2 id="Boost的安装"><a href="#Boost的安装" class="headerlink" title="Boost的安装"></a>Boost的安装</h2><h3 id="下载Boost"><a href="#下载Boost" class="headerlink" title="下载Boost"></a>下载<a href="http://www.boost.org/" target="_blank" rel="external">Boost</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget https://nchc.dl.sourceforge.net/project/boost/boost/1.63.0/boost_1_63_0.tar.gz</div><div class="line">tar zxvf boost_1_63_0.tar.gz</div><div class="line"><span class="built_in">cd</span> boost_1_63_0</div></pre></td></tr></table></figure>
+<h3 id="安装Boost"><a href="#安装Boost" class="headerlink" title="安装Boost"></a>安装Boost</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh ./bootstrap.sh</div></pre></td></tr></table></figure>
+<h2 id="指定boost安装目录和include-lib文件夹的位置"><a href="#指定boost安装目录和include-lib文件夹的位置" class="headerlink" title="指定boost安装目录和include, lib文件夹的位置"></a>指定boost安装目录和include, lib文件夹的位置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./bjam --prefix=/panfs/home/zhao/zhangjy/software/boost --includedir=/panfs/home/zhao/zhangjy/software/boost --libdir=/panfs/home/zhao/zhangjy/software/boost install</div></pre></td></tr></table></figure>
+<h2 id="添加到环境变量"><a href="#添加到环境变量" class="headerlink" title="添加到环境变量"></a>添加到环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=/panfs/home/zhao/zhangjy/software/boost/boost:<span class="variable">$PATH</span></div><div class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/panfs/home/zhao/zhangjy/software/boost/lib:<span class="variable">$LD_LIBRARY_PATH</span></div></pre></td></tr></table></figure>
       
     </div>
 
@@ -548,7 +551,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -612,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载gcc-6-3-0"><span class="nav-number">1.</span> <span class="nav-text">下载gcc-6.3.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装依赖的mpfr-gmp和mpc等依赖工具"><span class="nav-number">2.</span> <span class="nav-text">安装依赖的mpfr, gmp和mpc等依赖工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在新的目录下编译"><span class="nav-number">3.</span> <span class="nav-text">在新的目录下编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境变量，去掉在-LD-LIBRARY-PATH和-LIBRARY-PATH变量中最后的’-’"><span class="nav-number">4.</span> <span class="nav-text">配置环境变量，去掉在\$LD_LIBRARY_PATH和\$LIBRARY_PATH变量中最后的’:’</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装GCC"><span class="nav-number">5.</span> <span class="nav-text">安装GCC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加新安装的GCC到环境变量"><span class="nav-number">6.</span> <span class="nav-text">添加新安装的GCC到环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当安装其他软件时，指定调用新版的GCC"><span class="nav-number">7.</span> <span class="nav-text">当安装其他软件时，指定调用新版的GCC</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GCC的安装"><span class="nav-number">1.</span> <span class="nav-text">GCC的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载gcc-6-3-0"><span class="nav-number">1.1.</span> <span class="nav-text">下载gcc-6.3.0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖的mpfr-gmp和mpc等依赖工具"><span class="nav-number">1.2.</span> <span class="nav-text">安装依赖的mpfr, gmp和mpc等依赖工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在新的目录下编译"><span class="nav-number">1.3.</span> <span class="nav-text">在新的目录下编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量，去掉在-LD-LIBRARY-PATH和-LIBRARY-PATH变量中最后的’-’"><span class="nav-number">1.4.</span> <span class="nav-text">配置环境变量，去掉在\$LD_LIBRARY_PATH和\$LIBRARY_PATH变量中最后的’:’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装GCC"><span class="nav-number">1.5.</span> <span class="nav-text">安装GCC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新安装的GCC到环境变量"><span class="nav-number">1.6.</span> <span class="nav-text">添加新安装的GCC到环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当安装其他软件时，指定调用新版的GCC"><span class="nav-number">1.7.</span> <span class="nav-text">当安装其他软件时，指定调用新版的GCC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Boost的安装"><span class="nav-number">2.</span> <span class="nav-text">Boost的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载Boost"><span class="nav-number">2.1.</span> <span class="nav-text">下载Boost</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Boost"><span class="nav-number">2.2.</span> <span class="nav-text">安装Boost</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定boost安装目录和include-lib文件夹的位置"><span class="nav-number">3.</span> <span class="nav-text">指定boost安装目录和include, lib文件夹的位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加到环境变量"><span class="nav-number">4.</span> <span class="nav-text">添加到环境变量</span></a></li></ol></div>
             
 
           </div>
