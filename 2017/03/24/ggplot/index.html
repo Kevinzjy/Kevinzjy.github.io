@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://kevinzjy.github.io/2017/03/24/ggplot/ggsci_npg_scale.png">
 <meta property="og:image" content="https://kevinzjy.github.io/2017/03/24/ggplot/ggsci_npg_pal.png">
 <meta property="og:image" content="https://kevinzjy.github.io/2017/03/24/ggplot/p1_legend.png">
-<meta property="og:updated_time" content="2017-04-26T13:16:15.113Z">
+<meta property="og:updated_time" content="2017-04-26T14:23:26.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ggplot作图">
 <meta name="twitter:description" content="ggsci颜色设置1234567891011121314151617181920library(&quot;ggsci&quot;)library(&quot;ggplot2&quot;)library(&quot;gridExtra&quot;)data(&quot;diamonds&quot;)p1 = ggplot(subset(diamonds, carat &amp;gt;= 2.2),       aes(x = table, y = price, colour = cu">
@@ -419,6 +419,12 @@
 <img src="/2017/03/24/ggplot/ggsci_npg_pal.png" alt="ggsci_npg_pal.png" title="">
 <h2 id="ggplot-legend"><a href="#ggplot-legend" class="headerlink" title="ggplot legend"></a>ggplot legend</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">get_legend &lt;- <span class="keyword">function</span>(p) &#123;</div><div class="line">    tmp &lt;- ggplot_gtable(ggplot_build(p))</div><div class="line">    leg &lt;- which(sapply(tmp$grobs, <span class="keyword">function</span>(x) x$name) == <span class="string">"guide-box"</span>)</div><div class="line">    legend &lt;- tmp$grobs[[leg]]</div><div class="line">    <span class="keyword">return</span>(legend)</div><div class="line">&#125;</div><div class="line"></div><div class="line">p1_legend &lt;- get_legend(p1)</div><div class="line">plot(p1_legend)</div></pre></td></tr></table></figure>
 <img src="/2017/03/24/ggplot/p1_legend.png" alt="p1_legend.png" title="">
+<h2 id="ggplot-transparency"><a href="#ggplot-transparency" class="headerlink" title="ggplot transparency"></a>ggplot transparency</h2><p>ggplot中，将plot存为eps格式可以更加方便地使用AI进行编辑</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ggsave(<span class="string">"./plot.eps"</span>, width=<span class="number">5</span>, height=<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<p>但是默认的eps输出格式不能保存透明度，会出现报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Warning message:</div><div class="line">In grid.Call.graphics(L_rect, x$x, x$y, x$width, x$height, resolveHJust(x$just,  :</div><div class="line">  此装置不支持半透明：每一页将被报告一次</div></pre></td></tr></table></figure>
+<p>此时</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ggsave(<span class="string">"./F1B1.eps"</span>, device=cairo_ps, width = <span class="number">6</span>, height = <span class="number">10</span>)</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -548,7 +554,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -559,7 +565,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -570,7 +576,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -612,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ggsci颜色设置"><span class="nav-number">1.</span> <span class="nav-text">ggsci颜色设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ggplot-legend"><span class="nav-number">2.</span> <span class="nav-text">ggplot legend</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ggsci颜色设置"><span class="nav-number">1.</span> <span class="nav-text">ggsci颜色设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ggplot-legend"><span class="nav-number">2.</span> <span class="nav-text">ggplot legend</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ggplot-transparency"><span class="nav-number">3.</span> <span class="nav-text">ggplot transparency</span></a></li></ol></div>
             
 
           </div>

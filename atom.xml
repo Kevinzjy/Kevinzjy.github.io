@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-03-29T05:17:04.000Z</updated>
+  <updated>2017-05-12T08:31:35.477Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用Sra-tools从NCBI下载SRA数据</title>
+    <link href="https://kevinzjy.github.io/2017/05/12/sratoolkit/"/>
+    <id>https://kevinzjy.github.io/2017/05/12/sratoolkit/</id>
+    <published>2017-05-12T07:56:45.000Z</published>
+    <updated>2017-05-12T08:31:35.477Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Sra-tools的下载与安装&quot;&gt;&lt;a href=&quot;#Sra-tools的下载与安装&quot; class=&quot;headerlink&quot; title=&quot;Sra-tools的下载与安装&quot;&gt;&lt;/a&gt;Sra-tools的下载与安装&lt;/h2&gt;&lt;p&gt;Note: 旧版的Sratoolki
+    
+    </summary>
+    
+      <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu下部署NAS</title>
+    <link href="https://kevinzjy.github.io/2017/04/30/nas/"/>
+    <id>https://kevinzjy.github.io/2017/04/30/nas/</id>
+    <published>2017-04-30T08:18:15.000Z</published>
+    <updated>2017-05-12T08:32:12.900Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装Ubuntu-NAS&quot;&gt;&lt;a href=&quot;#安装Ubuntu-NAS&quot; class=&quot;headerlink&quot; title=&quot;安装Ubuntu NAS&quot;&gt;&lt;/a&gt;安装Ubuntu NAS&lt;/h2&gt;&lt;h3 id=&quot;开机自动挂载移动硬盘&quot;&gt;&lt;a href=&quot;#开机自
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="NAS" scheme="https://kevinzjy.github.io/tags/NAS/"/>
+    
+  </entry>
   
   <entry>
     <title>Python中的多进程</title>
@@ -58,7 +102,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/ggplot/"/>
     <id>https://kevinzjy.github.io/2017/03/24/ggplot/</id>
     <published>2017-03-24T15:04:04.000Z</published>
-    <updated>2017-04-26T13:16:15.113Z</updated>
+    <updated>2017-04-26T14:23:26.780Z</updated>
     
     <summary type="html">
     
