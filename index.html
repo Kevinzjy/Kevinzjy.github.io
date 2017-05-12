@@ -408,19 +408,16 @@
 
       
         
-          
-            <h2 id="Sra-tools的下载与安装"><a href="#Sra-tools的下载与安装" class="headerlink" title="Sra-tools的下载与安装"></a>Sra-tools的下载与安装</h2><p>Note: 旧版的Sratoolkit已经更新为Sratools</p>
-<p>参考NCBI官方教程<a href="http://ncbi.github.io/sra-tools/install_config.html" target="_blank" rel="external">Wiki</a></p>
+          <h2 id="Sra-tools的下载与安装"><a href="#Sra-tools的下载与安装" class="headerlink" title="Sra-tools的下载与安装"></a>Sra-tools的下载与安装</h2><p>Note: 旧版的Sratoolkit已经更新为Sratools</p>
+<p>参考NCBI官方教程<a href="http://ncbi.github.io/sra-tools/install_config.html">Wiki</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Downloading SRA Toolkit</span></div><div class="line">wget <span class="string">"http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz"</span></div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Unpacking the Toolkit </span></div><div class="line">tar zxvf sratoolkit.current-centos_linux64.tar.gz</div><div class="line"><span class="built_in">cd</span> sratoolkit.2.8.2-1-centos_linux64</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Add to $PATH</span></div><div class="line"><span class="built_in">export</span> PATH=[sratoolkit_path]:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Test sratoolkit</div><div class="line">fastq-dump -X 5 -Z SRR390728</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Configure </div><div class="line">vdb-config -i</div></pre></td></tr></table></figure>
-<p>在vdb-config的图形界面里更改[Default Import Path]，最好不要放在用户$HOME目录下，否则SRA文件可能会导致用户目录占用空间<br>当<br>某些情况下，vdb-config可能不能打开图形化界面，可以手动在配置文件中指定SRA文件的储存位置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 手动指定sra_path</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'/repository/user/main/public/root = "[sra_path]"'</span> &gt; <span class="variable">$HOME</span>/.ncbi/user-settings.mkfg</div></pre></td></tr></table></figure>
-<h2 id="如何下载SRA文件"><a href="#如何下载SRA文件" class="headerlink" title="如何下载SRA文件"></a>如何下载SRA文件</h2><p>一般情况下，我们下载的是paired-end reads，而默认的fastq-dump会把read1,read2解压在同一文件中，我们需要手动指定–split-3来分别获得read1和read2</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Download DRX033310_1.fastq.gz, DRX033310_2.fastq.gz</span></div><div class="line">fastq-dump --split-3 --gzip SRR390728</div></pre></td></tr></table></figure>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/12/sratoolkit/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -560,11 +557,14 @@
 
       
         
-          
-            <h2 id="安装Ubuntu-NAS"><a href="#安装Ubuntu-NAS" class="headerlink" title="安装Ubuntu NAS"></a>安装Ubuntu NAS</h2><h3 id="开机自动挂载移动硬盘"><a href="#开机自动挂载移动硬盘" class="headerlink" title="开机自动挂载移动硬盘"></a>开机自动挂载移动硬盘</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo fdisk <span class="_">-l</span></div><div class="line">sudo umount /dev/sdb1</div><div class="line">sudo mkfs -t ext4 /dev/sdb1</div></pre></td></tr></table></figure>
-<h3 id="使用bash-it-或者-zsh-oh-my-zsh"><a href="#使用bash-it-或者-zsh-oh-my-zsh" class="headerlink" title="使用bash-it 或者 zsh + oh-my-zsh"></a>使用bash-it 或者 zsh + oh-my-zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt update</div><div class="line">sudo apt install zsh</div><div class="line">sudo apt install git</div></pre></td></tr></table></figure>
-
-          
+          <h2 id="安装Ubuntu-NAS"><a href="#安装Ubuntu-NAS" class="headerlink" title="安装Ubuntu NAS"></a>安装Ubuntu NAS</h2>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/30/nas/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

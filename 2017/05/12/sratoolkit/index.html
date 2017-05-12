@@ -91,23 +91,20 @@
 
 <meta name="description" content="Sra-tools的下载与安装Note: 旧版的Sratoolkit已经更新为Sratools
 参考NCBI官方教程Wiki
-12# Downloading SRA Toolkitwget &quot;http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz&quot;
-123# Unpacki">
+12# Downloading SRA Toolkitwget &quot;http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用Sra-tools从NCBI下载SRA数据">
 <meta property="og:url" content="https://kevinzjy.github.io/2017/05/12/sratoolkit/index.html">
 <meta property="og:site_name" content="Kevinzjy's Blog">
 <meta property="og:description" content="Sra-tools的下载与安装Note: 旧版的Sratoolkit已经更新为Sratools
 参考NCBI官方教程Wiki
-12# Downloading SRA Toolkitwget &quot;http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz&quot;
-123# Unpacki">
-<meta property="og:updated_time" content="2017-05-12T08:31:35.477Z">
+12# Downloading SRA Toolkitwget &quot;http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz&quot;">
+<meta property="og:updated_time" content="2017-05-12T08:35:47.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Sra-tools从NCBI下载SRA数据">
 <meta name="twitter:description" content="Sra-tools的下载与安装Note: 旧版的Sratoolkit已经更新为Sratools
 参考NCBI官方教程Wiki
-12# Downloading SRA Toolkitwget &quot;http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz&quot;
-123# Unpacki">
+12# Downloading SRA Toolkitwget &quot;http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz&quot;">
 
 
 
@@ -420,6 +417,7 @@
         <h2 id="Sra-tools的下载与安装"><a href="#Sra-tools的下载与安装" class="headerlink" title="Sra-tools的下载与安装"></a>Sra-tools的下载与安装</h2><p>Note: 旧版的Sratoolkit已经更新为Sratools</p>
 <p>参考NCBI官方教程<a href="http://ncbi.github.io/sra-tools/install_config.html" target="_blank" rel="external">Wiki</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Downloading SRA Toolkit</span></div><div class="line">wget <span class="string">"http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz"</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Unpacking the Toolkit </span></div><div class="line">tar zxvf sratoolkit.current-centos_linux64.tar.gz</div><div class="line"><span class="built_in">cd</span> sratoolkit.2.8.2-1-centos_linux64</div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Add to $PATH</span></div><div class="line"><span class="built_in">export</span> PATH=[sratoolkit_path]:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># Test sratoolkit</div><div class="line">fastq-dump -X 5 -Z SRR390728</div></pre></td></tr></table></figure>
