@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-05-12T08:35:47.149Z</updated>
+  <updated>2017-05-12T08:39:48.000Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="https://kevinzjy.github.io/2017/05/12/sratoolkit/"/>
     <id>https://kevinzjy.github.io/2017/05/12/sratoolkit/</id>
     <published>2017-05-12T07:56:45.000Z</published>
-    <updated>2017-05-12T08:35:47.149Z</updated>
+    <updated>2017-05-12T08:39:48.000Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Sra-tools的下载与安装&quot;&gt;&lt;a href=&quot;#Sra-tools的下载与安装&quot; class=&quot;headerlink&quot; title=&quot;Sra-tools的下载与安装&quot;&gt;&lt;/a&gt;Sra-tools的下载与安装&lt;/h2&gt;&lt;p&gt;Note: 旧版的Sratoolkit已经更新为Sratools&lt;/p&gt;
+      &lt;h2 id=&quot;Sra-tools的下载与安装&quot;&gt;&lt;a href=&quot;#Sra-tools的下载与安装&quot; class=&quot;headerlink&quot; title=&quot;Sra-tools的下载与安装&quot;&gt;&lt;/a&gt;Sra-tools的下载与安装&lt;/h2&gt;&lt;p&gt;Note: 旧版的Sratoolkit已经更新为Sra-tools&lt;/p&gt;
 &lt;p&gt;参考NCBI官方教程&lt;a href=&quot;http://ncbi.github.io/sra-tools/install_config.html&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Downloading SRA Toolkit&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;wget &lt;span class=&quot;string&quot;&gt;&quot;http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
@@ -40,11 +40,29 @@
   </entry>
   
   <entry>
+    <title>Hello World</title>
+    <link href="https://kevinzjy.github.io/2017/05/01/hello-world/"/>
+    <id>https://kevinzjy.github.io/2017/05/01/hello-world/</id>
+    <published>2017-05-01T06:23:12.756Z</published>
+    <updated>2017-03-26T10:10:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu下部署NAS</title>
     <link href="https://kevinzjy.github.io/2017/04/30/nas/"/>
     <id>https://kevinzjy.github.io/2017/04/30/nas/</id>
     <published>2017-04-30T08:18:15.000Z</published>
-    <updated>2017-05-12T08:35:34.257Z</updated>
+    <updated>2017-05-12T08:35:34.000Z</updated>
     
     <summary type="html">
     
@@ -83,7 +101,7 @@
     <link href="https://kevinzjy.github.io/2017/03/26/Linux-Tech/"/>
     <id>https://kevinzjy.github.io/2017/03/26/Linux-Tech/</id>
     <published>2017-03-26T09:29:26.000Z</published>
-    <updated>2017-03-26T10:11:18.433Z</updated>
+    <updated>2017-03-26T10:11:18.000Z</updated>
     
     <summary type="html">
     
@@ -104,7 +122,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/ggplot/"/>
     <id>https://kevinzjy.github.io/2017/03/24/ggplot/</id>
     <published>2017-03-24T15:04:04.000Z</published>
-    <updated>2017-04-26T14:23:26.780Z</updated>
+    <updated>2017-04-26T14:23:26.000Z</updated>
     
     <summary type="html">
     
@@ -126,7 +144,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-c/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-c/</id>
     <published>2017-03-24T13:46:27.000Z</published>
-    <updated>2017-03-28T04:30:52.826Z</updated>
+    <updated>2017-03-28T04:30:52.000Z</updated>
     
     <summary type="html">
     
@@ -149,7 +167,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-hexo/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-hexo/</id>
     <published>2017-03-24T13:16:34.000Z</published>
-    <updated>2017-03-26T10:10:57.746Z</updated>
+    <updated>2017-05-12T09:08:11.000Z</updated>
     
     <summary type="html">
     
@@ -174,7 +192,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-R/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-R/</id>
     <published>2017-03-24T12:08:28.000Z</published>
-    <updated>2017-03-26T10:11:08.537Z</updated>
+    <updated>2017-03-26T10:11:08.000Z</updated>
     
     <summary type="html">
     
@@ -189,24 +207,6 @@
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
       <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://kevinzjy.github.io/2017/03/24/hello-world/"/>
-    <id>https://kevinzjy.github.io/2017/03/24/hello-world/</id>
-    <published>2017-03-24T11:59:06.608Z</published>
-    <updated>2017-03-26T10:10:23.743Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
     
   </entry>
   
