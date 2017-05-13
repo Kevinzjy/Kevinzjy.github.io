@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Windows," />
+  <meta name="keywords" content="Windows,Bash on Ubuntu," />
 
 
 
@@ -89,25 +89,25 @@
 
 
 
-<meta name="description" content="实现Windows下程序的开机启动
-如何实现Snipaste和自定义Hotkey的脚本开机自动启动在Windows资源管理器 -&amp;gt; 查看 -&amp;gt; 隐藏的项目，选中后，打开路径
-C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-将需要开机自动启动的脚本放在这里即可">
+<meta name="description" content="记录一些Ubuntu上工具的安装和使用
+Htop: 增强版的Top命令1sudo apt install htop
+
+Glances: 全面监控你的系统状态1sudo pip install glances[action,browser,cloud,cpuinfo,chart,docker,export,folders,gpu,ip,raid,snmp,web,wifi]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows-Autostart">
-<meta property="og:url" content="https://kevinzjy.github.io/2017/05/13/Windows-Autostart/index.html">
+<meta property="og:title" content="Bash on Ubuntu on Windows的安装和配置 (二) Ubuntu软件推荐">
+<meta property="og:url" content="https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/index.html">
 <meta property="og:site_name" content="Kevinzjy's Blog">
-<meta property="og:description" content="实现Windows下程序的开机启动
-如何实现Snipaste和自定义Hotkey的脚本开机自动启动在Windows资源管理器 -&amp;gt; 查看 -&amp;gt; 隐藏的项目，选中后，打开路径
-C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-将需要开机自动启动的脚本放在这里即可">
-<meta property="og:updated_time" content="2017-05-13T04:33:25.885Z">
+<meta property="og:description" content="记录一些Ubuntu上工具的安装和使用
+Htop: 增强版的Top命令1sudo apt install htop
+
+Glances: 全面监控你的系统状态1sudo pip install glances[action,browser,cloud,cpuinfo,chart,docker,export,folders,gpu,ip,raid,snmp,web,wifi]">
+<meta property="og:updated_time" content="2017-05-13T15:52:54.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows-Autostart">
-<meta name="twitter:description" content="实现Windows下程序的开机启动
-如何实现Snipaste和自定义Hotkey的脚本开机自动启动在Windows资源管理器 -&amp;gt; 查看 -&amp;gt; 隐藏的项目，选中后，打开路径
-C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-将需要开机自动启动的脚本放在这里即可">
+<meta name="twitter:title" content="Bash on Ubuntu on Windows的安装和配置 (二) Ubuntu软件推荐">
+<meta name="twitter:description" content="记录一些Ubuntu上工具的安装和使用
+Htop: 增强版的Top命令1sudo apt install htop
+
+Glances: 全面监控你的系统状态1sudo pip install glances[action,browser,cloud,cpuinfo,chart,docker,export,folders,gpu,ip,raid,snmp,web,wifi]">
 
 
 
@@ -135,13 +135,13 @@ C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 
 
 
-  <link rel="canonical" href="https://kevinzjy.github.io/2017/05/13/Windows-Autostart/"/>
+  <link rel="canonical" href="https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/"/>
 
 
 
 
 
-  <title> Windows-Autostart | Kevinzjy's Blog </title>
+  <title> Bash on Ubuntu on Windows的安装和配置 (二) Ubuntu软件推荐 | Kevinzjy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -318,7 +318,7 @@ C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://kevinzjy.github.io/2017/05/13/Windows-Autostart/">
+    <link itemprop="mainEntityOfPage" href="https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinyang Zhang">
@@ -339,7 +339,7 @@ C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
             
             
               
-                Windows-Autostart
+                Bash on Ubuntu on Windows的安装和配置 (二) Ubuntu软件推荐
               
             
           </h1>
@@ -354,7 +354,7 @@ C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-13T12:21:52+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-13T23:02:26+08:00">
                 2017-05-13
               </time>
             
@@ -417,11 +417,30 @@ C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
       
 
       
-        <p>实现Windows下程序的开机启动</p>
-<h3 id="如何实现Snipaste和自定义Hotkey的脚本开机自动启动"><a href="#如何实现Snipaste和自定义Hotkey的脚本开机自动启动" class="headerlink" title="如何实现Snipaste和自定义Hotkey的脚本开机自动启动"></a>如何实现Snipaste和自定义Hotkey的脚本开机自动启动</h3><p>在Windows资源管理器 -&gt; 查看 -&gt; 隐藏的项目，选中后，打开路径</p>
-<p>C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</p>
-<p>将需要开机自动启动的脚本放在这里即可</p>
+        <p>记录一些Ubuntu上工具的安装和使用</p>
+<h3 id="Htop-增强版的Top命令"><a href="#Htop-增强版的Top命令" class="headerlink" title="Htop: 增强版的Top命令"></a>Htop: 增强版的Top命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install htop</div></pre></td></tr></table></figure>
+
+<h3 id="Glances-全面监控你的系统状态"><a href="#Glances-全面监控你的系统状态" class="headerlink" title="Glances: 全面监控你的系统状态"></a>Glances: 全面监控你的系统状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pip install glances[action,browser,cloud,cpuinfo,chart,docker,<span class="built_in">export</span>,folders,gpu,ip,raid,snmp,web,wifi]</div></pre></td></tr></table></figure>
 <a id="more"></a>
+<h3 id="Axel，好用的多线程下载工具"><a href="#Axel，好用的多线程下载工具" class="headerlink" title="Axel，好用的多线程下载工具"></a>Axel，好用的多线程下载工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt install axel</div><div class="line">axel -n 4 -o ./  url</div></pre></td></tr></table></figure>
+<h3 id="附-常用软件包在apt中的名称"><a href="#附-常用软件包在apt中的名称" class="headerlink" title="附: 常用软件包在apt中的名称"></a>附: 常用软件包在apt中的名称</h3><table>
+<thead>
+<tr>
+<th>Description</th>
+<th style="text-align:right">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pip (for python 2.7)</td>
+<td style="text-align:right">python-pip</td>
+</tr>
+<tr>
+<td>pip (for python 3)</td>
+<td style="text-align:right">python3-pip</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -453,6 +472,8 @@ C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
           
             <a href="/tags/Windows/" rel="tag"># Windows</a>
           
+            <a href="/tags/Bash-on-Ubuntu/" rel="tag"># Bash on Ubuntu</a>
+          
         </div>
       
 
@@ -464,8 +485,8 @@ C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/13/Python-Tips/" rel="next" title="Python使用Tips">
-                <i class="fa fa-chevron-left"></i> Python使用Tips
+              <a href="/2017/05/13/Windows-Autostart/" rel="next" title="Windows-Autostart">
+                <i class="fa fa-chevron-left"></i> Windows-Autostart
               </a>
             
           </div>
@@ -473,10 +494,6 @@ C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/13/Ubuntu-softwares/" rel="prev" title="Bash on Ubuntu on Windows的安装和配置 (二) Ubuntu软件推荐">
-                Bash on Ubuntu on Windows的安装和配置 (二) Ubuntu软件推荐 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,7 +631,7 @@ C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现Snipaste和自定义Hotkey的脚本开机自动启动"><span class="nav-number">1.</span> <span class="nav-text">如何实现Snipaste和自定义Hotkey的脚本开机自动启动</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Htop-增强版的Top命令"><span class="nav-number">1.</span> <span class="nav-text">Htop: 增强版的Top命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Glances-全面监控你的系统状态"><span class="nav-number">2.</span> <span class="nav-text">Glances: 全面监控你的系统状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Axel，好用的多线程下载工具"><span class="nav-number">3.</span> <span class="nav-text">Axel，好用的多线程下载工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#附-常用软件包在apt中的名称"><span class="nav-number">4.</span> <span class="nav-text">附: 常用软件包在apt中的名称</span></a></li></ol></div>
             
 
           </div>

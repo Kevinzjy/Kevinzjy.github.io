@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/</loc>
+    
+    <lastmod>2017-05-13T15:52:54.948Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/12/Install-WSL/</loc>
+    
+    <lastmod>2017-05-13T15:52:45.829Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kevinzjy.github.io/2017/03/24/Install-gcc/</loc>
     
     <lastmod>2017-05-13T11:41:26.096Z</lastmod>
