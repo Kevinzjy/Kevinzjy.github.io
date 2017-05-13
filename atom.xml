@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-05-13T04:26:32.104Z</updated>
+  <updated>2017-05-13T04:33:25.885Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -20,12 +20,14 @@
     <link href="https://kevinzjy.github.io/2017/05/13/Windows-Autostart/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Windows-Autostart/</id>
     <published>2017-05-13T04:21:52.000Z</published>
-    <updated>2017-05-13T04:26:32.104Z</updated>
+    <updated>2017-05-13T04:33:25.885Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;实现Windows下程序的开机启动&lt;/p&gt;
-&lt;h3 id=&quot;如何实现Snipaste和自定义Hotkey的脚本开机自动启动&quot;&gt;&lt;a href=&quot;#如何实现Snipaste和自定义Hotkey的脚本开机自动启动&quot; class=&quot;headerlink&quot; title=&quot;如何实现S
+&lt;h3 id=&quot;如何实现Snipaste和自定义Hotkey的脚本开机自动启动&quot;&gt;&lt;a href=&quot;#如何实现Snipaste和自定义Hotkey的脚本开机自动启动&quot; class=&quot;headerlink&quot; title=&quot;如何实现Snipaste和自定义Hotkey的脚本开机自动启动&quot;&gt;&lt;/a&gt;如何实现Snipaste和自定义Hotkey的脚本开机自动启动&lt;/h3&gt;&lt;p&gt;在Windows资源管理器 -&amp;gt; 查看 -&amp;gt; 隐藏的项目，选中后，打开路径&lt;/p&gt;
+&lt;p&gt;C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup&lt;/p&gt;
+&lt;p&gt;将需要开机自动启动的脚本放在这里即可&lt;/p&gt;
     
     </summary>
     
@@ -37,16 +39,22 @@
   </entry>
   
   <entry>
-    <title>python</title>
+    <title>Python使用Tips</title>
     <link href="https://kevinzjy.github.io/2017/05/13/Python-Tips/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Python-Tips/</id>
     <published>2017-05-13T03:40:59.000Z</published>
-    <updated>2017-05-13T03:40:59.549Z</updated>
+    <updated>2017-05-13T04:40:30.852Z</updated>
     
     <summary type="html">
     
+      &lt;h2 id=&quot;Python-使用过程中的特殊技巧&quot;&gt;&lt;a href=&quot;#Python-使用过程中的特殊技巧&quot; class=&quot;headerlink&quot; title=&quot;Python 使用过程中的特殊技巧&quot;&gt;&lt;/a&gt;Python 使用过程中的特殊技巧&lt;/h2&gt;
+    
     </summary>
     
+      <category term="Python" scheme="https://kevinzjy.github.io/categories/python/"/>
+    
+    
+      <category term="Python" scheme="https://kevinzjy.github.io/tags/Python/"/>
     
   </entry>
   
@@ -55,7 +63,7 @@
     <link href="https://kevinzjy.github.io/2017/05/12/Install-WSL/"/>
     <id>https://kevinzjy.github.io/2017/05/12/Install-WSL/</id>
     <published>2017-05-12T15:26:40.000Z</published>
-    <updated>2017-05-13T04:06:51.483Z</updated>
+    <updated>2017-05-13T04:39:40.318Z</updated>
     
     <summary type="html">
     
@@ -81,7 +89,7 @@
     <link href="https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/"/>
     <id>https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/</id>
     <published>2017-05-12T07:56:45.000Z</published>
-    <updated>2017-05-12T08:39:48.000Z</updated>
+    <updated>2017-05-13T04:37:07.923Z</updated>
     
     <summary type="html">
     
@@ -94,9 +102,9 @@
       <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
     
     
-      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+      <category term="Bioinfomatics，Linux" scheme="https://kevinzjy.github.io/tags/Bioinfomatics%EF%BC%8CLinux/"/>
     
-      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
+      <category term="Tools" scheme="https://kevinzjy.github.io/tags/Tools/"/>
     
   </entry>
   
@@ -127,7 +135,7 @@
     <link href="https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/"/>
     <id>https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/</id>
     <published>2017-03-29T04:55:17.000Z</published>
-    <updated>2017-03-29T05:17:04.000Z</updated>
+    <updated>2017-05-13T04:40:17.620Z</updated>
     
     <summary type="html">
     
@@ -136,6 +144,10 @@
     
     </summary>
     
+      <category term="Python" scheme="https://kevinzjy.github.io/categories/python/"/>
+    
+    
+      <category term="Python" scheme="https://kevinzjy.github.io/tags/Python/"/>
     
   </entry>
   
@@ -161,11 +173,11 @@
   </entry>
   
   <entry>
-    <title>ggplot作图</title>
-    <link href="https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot/"/>
-    <id>https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot/</id>
+    <title>ggplot2作图</title>
+    <link href="https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot2/"/>
+    <id>https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot2/</id>
     <published>2017-03-24T15:04:04.000Z</published>
-    <updated>2017-04-26T14:23:26.000Z</updated>
+    <updated>2017-05-13T04:38:59.150Z</updated>
     
     <summary type="html">
     
@@ -173,12 +185,14 @@
     
     </summary>
     
-      <category term="R" scheme="https://kevinzjy.github.io/categories/R/"/>
+      <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
     
     
-      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
     
       <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
+    
+      <category term="ggplot2" scheme="https://kevinzjy.github.io/tags/ggplot2/"/>
     
   </entry>
   
@@ -187,7 +201,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-gcc/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-gcc/</id>
     <published>2017-03-24T13:46:27.000Z</published>
-    <updated>2017-03-28T04:30:52.000Z</updated>
+    <updated>2017-05-13T04:39:11.051Z</updated>
     
     <summary type="html">
     
@@ -196,12 +210,14 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+      <category term="Server" scheme="https://kevinzjy.github.io/categories/Server/"/>
     
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
     
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
-      <category term="C++" scheme="https://kevinzjy.github.io/tags/C/"/>
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
   </entry>
   
@@ -210,7 +226,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-hexo/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-hexo/</id>
     <published>2017-03-24T13:16:34.000Z</published>
-    <updated>2017-05-13T04:07:59.557Z</updated>
+    <updated>2017-05-13T04:39:21.233Z</updated>
     
     <summary type="html">
     
@@ -221,12 +237,12 @@
     
     </summary>
     
-      <category term="Windows" scheme="https://kevinzjy.github.io/categories/windows/"/>
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
     
     
       <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
     
-      <category term="Github" scheme="https://kevinzjy.github.io/tags/Github/"/>
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
   </entry>
   
@@ -235,7 +251,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-R/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-R/</id>
     <published>2017-03-24T12:08:28.000Z</published>
-    <updated>2017-03-26T10:11:08.000Z</updated>
+    <updated>2017-05-13T04:39:26.994Z</updated>
     
     <summary type="html">
     
@@ -244,12 +260,12 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+      <category term="Server" scheme="https://kevinzjy.github.io/categories/Server/"/>
     
-    
-      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
       <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
   </entry>
   

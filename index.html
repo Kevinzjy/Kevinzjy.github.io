@@ -408,13 +408,17 @@
 
       
         
-          
-            <p>实现Windows下程序的开机启动</p>
+          <p>实现Windows下程序的开机启动</p>
 <h3 id="如何实现Snipaste和自定义Hotkey的脚本开机自动启动"><a href="#如何实现Snipaste和自定义Hotkey的脚本开机自动启动" class="headerlink" title="如何实现Snipaste和自定义Hotkey的脚本开机自动启动"></a>如何实现Snipaste和自定义Hotkey的脚本开机自动启动</h3><p>在Windows资源管理器 -&gt; 查看 -&gt; 隐藏的项目，选中后，打开路径</p>
 <p>C:\Users\kevin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</p>
 <p>将需要开机自动启动的脚本放在这里即可</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/13/Windows-Autostart/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -479,7 +483,7 @@
               
                 
                 <a class="post-title-link" href="/2017/05/13/Python-Tips/" itemprop="url">
-                  python
+                  Python使用Tips
                 </a>
               
             
@@ -505,6 +509,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -533,7 +559,7 @@
       
         
           
-            
+            <h2 id="Python-使用过程中的特殊技巧"><a href="#Python-使用过程中的特殊技巧" class="headerlink" title="Python 使用过程中的特殊技巧"></a>Python 使用过程中的特殊技巧</h2>
           
         
       
@@ -1073,6 +1099,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1294,7 +1342,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot/">
+    <link itemprop="mainEntityOfPage" href="https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jinyang Zhang">
@@ -1316,8 +1364,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/24/Bioinfo-ggplot/" itemprop="url">
-                  ggplot作图
+                <a class="post-title-link" href="/2017/03/24/Bioinfo-ggplot2/" itemprop="url">
+                  ggplot2作图
                 </a>
               
             
@@ -1356,8 +1404,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/R/" itemprop="url" rel="index">
-                    <span itemprop="name">R</span>
+                  <a href="/categories/Bioinformatics/" itemprop="url" rel="index">
+                    <span itemprop="name">Bioinformatics</span>
                   </a>
                 </span>
 
@@ -1395,7 +1443,7 @@
           <h2 id="ggsci颜色设置"><a href="#ggsci颜色设置" class="headerlink" title="ggsci颜色设置"></a>ggsci颜色设置</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(<span class="string">"ggsci"</span>)</div><div class="line"><span class="keyword">library</span>(<span class="string">"ggplot2"</span>)</div><div class="line"><span class="keyword">library</span>(<span class="string">"gridExtra"</span>)</div><div class="line"></div><div class="line">data(<span class="string">"diamonds"</span>)</div><div class="line"></div><div class="line">p1 = ggplot(subset(diamonds, carat &gt;= <span class="number">2.2</span>),</div><div class="line">       aes(x = table, y = price, colour = cut)) +</div><div class="line">  geom_point(alpha = <span class="number">0.7</span>) +</div><div class="line">  geom_smooth(method = <span class="string">"loess"</span>, alpha = <span class="number">0.05</span>, size = <span class="number">1</span>, span = <span class="number">1</span>) +</div><div class="line">  theme_bw()</div><div class="line"></div><div class="line">p2 = ggplot(subset(diamonds, carat &gt; <span class="number">2.2</span> &amp; depth &gt; <span class="number">55</span> &amp; depth &lt; <span class="number">70</span>),</div><div class="line">       aes(x = depth, fill = cut)) +</div><div class="line">  geom_histogram(colour = <span class="string">"black"</span>, binwidth = <span class="number">1</span>, position = <span class="string">"dodge"</span>) +</div><div class="line">  theme_bw()</div><div class="line"></div><div class="line">p1_npg = p1 + scale_color_npg()</div><div class="line">p2_npg = p2 + scale_fill_npg()</div><div class="line">grid.arrange(p1_npg, p2_npg, ncol = <span class="number">2</span>)</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/24/Bioinfo-ggplot/#more" rel="contents">
+            <a class="btn" href="/2017/03/24/Bioinfo-ggplot2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1503,8 +1551,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
                   </a>
                 </span>
 
@@ -1651,8 +1699,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/windows/" itemprop="url" rel="index">
-                    <span itemprop="name">Windows</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -1790,7 +1838,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1801,7 +1849,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
