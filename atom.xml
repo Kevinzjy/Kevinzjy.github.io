@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-05-13T15:57:17.637Z</updated>
+  <updated>2017-05-13T16:29:43.545Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/</id>
     <published>2017-05-13T15:02:26.000Z</published>
-    <updated>2017-05-13T15:57:17.637Z</updated>
+    <updated>2017-05-13T16:29:43.545Z</updated>
     
     <summary type="html">
     
@@ -213,9 +213,9 @@
       <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
     
     
-      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
-    
       <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
+    
+      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
     
       <category term="ggplot2" scheme="https://kevinzjy.github.io/tags/ggplot2/"/>
     
@@ -238,11 +238,11 @@
       <category term="Server" scheme="https://kevinzjy.github.io/categories/Server/"/>
     
     
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
       <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
       <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
-    
-      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
   </entry>
   
