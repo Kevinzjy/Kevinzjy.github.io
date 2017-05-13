@@ -63,7 +63,7 @@
     <link href="https://kevinzjy.github.io/2017/05/12/Install-WSL/"/>
     <id>https://kevinzjy.github.io/2017/05/12/Install-WSL/</id>
     <published>2017-05-12T15:26:40.000Z</published>
-    <updated>2017-05-13T04:39:40.318Z</updated>
+    <updated>2017-05-13T04:43:18.712Z</updated>
     
     <summary type="html">
     
@@ -188,9 +188,9 @@
       <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
     
     
-      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
-    
       <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
+    
+      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
     
       <category term="ggplot2" scheme="https://kevinzjy.github.io/tags/ggplot2/"/>
     
@@ -213,9 +213,9 @@
       <category term="Server" scheme="https://kevinzjy.github.io/categories/Server/"/>
     
     
-      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
-    
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
     
       <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
@@ -263,9 +263,9 @@
       <category term="Server" scheme="https://kevinzjy.github.io/categories/Server/"/>
     
     
-      <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
-    
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
     
   </entry>
   

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kevinzjy.github.io/2017/05/12/Install-WSL/</loc>
+    
+    <lastmod>2017-05-13T04:43:18.712Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kevinzjy.github.io/2017/05/13/Python-Tips/</loc>
     
     <lastmod>2017-05-13T04:40:30.852Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/</loc>
     
     <lastmod>2017-05-13T04:40:17.620Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/05/12/Install-WSL/</loc>
-    
-    <lastmod>2017-05-13T04:39:40.318Z</lastmod>
     
   </url>
   
