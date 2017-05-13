@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-05-13T03:37:16.181Z</updated>
+  <updated>2017-05-13T04:26:32.104Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -16,19 +16,54 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Windows-Autostart</title>
+    <link href="https://kevinzjy.github.io/2017/05/13/Windows-Autostart/"/>
+    <id>https://kevinzjy.github.io/2017/05/13/Windows-Autostart/</id>
+    <published>2017-05-13T04:21:52.000Z</published>
+    <updated>2017-05-13T04:26:32.104Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;实现Windows下程序的开机启动&lt;/p&gt;
+&lt;h3 id=&quot;如何实现Snipaste和自定义Hotkey的脚本开机自动启动&quot;&gt;&lt;a href=&quot;#如何实现Snipaste和自定义Hotkey的脚本开机自动启动&quot; class=&quot;headerlink&quot; title=&quot;如何实现S
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://kevinzjy.github.io/categories/windows/"/>
+    
+    
+      <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python</title>
+    <link href="https://kevinzjy.github.io/2017/05/13/Python-Tips/"/>
+    <id>https://kevinzjy.github.io/2017/05/13/Python-Tips/</id>
+    <published>2017-05-13T03:40:59.000Z</published>
+    <updated>2017-05-13T03:40:59.549Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Bash on Ubuntu on Windows的安装和配置(一)</title>
     <link href="https://kevinzjy.github.io/2017/05/12/Install-WSL/"/>
     <id>https://kevinzjy.github.io/2017/05/12/Install-WSL/</id>
     <published>2017-05-12T15:26:40.000Z</published>
-    <updated>2017-05-13T03:37:16.181Z</updated>
+    <updated>2017-05-13T04:06:51.483Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;记录一下Bash on Ubuntu on Windows的安装和配置过程&lt;br&gt;参考&lt;a href=&quot;https://msdn.microsoft.com/en-us/commandline/wsl/about&quot;&gt;官方说明&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;记录基本的 Bash on Ubuntu on Windows (WSL) 的安装和配置过程&lt;br&gt;参考&lt;a href=&quot;https://msdn.microsoft.com/en-us/commandline/wsl/about&quot;&gt;官方说明&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Step1-Bash-on-Ubuntu-on-Windows的下载和安装&quot;&gt;&lt;a href=&quot;#Step1-Bash-on-Ubuntu-on-Windows的下载和安装&quot; class=&quot;headerlink&quot; title=&quot;Step1: Bash on Ubuntu on Windows的下载和安装&quot;&gt;&lt;/a&gt;Step1: Bash on Ubuntu on Windows的下载和安装&lt;/h2&gt;&lt;h3 id=&quot;更新系统版本&quot;&gt;&lt;a href=&quot;#更新系统版本&quot; class=&quot;headerlink&quot; title=&quot;更新系统版本&quot;&gt;&lt;/a&gt;更新系统版本&lt;/h3&gt;&lt;p&gt;在 设置 -&amp;gt; 系统 -&amp;gt; 关于 中，查看系统版本号，系统必须为64位，版本号至少为14393.0，如果版本过低，检查更新至14393以上版本&lt;/p&gt;
 &lt;h3 id=&quot;打开开发者模式&quot;&gt;&lt;a href=&quot;#打开开发者模式&quot; class=&quot;headerlink&quot; title=&quot;打开开发者模式&quot;&gt;&lt;/a&gt;打开开发者模式&lt;/h3&gt;&lt;p&gt;在 设置 -&amp;gt; 更新和安全 -&amp;gt; 针对开发人员 中，选中开发人员模式, 重启电脑&lt;/p&gt;
 &lt;p&gt;在 控制面板 -&amp;gt; 程序 -&amp;gt; 程序和功能 -&amp;gt; 启动或关闭Windows功能 中，勾选适用于Linux的Windows子系统&lt;/p&gt;
-&lt;p&gt;打开命令行，输入bash,后”y”确认条款，下载完成后输入用户名和密码后，安装成功&lt;/p&gt;
+&lt;p&gt;打开命令行，输入bash, 阅读条款后输入”y”确认条款，下载安装Ubuntu sub system。安装完成后输入用户名和密码后，安装成功&lt;/p&gt;
     
     </summary>
     
@@ -43,8 +78,8 @@
   
   <entry>
     <title>利用Sra-tools从NCBI下载SRA数据</title>
-    <link href="https://kevinzjy.github.io/2017/05/12/sratoolkit/"/>
-    <id>https://kevinzjy.github.io/2017/05/12/sratoolkit/</id>
+    <link href="https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/"/>
+    <id>https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/</id>
     <published>2017-05-12T07:56:45.000Z</published>
     <updated>2017-05-12T08:39:48.000Z</updated>
     
@@ -67,8 +102,8 @@
   
   <entry>
     <title>Ubuntu下部署NAS</title>
-    <link href="https://kevinzjy.github.io/2017/04/30/nas/"/>
-    <id>https://kevinzjy.github.io/2017/04/30/nas/</id>
+    <link href="https://kevinzjy.github.io/2017/04/30/Linux-NAS/"/>
+    <id>https://kevinzjy.github.io/2017/04/30/Linux-NAS/</id>
     <published>2017-04-30T08:18:15.000Z</published>
     <updated>2017-05-12T08:35:34.000Z</updated>
     
@@ -89,8 +124,8 @@
   
   <entry>
     <title>Python中的多进程</title>
-    <link href="https://kevinzjy.github.io/2017/03/29/python-Multiprocessing/"/>
-    <id>https://kevinzjy.github.io/2017/03/29/python-Multiprocessing/</id>
+    <link href="https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/"/>
+    <id>https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/</id>
     <published>2017-03-29T04:55:17.000Z</published>
     <updated>2017-03-29T05:17:04.000Z</updated>
     
@@ -106,8 +141,8 @@
   
   <entry>
     <title>Linux服务器使用技巧</title>
-    <link href="https://kevinzjy.github.io/2017/03/26/Linux-Tech/"/>
-    <id>https://kevinzjy.github.io/2017/03/26/Linux-Tech/</id>
+    <link href="https://kevinzjy.github.io/2017/03/26/Linux-Tips/"/>
+    <id>https://kevinzjy.github.io/2017/03/26/Linux-Tips/</id>
     <published>2017-03-26T09:29:26.000Z</published>
     <updated>2017-03-26T10:11:18.000Z</updated>
     
@@ -127,8 +162,8 @@
   
   <entry>
     <title>ggplot作图</title>
-    <link href="https://kevinzjy.github.io/2017/03/24/ggplot/"/>
-    <id>https://kevinzjy.github.io/2017/03/24/ggplot/</id>
+    <link href="https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot/"/>
+    <id>https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot/</id>
     <published>2017-03-24T15:04:04.000Z</published>
     <updated>2017-04-26T14:23:26.000Z</updated>
     
@@ -149,8 +184,8 @@
   
   <entry>
     <title>在Linux服务器上安装GCC，Boost和Cmake</title>
-    <link href="https://kevinzjy.github.io/2017/03/24/Install-c/"/>
-    <id>https://kevinzjy.github.io/2017/03/24/Install-c/</id>
+    <link href="https://kevinzjy.github.io/2017/03/24/Install-gcc/"/>
+    <id>https://kevinzjy.github.io/2017/03/24/Install-gcc/</id>
     <published>2017-03-24T13:46:27.000Z</published>
     <updated>2017-03-28T04:30:52.000Z</updated>
     
@@ -175,7 +210,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-hexo/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-hexo/</id>
     <published>2017-03-24T13:16:34.000Z</published>
-    <updated>2017-05-12T09:08:11.000Z</updated>
+    <updated>2017-05-13T04:07:59.557Z</updated>
     
     <summary type="html">
     
