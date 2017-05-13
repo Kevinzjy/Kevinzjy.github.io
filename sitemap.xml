@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/</loc>
+    
+    <lastmod>2017-05-13T15:39:19.026Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kevinzjy.github.io/2017/05/12/Install-WSL/</loc>
     
-    <lastmod>2017-05-13T04:43:18.712Z</lastmod>
+    <lastmod>2017-05-13T15:09:39.708Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/Install-gcc/</loc>
+    
+    <lastmod>2017-05-13T11:41:26.096Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot2/</loc>
+    
+    <lastmod>2017-05-13T07:07:12.660Z</lastmod>
     
   </url>
   
@@ -33,20 +54,6 @@
     <loc>https://kevinzjy.github.io/2017/03/24/Install-hexo/</loc>
     
     <lastmod>2017-05-13T04:39:21.233Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/03/24/Install-gcc/</loc>
-    
-    <lastmod>2017-05-13T04:39:11.051Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot2/</loc>
-    
-    <lastmod>2017-05-13T04:38:59.150Z</lastmod>
     
   </url>
   

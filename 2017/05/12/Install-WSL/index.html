@@ -99,7 +99,7 @@ Step1: Bash on Ubuntu on Windows的下载和安装更新系统版本在 设置 -
 <meta property="og:description" content="记录基本的 Bash on Ubuntu on Windows (WSL) 的安装和配置过程参考官方说明
 Step1: Bash on Ubuntu on Windows的下载和安装更新系统版本在 设置 -&amp;gt; 系统 -&amp;gt; 关于 中，查看系统版本号，系统必须为64位，版本号至少为14393.0，如果版本过低，检查更新至14393以上版本
 打开开发者模式在 设置 -&amp;gt; 更新和安全 -">
-<meta property="og:updated_time" content="2017-05-13T04:43:18.712Z">
+<meta property="og:updated_time" content="2017-05-13T15:09:39.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bash on Ubuntu on Windows的安装和配置(一)">
 <meta name="twitter:description" content="记录基本的 Bash on Ubuntu on Windows (WSL) 的安装和配置过程参考官方说明
@@ -418,16 +418,16 @@ Step1: Bash on Ubuntu on Windows的下载和安装更新系统版本在 设置 -
 <h2 id="Step1-Bash-on-Ubuntu-on-Windows的下载和安装"><a href="#Step1-Bash-on-Ubuntu-on-Windows的下载和安装" class="headerlink" title="Step1: Bash on Ubuntu on Windows的下载和安装"></a>Step1: Bash on Ubuntu on Windows的下载和安装</h2><h3 id="更新系统版本"><a href="#更新系统版本" class="headerlink" title="更新系统版本"></a>更新系统版本</h3><p>在 设置 -&gt; 系统 -&gt; 关于 中，查看系统版本号，系统必须为64位，版本号至少为14393.0，如果版本过低，检查更新至14393以上版本</p>
 <h3 id="打开开发者模式"><a href="#打开开发者模式" class="headerlink" title="打开开发者模式"></a>打开开发者模式</h3><p>在 设置 -&gt; 更新和安全 -&gt; 针对开发人员 中，选中开发人员模式, 重启电脑</p>
 <p>在 控制面板 -&gt; 程序 -&gt; 程序和功能 -&gt; 启动或关闭Windows功能 中，勾选适用于Linux的Windows子系统</p>
-<p>打开命令行，输入bash, 阅读条款后输入”y”确认条款，下载安装Ubuntu sub system。安装完成后输入用户名和密码后，安装成功</p>
+<p>打开命令行，输入<code>bash</code>, 阅读条款后输入”y”确认条款，下载安装Ubuntu sub system。安装完成后输入用户名和密码后，安装成功</p>
 <a id="more"></a>
 <h2 id="Step2-更新Ubuntu版本"><a href="#Step2-更新Ubuntu版本" class="headerlink" title="Step2: 更新Ubuntu版本"></a>Step2: 更新Ubuntu版本</h2><p>检查Windows创意者更新，在Windows升级至1703版本后，WSL会自动升级至16.04 LTS</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 手动查看Ubuntu版本号</span></div><div class="line">lsb_release <span class="_">-a</span></div><div class="line">sudo <span class="keyword">do</span>-release-upgrade <span class="comment"># Manual upgrade to Ubuntu 16.04</span></div></pre></td></tr></table></figure>
 <h2 id="Step3-安装Ubuntu后进行的设置，参考"><a href="#Step3-安装Ubuntu后进行的设置，参考" class="headerlink" title="Step3: 安装Ubuntu后进行的设置，参考:"></a>Step3: 安装Ubuntu后进行的设置，<a href="https://cxfer.cn/2016/79.html" target="_blank" rel="external">参考</a>:</h2><ul>
-<li>新升级至Ubuntu 16.04 LTS后，打开Bash会提示 ‘To run a command as administrator (user “root”), use “sudo <command>“.<br>See “man sudo_root” for details.’，随便执行一个sudo命令，即可去掉该提示</li>
+<li>新升级至Ubuntu 16.04 LTS后，打开Bash会提示 ‘To run a command as administrator (user “root”), use “sudo <command>“. See “man sudo_root” for details.’，随便执行一个sudo命令，即可去掉该提示</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo -i</div></pre></td></tr></table></figure>
 <ul>
-<li>在Ubuntu升级后，sudo apt update可能会出现 “N: Ignoring file ‘50unattended-upgrades.ucf-dist’ in directory ‘/etc/apt/apt.conf.d/‘ as it has an invalid filename extension” 错误，将该旧版配置文件删除后 apt update 即可解决</li>
+<li>在Ubuntu升级后，sudo apt update可能会出现 “N: Ignoring file ‘50unattended-upgrades.ucf-dist’ in directory ‘/etc/apt/apt.conf.d/‘ as it has an invalid filename extension” 错误，将该旧版配置文件删除后 <code>sudo apt update</code> 即可解决</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo rm /etc/apt/apt.conf.d/50unattended-upgrades.ucf-dist &amp;&amp; sudo apt update</div></pre></td></tr></table></figure>
 <ul>
@@ -457,13 +457,13 @@ Step1: Bash on Ubuntu on Windows的下载和安装更新系统版本在 设置 -
 <h3 id="安装Cmder"><a href="#安装Cmder" class="headerlink" title="安装Cmder"></a>安装Cmder</h3><p>从<a href="http://cmder.net/" target="_blank" rel="external">官方网站</a>下载Cmder，并在<a href="https://www.fosshub.com/ConEmu.html" target="_blank" rel="external">ConEmu</a>下载ConEmu的更新，安装后覆盖至Cmder/vendor/conemu-maximus5，完成对ConEmu的更新</p>
 <p>在Cmder中，直接运行Bash.exe时无法使用方向键。需要点击右下角 Settings -&gt; Startup -&gt; Tasks，新建任务</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:\Windows\System32\bash.exe ~ -cur_console:p:n # 直接进入~目录</div></pre></td></tr></table></figure>
-<p>即可在Bash中使用方向键, 如果使用 “-cur_console:p1” 会导致Vim中无法使用方向键</p>
+<p>即可在Bash中使用方向键, 如果使用 <code>-cur_console:p1</code> 会导致Vim中无法使用方向键</p>
 <h3 id="安装Bash-it对Bash环境进行美化"><a href="#安装Bash-it对Bash环境进行美化" class="headerlink" title="安装Bash-it对Bash环境进行美化"></a>安装Bash-it对Bash环境进行美化</h3><p>在Windows 1703 创意者更新后，Cmder + zsh 环境配置下会出现光标前出现空格的Bug，目前暂未解决，因此使用Bash-it对默认的Bash环境进行美化</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/revans/bash-it.git ~/.bash_it</div><div class="line">~/.bash_it/install.sh</div></pre></td></tr></table></figure>
 <p>更改主题: 在 ~/.bashrc 中，把theme设为”simple”</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> BASH_IT_THEME=<span class="string">'simple'</span> <span class="comment"># 主题配置</span></div><div class="line"></div><div class="line"><span class="built_in">export</span> SCM_CHECK=<span class="literal">true</span> <span class="comment"># Git插件配置</span></div><div class="line"><span class="built_in">export</span> SCM_GIT_SHOW_DETAILS=<span class="literal">true</span> </div><div class="line"><span class="built_in">export</span> SCM_GIT_SHOW_MINIMAL_INFO=<span class="literal">true</span> <span class="comment"># 防止Git提示符乱码</span></div></pre></td></tr></table></figure>
-<h3 id="安装htop对系统进行监控"><a href="#安装htop对系统进行监控" class="headerlink" title="安装htop对系统进行监控"></a>安装htop对系统进行监控</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install htop</div></pre></td></tr></table></figure>
-<h3 id="安装axel，好用的多线程下载工具"><a href="#安装axel，好用的多线程下载工具" class="headerlink" title="安装axel，好用的多线程下载工具"></a>安装axel，好用的多线程下载工具</h3>
+<p>安装完这些，基本就可以在命令行和Bash on Ubuntu on Windows愉快地玩耍了~</p>
+
       
     </div>
 
@@ -593,7 +593,7 @@ Step1: Bash on Ubuntu on Windows的下载和安装更新系统版本在 设置 -
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -657,7 +657,7 @@ Step1: Bash on Ubuntu on Windows的下载和安装更新系统版本在 设置 -
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step1-Bash-on-Ubuntu-on-Windows的下载和安装"><span class="nav-number">1.</span> <span class="nav-text">Step1: Bash on Ubuntu on Windows的下载和安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新系统版本"><span class="nav-number">1.1.</span> <span class="nav-text">更新系统版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开开发者模式"><span class="nav-number">1.2.</span> <span class="nav-text">打开开发者模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2-更新Ubuntu版本"><span class="nav-number">2.</span> <span class="nav-text">Step2: 更新Ubuntu版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step3-安装Ubuntu后进行的设置，参考"><span class="nav-number">3.</span> <span class="nav-text">Step3: 安装Ubuntu后进行的设置，参考:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">3.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Cmder"><span class="nav-number">3.2.</span> <span class="nav-text">安装Cmder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Bash-it对Bash环境进行美化"><span class="nav-number">3.3.</span> <span class="nav-text">安装Bash-it对Bash环境进行美化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装htop对系统进行监控"><span class="nav-number">3.4.</span> <span class="nav-text">安装htop对系统进行监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装axel，好用的多线程下载工具"><span class="nav-number">3.5.</span> <span class="nav-text">安装axel，好用的多线程下载工具</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step1-Bash-on-Ubuntu-on-Windows的下载和安装"><span class="nav-number">1.</span> <span class="nav-text">Step1: Bash on Ubuntu on Windows的下载和安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新系统版本"><span class="nav-number">1.1.</span> <span class="nav-text">更新系统版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开开发者模式"><span class="nav-number">1.2.</span> <span class="nav-text">打开开发者模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2-更新Ubuntu版本"><span class="nav-number">2.</span> <span class="nav-text">Step2: 更新Ubuntu版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step3-安装Ubuntu后进行的设置，参考"><span class="nav-number">3.</span> <span class="nav-text">Step3: 安装Ubuntu后进行的设置，参考:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">3.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Cmder"><span class="nav-number">3.2.</span> <span class="nav-text">安装Cmder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Bash-it对Bash环境进行美化"><span class="nav-number">3.3.</span> <span class="nav-text">安装Bash-it对Bash环境进行美化</span></a></li></ol></li></ol></div>
             
 
           </div>
