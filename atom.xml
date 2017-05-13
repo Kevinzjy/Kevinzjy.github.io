@@ -26,7 +26,7 @@
     
       &lt;p&gt;记录一些Ubuntu上工具的安装和使用&lt;/p&gt;
 &lt;h3 id=&quot;Htop-增强版的Top命令&quot;&gt;&lt;a href=&quot;#Htop-增强版的Top命令&quot; class=&quot;headerlink&quot; title=&quot;Htop: 增强版的Top命令&quot;&gt;&lt;/a&gt;Htop: 增强版的Top命令&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt install htop&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
+&lt;img src=&quot;/2017/05/13/Ubuntu-softwares/htop.png&quot; alt=&quot;htop.png&quot; title=&quot;&quot;&gt;
 &lt;h3 id=&quot;Glances-全面监控你的系统状态&quot;&gt;&lt;a href=&quot;#Glances-全面监控你的系统状态&quot; class=&quot;headerlink&quot; title=&quot;Glances: 全面监控你的系统状态&quot;&gt;&lt;/a&gt;Glances: 全面监控你的系统状态&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo pip install glances[action,browser,cloud,cpuinfo,chart,docker,&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt;,folders,gpu,ip,raid,snmp,web,wifi]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
@@ -238,11 +238,11 @@
       <category term="Server" scheme="https://kevinzjy.github.io/categories/Server/"/>
     
     
-      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
       <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
     
-      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
   </entry>
   
@@ -265,9 +265,9 @@
       <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
     
     
-      <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
-    
       <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
+    
+      <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
     
   </entry>
   

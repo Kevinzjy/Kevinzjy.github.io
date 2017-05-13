@@ -410,11 +410,11 @@
         
           <p>记录一些Ubuntu上工具的安装和使用</p>
 <h3 id="Htop-增强版的Top命令"><a href="#Htop-增强版的Top命令" class="headerlink" title="Htop: 增强版的Top命令"></a>Htop: 增强版的Top命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install htop</div></pre></td></tr></table></figure>
-
+<img src="/2017/05/13/Ubuntu-softwares/htop.png" alt="htop.png" title="">
 <h3 id="Glances-全面监控你的系统状态"><a href="#Glances-全面监控你的系统状态" class="headerlink" title="Glances: 全面监控你的系统状态"></a>Glances: 全面监控你的系统状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pip install glances[action,browser,cloud,cpuinfo,chart,docker,<span class="built_in">export</span>,folders,gpu,ip,raid,snmp,web,wifi]</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/13/Ubuntu-softwares/#далее" rel="contents">
+            <a class="btn" href="/2017/05/13/Ubuntu-softwares/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -564,7 +564,7 @@
 <p>将需要开机自动启动的脚本放在这里即可</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/13/Windows-Autostart/#далее" rel="contents">
+            <a class="btn" href="/2017/05/13/Windows-Autostart/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -857,7 +857,7 @@
 <p>打开命令行，输入<code>bash</code>, 阅读条款后输入”y”确认条款，下载安装Ubuntu sub system。安装完成后输入用户名和密码后，安装成功</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/12/Install-WSL/#далее" rel="contents">
+            <a class="btn" href="/2017/05/12/Install-WSL/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1006,7 +1006,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Downloading SRA Toolkit</span></div><div class="line">wget <span class="string">"http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz"</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/05/12/Bioinfo-Sratools/#далее" rel="contents">
+            <a class="btn" href="/2017/05/12/Bioinfo-Sratools/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1153,7 +1153,7 @@
           <h2 id="安装Ubuntu-NAS"><a href="#安装Ubuntu-NAS" class="headerlink" title="安装Ubuntu NAS"></a>安装Ubuntu NAS</h2>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/30/Linux-NAS/#далее" rel="contents">
+            <a class="btn" href="/2017/04/30/Linux-NAS/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1446,7 +1446,7 @@
 <h2 id="防止错误删除或重命名文件"><a href="#防止错误删除或重命名文件" class="headerlink" title="防止错误删除或重命名文件"></a>防止错误删除或重命名文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alias rm=&apos;rm -i&apos;</div><div class="line">alias mv=&apos;mv -i&apos;</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/26/Linux-Tips/#далее" rel="contents">
+            <a class="btn" href="/2017/03/26/Linux-Tips/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1593,7 +1593,7 @@
           <h2 id="ggsci颜色设置"><a href="#ggsci颜色设置" class="headerlink" title="ggsci颜色设置"></a>ggsci颜色设置</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(<span class="string">"ggsci"</span>)</div><div class="line"><span class="keyword">library</span>(<span class="string">"ggplot2"</span>)</div><div class="line"><span class="keyword">library</span>(<span class="string">"gridExtra"</span>)</div><div class="line"></div><div class="line">data(<span class="string">"diamonds"</span>)</div><div class="line"></div><div class="line">p1 = ggplot(subset(diamonds, carat &gt;= <span class="number">2.2</span>),</div><div class="line">       aes(x = table, y = price, colour = cut)) +</div><div class="line">  geom_point(alpha = <span class="number">0.7</span>) +</div><div class="line">  geom_smooth(method = <span class="string">"loess"</span>, alpha = <span class="number">0.05</span>, size = <span class="number">1</span>, span = <span class="number">1</span>) +</div><div class="line">  theme_bw()</div><div class="line"></div><div class="line">p2 = ggplot(subset(diamonds, carat &gt; <span class="number">2.2</span> &amp; depth &gt; <span class="number">55</span> &amp; depth &lt; <span class="number">70</span>),</div><div class="line">       aes(x = depth, fill = cut)) +</div><div class="line">  geom_histogram(colour = <span class="string">"black"</span>, binwidth = <span class="number">1</span>, position = <span class="string">"dodge"</span>) +</div><div class="line">  theme_bw()</div><div class="line"></div><div class="line">p1_npg = p1 + scale_color_npg()</div><div class="line">p2_npg = p2 + scale_fill_npg()</div><div class="line">grid.arrange(p1_npg, p2_npg, ncol = <span class="number">2</span>)</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/24/Bioinfo-ggplot2/#далее" rel="contents">
+            <a class="btn" href="/2017/03/24/Bioinfo-ggplot2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1741,7 +1741,7 @@
 <h3 id="安装依赖的mpfr-gmp和mpc等依赖工具"><a href="#安装依赖的mpfr-gmp和mpc等依赖工具" class="headerlink" title="安装依赖的mpfr, gmp和mpc等依赖工具"></a>安装依赖的mpfr, gmp和mpc等依赖工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./contrib/download_prerequisites</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/24/Install-gcc/#далее" rel="contents">
+            <a class="btn" href="/2017/03/24/Install-gcc/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
