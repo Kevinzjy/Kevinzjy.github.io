@@ -116,7 +116,7 @@
     <link href="https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/"/>
     <id>https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/</id>
     <published>2017-05-12T07:56:45.000Z</published>
-    <updated>2017-05-13T04:37:07.923Z</updated>
+    <updated>2017-05-13T16:42:51.128Z</updated>
     
     <summary type="html">
     
@@ -129,7 +129,9 @@
       <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
     
     
-      <category term="Bioinfomatics，Linux" scheme="https://kevinzjy.github.io/tags/Bioinfomatics%EF%BC%8CLinux/"/>
+      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
       <category term="Tools" scheme="https://kevinzjy.github.io/tags/Tools/"/>
     
@@ -215,9 +217,9 @@
       <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
     
     
-      <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
-    
       <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
+    
+      <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
     
       <category term="ggplot2" scheme="https://kevinzjy.github.io/tags/ggplot2/"/>
     
@@ -242,9 +244,9 @@
     
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
-      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
-    
       <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
     
   </entry>
   
@@ -267,9 +269,9 @@
       <category term="Windows" scheme="https://kevinzjy.github.io/categories/windows/"/>
     
     
-      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
-    
       <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
+    
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
   </entry>
   
