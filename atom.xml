@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-05-12T08:39:48.000Z</updated>
+  <updated>2017-05-13T03:37:16.181Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Bash on Ubuntu on Windows的安装和配置(一)</title>
+    <link href="https://kevinzjy.github.io/2017/05/12/Install-WSL/"/>
+    <id>https://kevinzjy.github.io/2017/05/12/Install-WSL/</id>
+    <published>2017-05-12T15:26:40.000Z</published>
+    <updated>2017-05-13T03:37:16.181Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录一下Bash on Ubuntu on Windows的安装和配置过程&lt;br&gt;参考&lt;a href=&quot;https://msdn.microsoft.com/en-us/commandline/wsl/about&quot;&gt;官方说明&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Step1-Bash-on-Ubuntu-on-Windows的下载和安装&quot;&gt;&lt;a href=&quot;#Step1-Bash-on-Ubuntu-on-Windows的下载和安装&quot; class=&quot;headerlink&quot; title=&quot;Step1: Bash on Ubuntu on Windows的下载和安装&quot;&gt;&lt;/a&gt;Step1: Bash on Ubuntu on Windows的下载和安装&lt;/h2&gt;&lt;h3 id=&quot;更新系统版本&quot;&gt;&lt;a href=&quot;#更新系统版本&quot; class=&quot;headerlink&quot; title=&quot;更新系统版本&quot;&gt;&lt;/a&gt;更新系统版本&lt;/h3&gt;&lt;p&gt;在 设置 -&amp;gt; 系统 -&amp;gt; 关于 中，查看系统版本号，系统必须为64位，版本号至少为14393.0，如果版本过低，检查更新至14393以上版本&lt;/p&gt;
+&lt;h3 id=&quot;打开开发者模式&quot;&gt;&lt;a href=&quot;#打开开发者模式&quot; class=&quot;headerlink&quot; title=&quot;打开开发者模式&quot;&gt;&lt;/a&gt;打开开发者模式&lt;/h3&gt;&lt;p&gt;在 设置 -&amp;gt; 更新和安全 -&amp;gt; 针对开发人员 中，选中开发人员模式, 重启电脑&lt;/p&gt;
+&lt;p&gt;在 控制面板 -&amp;gt; 程序 -&amp;gt; 程序和功能 -&amp;gt; 启动或关闭Windows功能 中，勾选适用于Linux的Windows子系统&lt;/p&gt;
+&lt;p&gt;打开命令行，输入bash,后”y”确认条款，下载完成后输入用户名和密码后，安装成功&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Windows" scheme="https://kevinzjy.github.io/categories/windows/"/>
+    
+    
+      <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
+    
+      <category term="Bash on Ubuntu" scheme="https://kevinzjy.github.io/tags/Bash-on-Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>利用Sra-tools从NCBI下载SRA数据</title>
@@ -36,24 +62,6 @@
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
       <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://kevinzjy.github.io/2017/05/01/hello-world/"/>
-    <id>https://kevinzjy.github.io/2017/05/01/hello-world/</id>
-    <published>2017-05-01T06:23:12.756Z</published>
-    <updated>2017-03-26T10:10:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
     
   </entry>
   
