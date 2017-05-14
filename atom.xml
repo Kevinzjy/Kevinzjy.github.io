@@ -96,11 +96,11 @@
       <category term="Software" scheme="https://kevinzjy.github.io/categories/linux/Software/"/>
     
     
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
+    
       <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
     
       <category term="Bash on Ubuntu" scheme="https://kevinzjy.github.io/tags/Bash-on-Ubuntu/"/>
-    
-      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
   </entry>
   
@@ -311,7 +311,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-gcc/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-gcc/</id>
     <published>2017-03-24T13:46:27.000Z</published>
-    <updated>2017-05-14T13:39:27.970Z</updated>
+    <updated>2017-05-14T14:19:20.972Z</updated>
     
     <summary type="html">
     
@@ -354,9 +354,9 @@
       <category term="Hexo" scheme="https://kevinzjy.github.io/categories/windows/Hexo/"/>
     
     
-      <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
-    
       <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
+    
+      <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
     
       <category term="Blog" scheme="https://kevinzjy.github.io/tags/Blog/"/>
     
