@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kevinzjy.github.io/2017/05/14/OSX-Dropbox+Hexo/</loc>
+    
+    <lastmod>2017-05-14T08:21:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kevinzjy.github.io/2017/05/13/Windows-Autostart/</loc>
     
     <lastmod>2017-05-14T07:53:29.000Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://kevinzjy.github.io/2017/03/26/Linux-Tips/</loc>
     
     <lastmod>2017-05-14T07:50:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/05/14/OSX-Dropbox+Hexo/</loc>
-    
-    <lastmod>2017-05-14T07:47:38.000Z</lastmod>
     
   </url>
   
