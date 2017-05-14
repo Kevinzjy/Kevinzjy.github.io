@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-05-14T07:38:44.000Z</updated>
+  <updated>2017-05-14T07:47:38.000Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>MAC-Tips</title>
-    <link href="https://kevinzjy.github.io/2017/05/14/MAC-Tips/"/>
-    <id>https://kevinzjy.github.io/2017/05/14/MAC-Tips/</id>
+    <title>MAC下使用Dropbox同步更新Hexo博客</title>
+    <link href="https://kevinzjy.github.io/2017/05/14/OSX-Dropbox+Hexo/"/>
+    <id>https://kevinzjy.github.io/2017/05/14/OSX-Dropbox+Hexo/</id>
     <published>2017-05-14T07:25:13.000Z</published>
-    <updated>2017-05-14T07:38:44.000Z</updated>
+    <updated>2017-05-14T07:47:38.000Z</updated>
     
     <summary type="html">
     
@@ -33,6 +33,8 @@
     
       <category term="MAC" scheme="https://kevinzjy.github.io/tags/MAC/"/>
     
+      <category term="Hexo" scheme="https://kevinzjy.github.io/tags/Hexo/"/>
+    
   </entry>
   
   <entry>
@@ -40,7 +42,7 @@
     <link href="https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/</id>
     <published>2017-05-13T15:02:26.000Z</published>
-    <updated>2017-05-13T16:36:55.000Z</updated>
+    <updated>2017-05-14T07:51:09.000Z</updated>
     
     <summary type="html">
     
@@ -58,14 +60,16 @@
     
       <category term="Bash on Ubuntu" scheme="https://kevinzjy.github.io/tags/Bash-on-Ubuntu/"/>
     
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
+    
   </entry>
   
   <entry>
-    <title>Windows-Autostart</title>
+    <title>Windows下实现脚本开机自动启动</title>
     <link href="https://kevinzjy.github.io/2017/05/13/Windows-Autostart/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Windows-Autostart/</id>
     <published>2017-05-13T04:21:52.000Z</published>
-    <updated>2017-05-13T04:33:25.000Z</updated>
+    <updated>2017-05-14T07:53:29.000Z</updated>
     
     <summary type="html">
     
@@ -88,11 +92,12 @@
     <link href="https://kevinzjy.github.io/2017/05/13/Python-Tips/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Python-Tips/</id>
     <published>2017-05-13T03:40:59.000Z</published>
-    <updated>2017-05-13T04:40:30.000Z</updated>
+    <updated>2017-05-14T07:51:50.000Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Python-使用过程中的特殊技巧&quot;&gt;&lt;a href=&quot;#Python-使用过程中的特殊技巧&quot; class=&quot;headerlink&quot; title=&quot;Python 使用过程中的特殊技巧&quot;&gt;&lt;/a&gt;Python 使用过程中的特殊技巧&lt;/h2&gt;
+      &lt;h2 id=&quot;Python-使用过程中的特殊技巧&quot;&gt;&lt;a href=&quot;#Python-使用过程中的特殊技巧&quot; class=&quot;headerlink&quot; title=&quot;Python 使用过程中的特殊技巧&quot;&gt;&lt;/a&gt;Python 使用过程中的特殊技巧&lt;/h2&gt;&lt;p&gt;坑&lt;/p&gt;
+&lt;fig
     
     </summary>
     
@@ -136,7 +141,7 @@
     <link href="https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/"/>
     <id>https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/</id>
     <published>2017-05-12T07:56:45.000Z</published>
-    <updated>2017-05-13T16:42:51.000Z</updated>
+    <updated>2017-05-14T07:51:19.000Z</updated>
     
     <summary type="html">
     
@@ -149,11 +154,11 @@
       <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
     
     
-      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
-    
       <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
     
-      <category term="Tools" scheme="https://kevinzjy.github.io/tags/Tools/"/>
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Bioinformatic-Tools" scheme="https://kevinzjy.github.io/tags/Bioinformatic-Tools/"/>
     
   </entry>
   
@@ -205,7 +210,7 @@
     <link href="https://kevinzjy.github.io/2017/03/26/Linux-Tips/"/>
     <id>https://kevinzjy.github.io/2017/03/26/Linux-Tips/</id>
     <published>2017-03-26T09:29:26.000Z</published>
-    <updated>2017-03-26T10:11:18.000Z</updated>
+    <updated>2017-05-14T07:50:54.000Z</updated>
     
     <summary type="html">
     
@@ -218,6 +223,8 @@
     
     
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
     
   </entry>
   
@@ -237,9 +244,9 @@
       <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
     
     
-      <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
-    
       <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
+    
+      <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
     
       <category term="ggplot2" scheme="https://kevinzjy.github.io/tags/ggplot2/"/>
     
@@ -264,18 +271,18 @@
     
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
-      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
-    
       <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
   </entry>
   
   <entry>
-    <title>在Windows下使用Github pages + Hexo 搭建个人博客</title>
+    <title>在Windows下使用Github pages + Hexo搭建个人博客</title>
     <link href="https://kevinzjy.github.io/2017/03/24/Install-hexo/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-hexo/</id>
     <published>2017-03-24T13:16:34.000Z</published>
-    <updated>2017-05-13T16:40:49.000Z</updated>
+    <updated>2017-05-14T07:52:47.000Z</updated>
     
     <summary type="html">
     
@@ -292,6 +299,8 @@
       <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
     
       <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
+    
+      <category term="Blog" scheme="https://kevinzjy.github.io/tags/Blog/"/>
     
   </entry>
   
