@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-05-13T16:41:05.253Z</updated>
+  <updated>2017-05-14T07:38:44.000Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -16,11 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MAC-Tips</title>
+    <link href="https://kevinzjy.github.io/2017/05/14/MAC-Tips/"/>
+    <id>https://kevinzjy.github.io/2017/05/14/MAC-Tips/</id>
+    <published>2017-05-14T07:25:13.000Z</published>
+    <updated>2017-05-14T07:38:44.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Mac上许多配置与Linux系统不大相同&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="MAC" scheme="https://kevinzjy.github.io/categories/MAC/"/>
+    
+    
+      <category term="MAC" scheme="https://kevinzjy.github.io/tags/MAC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Bash on Ubuntu on Windows的安装和配置 (二) Ubuntu软件推荐</title>
     <link href="https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/</id>
     <published>2017-05-13T15:02:26.000Z</published>
-    <updated>2017-05-13T16:41:05.253Z</updated>
+    <updated>2017-05-13T16:36:55.000Z</updated>
     
     <summary type="html">
     
@@ -45,7 +65,7 @@
     <link href="https://kevinzjy.github.io/2017/05/13/Windows-Autostart/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Windows-Autostart/</id>
     <published>2017-05-13T04:21:52.000Z</published>
-    <updated>2017-05-13T04:33:25.885Z</updated>
+    <updated>2017-05-13T04:33:25.000Z</updated>
     
     <summary type="html">
     
@@ -68,7 +88,7 @@
     <link href="https://kevinzjy.github.io/2017/05/13/Python-Tips/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Python-Tips/</id>
     <published>2017-05-13T03:40:59.000Z</published>
-    <updated>2017-05-13T04:40:30.852Z</updated>
+    <updated>2017-05-13T04:40:30.000Z</updated>
     
     <summary type="html">
     
@@ -88,11 +108,11 @@
     <link href="https://kevinzjy.github.io/2017/05/12/Install-WSL/"/>
     <id>https://kevinzjy.github.io/2017/05/12/Install-WSL/</id>
     <published>2017-05-12T15:26:40.000Z</published>
-    <updated>2017-05-13T16:41:01.398Z</updated>
+    <updated>2017-05-13T16:41:01.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;记录基本的 Bash on Ubuntu on Windows (WSL) 的安装和配置过程&lt;br&gt;参考&lt;a href=&quot;https://msdn.microsoft.com/en-us/commandline/wsl/about&quot;&gt;官方说明&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;记录基本的 Bash on Ubuntu on Windows (WSL) 的安装和配置过程&lt;br&gt;参考&lt;a href=&quot;https://msdn.microsoft.com/en-us/commandline/wsl/about&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方说明&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Step1-Bash-on-Ubuntu-on-Windows的下载和安装&quot;&gt;&lt;a href=&quot;#Step1-Bash-on-Ubuntu-on-Windows的下载和安装&quot; class=&quot;headerlink&quot; title=&quot;Step1: Bash on Ubuntu on Windows的下载和安装&quot;&gt;&lt;/a&gt;Step1: Bash on Ubuntu on Windows的下载和安装&lt;/h2&gt;&lt;h3 id=&quot;更新系统版本&quot;&gt;&lt;a href=&quot;#更新系统版本&quot; class=&quot;headerlink&quot; title=&quot;更新系统版本&quot;&gt;&lt;/a&gt;更新系统版本&lt;/h3&gt;&lt;p&gt;在 设置 -&amp;gt; 系统 -&amp;gt; 关于 中，查看系统版本号，系统必须为64位，版本号至少为14393.0，如果版本过低，检查更新至14393以上版本&lt;/p&gt;
 &lt;h3 id=&quot;打开开发者模式&quot;&gt;&lt;a href=&quot;#打开开发者模式&quot; class=&quot;headerlink&quot; title=&quot;打开开发者模式&quot;&gt;&lt;/a&gt;打开开发者模式&lt;/h3&gt;&lt;p&gt;在 设置 -&amp;gt; 更新和安全 -&amp;gt; 针对开发人员 中，选中开发人员模式, 重启电脑&lt;/p&gt;
 &lt;p&gt;在 控制面板 -&amp;gt; 程序 -&amp;gt; 程序和功能 -&amp;gt; 启动或关闭Windows功能 中，勾选适用于Linux的Windows子系统&lt;/p&gt;
@@ -116,12 +136,12 @@
     <link href="https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/"/>
     <id>https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/</id>
     <published>2017-05-12T07:56:45.000Z</published>
-    <updated>2017-05-13T16:42:51.128Z</updated>
+    <updated>2017-05-13T16:42:51.000Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;Sra-tools的下载与安装&quot;&gt;&lt;a href=&quot;#Sra-tools的下载与安装&quot; class=&quot;headerlink&quot; title=&quot;Sra-tools的下载与安装&quot;&gt;&lt;/a&gt;Sra-tools的下载与安装&lt;/h2&gt;&lt;p&gt;Note: 旧版的Sratoolkit已经更新为Sra-tools&lt;/p&gt;
-&lt;p&gt;参考NCBI官方教程&lt;a href=&quot;http://ncbi.github.io/sra-tools/install_config.html&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考NCBI官方教程&lt;a href=&quot;http://ncbi.github.io/sra-tools/install_config.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Downloading SRA Toolkit&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;wget &lt;span class=&quot;string&quot;&gt;&quot;http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
@@ -129,9 +149,9 @@
       <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
     
     
-      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
-    
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
     
       <category term="Tools" scheme="https://kevinzjy.github.io/tags/Tools/"/>
     
@@ -164,7 +184,7 @@
     <link href="https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/"/>
     <id>https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/</id>
     <published>2017-03-29T04:55:17.000Z</published>
-    <updated>2017-05-13T04:40:17.620Z</updated>
+    <updated>2017-05-13T04:40:17.000Z</updated>
     
     <summary type="html">
     
@@ -206,7 +226,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot2/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot2/</id>
     <published>2017-03-24T15:04:04.000Z</published>
-    <updated>2017-05-13T07:07:12.660Z</updated>
+    <updated>2017-05-13T07:07:12.000Z</updated>
     
     <summary type="html">
     
@@ -217,9 +237,9 @@
       <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
     
     
-      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
-    
       <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
+    
+      <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
     
       <category term="ggplot2" scheme="https://kevinzjy.github.io/tags/ggplot2/"/>
     
@@ -230,7 +250,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-gcc/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-gcc/</id>
     <published>2017-03-24T13:46:27.000Z</published>
-    <updated>2017-05-13T11:41:26.096Z</updated>
+    <updated>2017-05-13T11:41:26.000Z</updated>
     
     <summary type="html">
     
@@ -255,13 +275,13 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-hexo/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-hexo/</id>
     <published>2017-03-24T13:16:34.000Z</published>
-    <updated>2017-05-13T16:40:49.973Z</updated>
+    <updated>2017-05-13T16:40:49.000Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;依赖工具&quot;&gt;&lt;a href=&quot;#依赖工具&quot; class=&quot;headerlink&quot; title=&quot;依赖工具&quot;&gt;&lt;/a&gt;依赖工具&lt;/h2&gt;&lt;p&gt;在Windows下安装Git + Node.js + Cmder&lt;/p&gt;
-&lt;h3 id=&quot;安装Git&quot;&gt;&lt;a href=&quot;#安装Git&quot; class=&quot;headerlink&quot; title=&quot;安装Git&quot;&gt;&lt;/a&gt;安装Git&lt;/h3&gt;&lt;p&gt;下载Git，&lt;a href=&quot;https://git-scm.com/downloads&quot;&gt;下载地址&lt;/a&gt;&lt;br&gt;安装时选择添加Git到$PATH&lt;/p&gt;
-&lt;h3 id=&quot;配置Cmder&quot;&gt;&lt;a href=&quot;#配置Cmder&quot; class=&quot;headerlink&quot; title=&quot;配置Cmder&quot;&gt;&lt;/a&gt;配置Cmder&lt;/h3&gt;&lt;p&gt;安装&lt;a href=&quot;http://cmder.net/&quot;&gt;Cmder&lt;/a&gt;, 在Cmder中添加{git bash}: &lt;/p&gt;
+&lt;h3 id=&quot;安装Git&quot;&gt;&lt;a href=&quot;#安装Git&quot; class=&quot;headerlink&quot; title=&quot;安装Git&quot;&gt;&lt;/a&gt;安装Git&lt;/h3&gt;&lt;p&gt;下载Git，&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;br&gt;安装时选择添加Git到$PATH&lt;/p&gt;
+&lt;h3 id=&quot;配置Cmder&quot;&gt;&lt;a href=&quot;#配置Cmder&quot; class=&quot;headerlink&quot; title=&quot;配置Cmder&quot;&gt;&lt;/a&gt;配置Cmder&lt;/h3&gt;&lt;p&gt;安装&lt;a href=&quot;http://cmder.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Cmder&lt;/a&gt;, 在Cmder中添加{git bash}: &lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Task parameters: /icon &lt;span class=&quot;string&quot;&gt;&quot;C:\Program Files\Git\git-bash.exe&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Commands: &lt;span class=&quot;string&quot;&gt;&quot;C:\Program Files\Git\bin\sh.exe&quot;&lt;/span&gt; --login -i&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
@@ -280,7 +300,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-R/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-R/</id>
     <published>2017-03-24T12:08:28.000Z</published>
-    <updated>2017-05-13T04:39:26.994Z</updated>
+    <updated>2017-05-13T04:39:26.000Z</updated>
     
     <summary type="html">
     
