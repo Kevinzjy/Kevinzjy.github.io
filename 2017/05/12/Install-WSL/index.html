@@ -96,7 +96,7 @@
 <meta property="og:url" content="https://kevinzjy.github.io/2017/05/12/Install-WSL/index.html">
 <meta property="og:site_name" content="Kevinzjy&#39;s Blog">
 <meta property="og:description" content="记录基本的 Bash on Ubuntu on Windows (WSL) 的安装和配置过程参考官方说明 Step1: Bash on Ubuntu on Windows的下载和安装更新系统版本在 设置 -&amp;gt; 系统 -&amp;gt; 关于 中，查看系统版本号，系统必须为64位，版本号至少为14393.0，如果版本过低，检查更新至14393以上版本 打开开发者模式在 设置 -&amp;gt; 更新和安全 -">
-<meta property="og:updated_time" content="2017-05-14T08:28:50.000Z">
+<meta property="og:updated_time" content="2017-05-14T08:49:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bash on Ubuntu on Windows的安装和配置 (一) WSL的安装和配置">
 <meta name="twitter:description" content="记录基本的 Bash on Ubuntu on Windows (WSL) 的安装和配置过程参考官方说明 Step1: Bash on Ubuntu on Windows的下载和安装更新系统版本在 设置 -&amp;gt; 系统 -&amp;gt; 关于 中，查看系统版本号，系统必须为64位，版本号至少为14393.0，如果版本过低，检查更新至14393以上版本 打开开发者模式在 设置 -&amp;gt; 更新和安全 -">
@@ -467,8 +467,15 @@
 <h3 id="安装Bash-it对Bash环境进行美化"><a href="#安装Bash-it对Bash环境进行美化" class="headerlink" title="安装Bash-it对Bash环境进行美化"></a>安装Bash-it对Bash环境进行美化</h3><p>在Windows 1703 创意者更新后，Cmder + zsh 环境配置下会出现光标前出现空格的Bug，目前暂未解决，因此使用Bash-it对默认的Bash环境进行美化</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/revans/bash-it.git ~/.bash_it</div><div class="line">~/.bash_it/install.sh</div></pre></td></tr></table></figure>
 <p>更改主题: 在 ~/.bashrc 中，把theme设为”simple”</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> BASH_IT_THEME=<span class="string">'simple'</span> <span class="comment"># 主题配置</span></div><div class="line"></div><div class="line"><span class="built_in">export</span> SCM_CHECK=<span class="literal">true</span> <span class="comment"># Git插件配置</span></div><div class="line"><span class="built_in">export</span> SCM_GIT_SHOW_DETAILS=<span class="literal">true</span> </div><div class="line"><span class="built_in">export</span> SCM_GIT_SHOW_MINIMAL_INFO=<span class="literal">true</span> <span class="comment"># 防止Git提示符乱码</span></div></pre></td></tr></table></figure>
-<p>安装完这些，基本就可以在命令行和Bash on Ubuntu on Windows愉快地玩耍了~</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> BASH_IT_THEME=<span class="string">'simple'</span> <span class="comment"># 主题配置</span></div><div class="line"></div><div class="line"><span class="built_in">export</span> SCM_CHECK=<span class="literal">true</span> <span class="comment"># Git插件配置</span></div><div class="line"><span class="built_in">export</span> SCM_GIT_SHOW_DETAILS=<span class="literal">true</span> </div><div class="line"><span class="built_in">export</span> SCM_GIT_SHOW_MINIMAL_INFO=<span class="literal">true</span> <span class="comment"># 防止Git提示符乱码</span></div><div class="line"></div><div class="line"><span class="built_in">export</span> TERM=xterm-256color <span class="comment"># 设置Terminal类型，支持256色</span></div><div class="line">LC_ALL=en_US.UTF-8</div></pre></td></tr></table></figure>
+<h3 id="安装X-server用来运行图形化程序"><a href="#安装X-server用来运行图形化程序" class="headerlink" title="安装X-server用来运行图形化程序"></a>安装X-server用来运行图形化程序</h3><p>默认情况下，WSL不能直接运行图形化程序，可以通过安装X-server并监听端口的方式解决</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> DISPLAY=:0 <span class="comment"># 写入 .bashrc, 可以省去每次打开Bash后输入的麻烦</span></div></pre></td></tr></table></figure>
+<p>在Windows下，安装VcXsrv，运行VcXsrv监听:0端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Rstudio <span class="comment"># 即可在Windows下启动Rstudio的图形化界面</span></div></pre></td></tr></table></figure>
+<p>不过用这种方法，打开的图形化界面太丑陋了，不能直视啊。。。</p>
+<h3 id="Tips-WSL系统内可以直接运行Windows命令"><a href="#Tips-WSL系统内可以直接运行Windows命令" class="headerlink" title="Tips: WSL系统内可以直接运行Windows命令"></a>Tips: WSL系统内可以直接运行Windows命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sublime_text.exe <span class="comment"># 启动sublime text</span></div></pre></td></tr></table></figure>
+<p>但是不能在命令行直接对Linux下的文件进行编辑，应该是因为传递的文件名参数问题。这点其实可以通过一些方法解决，但是目前还没有这方面需求，懒得折腾了。。。</p>
+<p>安装完这些，基本就可以在命令行和Bash on Ubuntu on Windows愉快地玩耍了~ Enjoy!</p>
 
       
     </div>
@@ -599,7 +606,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -610,7 +617,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -621,7 +628,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -663,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step1-Bash-on-Ubuntu-on-Windows的下载和安装"><span class="nav-number">1.</span> <span class="nav-text">Step1: Bash on Ubuntu on Windows的下载和安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新系统版本"><span class="nav-number">1.1.</span> <span class="nav-text">更新系统版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开开发者模式"><span class="nav-number">1.2.</span> <span class="nav-text">打开开发者模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2-更新Ubuntu版本"><span class="nav-number">2.</span> <span class="nav-text">Step2: 更新Ubuntu版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step3-安装Ubuntu后进行的设置，参考"><span class="nav-number">3.</span> <span class="nav-text">Step3: 安装Ubuntu后进行的设置，参考:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">3.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Cmder"><span class="nav-number">3.2.</span> <span class="nav-text">安装Cmder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Bash-it对Bash环境进行美化"><span class="nav-number">3.3.</span> <span class="nav-text">安装Bash-it对Bash环境进行美化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step1-Bash-on-Ubuntu-on-Windows的下载和安装"><span class="nav-number">1.</span> <span class="nav-text">Step1: Bash on Ubuntu on Windows的下载和安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新系统版本"><span class="nav-number">1.1.</span> <span class="nav-text">更新系统版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开开发者模式"><span class="nav-number">1.2.</span> <span class="nav-text">打开开发者模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2-更新Ubuntu版本"><span class="nav-number">2.</span> <span class="nav-text">Step2: 更新Ubuntu版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step3-安装Ubuntu后进行的设置，参考"><span class="nav-number">3.</span> <span class="nav-text">Step3: 安装Ubuntu后进行的设置，参考:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">3.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Cmder"><span class="nav-number">3.2.</span> <span class="nav-text">安装Cmder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Bash-it对Bash环境进行美化"><span class="nav-number">3.3.</span> <span class="nav-text">安装Bash-it对Bash环境进行美化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装X-server用来运行图形化程序"><span class="nav-number">3.4.</span> <span class="nav-text">安装X-server用来运行图形化程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips-WSL系统内可以直接运行Windows命令"><span class="nav-number">3.5.</span> <span class="nav-text">Tips: WSL系统内可以直接运行Windows命令</span></a></li></ol></li></ol></div>
             
 
           </div>

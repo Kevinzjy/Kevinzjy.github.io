@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-05-14T08:30:30.000Z</updated>
+  <updated>2017-05-14T09:52:47.000Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一次审稿经验</title>
+    <link href="https://kevinzjy.github.io/2017/05/14/Manuscript-review/"/>
+    <id>https://kevinzjy.github.io/2017/05/14/Manuscript-review/</id>
+    <published>2017-05-14T08:34:42.000Z</published>
+    <updated>2017-05-14T09:52:47.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录一下第一次审稿的经历233&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Academic Life" scheme="https://kevinzjy.github.io/categories/Academic-Life/"/>
+    
+    
+      <category term="Academic" scheme="https://kevinzjy.github.io/tags/Academic/"/>
+    
+  </entry>
   
   <entry>
     <title>MAC下使用Dropbox同步更新Hexo博客</title>
@@ -121,7 +141,7 @@
     <link href="https://kevinzjy.github.io/2017/05/12/Install-WSL/"/>
     <id>https://kevinzjy.github.io/2017/05/12/Install-WSL/</id>
     <published>2017-05-12T15:26:40.000Z</published>
-    <updated>2017-05-14T08:28:50.000Z</updated>
+    <updated>2017-05-14T08:49:55.000Z</updated>
     
     <summary type="html">
     

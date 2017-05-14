@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kevinzjy.github.io/2017/05/14/Manuscript-review/</loc>
+    
+    <lastmod>2017-05-14T09:52:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/12/Install-WSL/</loc>
+    
+    <lastmod>2017-05-14T08:49:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kevinzjy.github.io/2017/05/13/Windows-Autostart/</loc>
     
     <lastmod>2017-05-14T08:31:15.000Z</lastmod>
@@ -61,13 +75,6 @@
     <loc>https://kevinzjy.github.io/2017/03/24/Install-hexo/</loc>
     
     <lastmod>2017-05-14T08:28:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/05/12/Install-WSL/</loc>
-    
-    <lastmod>2017-05-14T08:28:50.000Z</lastmod>
     
   </url>
   
