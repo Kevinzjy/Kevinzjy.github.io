@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kevinzjy.github.io/2017/05/14/Linux-Sogou/</loc>
+    
+    <lastmod>2017-05-14T13:39:42.267Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/Install-gcc/</loc>
+    
+    <lastmod>2017-05-14T13:39:27.970Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kevinzjy.github.io/2017/05/14/Manuscript-review/</loc>
     
     <lastmod>2017-05-14T09:52:47.000Z</lastmod>
@@ -37,7 +51,7 @@
   </url>
   
   <url>
-    <loc>https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/</loc>
+    <loc>https://kevinzjy.github.io/2017/03/29/python-Multiprocessing/</loc>
     
     <lastmod>2017-05-14T08:30:29.000Z</lastmod>
     
@@ -51,23 +65,16 @@
   </url>
   
   <url>
-    <loc>https://kevinzjy.github.io/2017/03/24/Install-R/</loc>
-    
-    <lastmod>2017-05-14T08:29:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/03/24/Install-gcc/</loc>
-    
-    <lastmod>2017-05-14T08:29:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot2/</loc>
     
     <lastmod>2017-05-14T08:29:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/Install-R/</loc>
+    
+    <lastmod>2017-05-14T08:28:56.000Z</lastmod>
     
   </url>
   
