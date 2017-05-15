@@ -2,23 +2,21 @@ language: node_js
 
 node_js: stable
 
-cache:
-  directories:
-    - node_modules
-
-before_script:
-    - git clone --branch master https://github.com/Kevinzjy/Kevinzjy.github.io.git public
+install:
+  - npm install
 
 script:
-  - npm run build
+  - hexo cl
+  - hexo g
 
 after_success:
   - cd public
+  - git init
   - git config user.name "Kevinzjy"
   - git config user.email "kevinzjy1997@gmail.com"
-  - git add --all .
-  - git commit -m "Travis CI Auto Buildere"
-  - git push https://${GIT_TOKEN}@github.com/Kevinzjy/Kevinzjy.github.io.git master
+  - git add .
+  - git commit -m "Travis CI Auto Builder"
+  - git push --force --quiet https://${GIT_TOKEN}@github.com/Kevinzjy/Kevinzjy.github.io.git master
 
 branches:
   only:
