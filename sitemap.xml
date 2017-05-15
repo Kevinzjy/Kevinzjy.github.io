@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/</loc>
+    
+    <lastmod>2017-05-15T10:49:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/15/Bioinfo-Differential-Expression/</loc>
+    
+    <lastmod>2017-05-15T07:32:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/</loc>
     
     <lastmod>2017-05-15T02:48:42.000Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>https://kevinzjy.github.io/2017/05/13/Python-Tips/</loc>
     
     <lastmod>2017-05-15T02:24:22.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/</loc>
-    
-    <lastmod>2017-05-15T02:24:18.000Z</lastmod>
     
   </url>
   

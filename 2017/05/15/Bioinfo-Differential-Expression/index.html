@@ -89,15 +89,16 @@
 
 
 
-<meta name="description" content="Kevinzjy">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kevinzjy&#39;s Blog">
-<meta property="og:url" content="https://kevinzjy.github.io/archives/2017/04/index.html">
+<meta name="description" content="如何进行基因的差异表达分析Introduction RNA-Seq produces gene expression profiles with much smaller technical variance Gene expression level is measured by the number of reads mapped back to this gene">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RNA-Seq中基因的差异表达分析">
+<meta property="og:url" content="https://kevinzjy.github.io/2017/05/15/Bioinfo-Differential-Expression/index.html">
 <meta property="og:site_name" content="Kevinzjy&#39;s Blog">
-<meta property="og:description" content="Kevinzjy">
+<meta property="og:description" content="如何进行基因的差异表达分析Introduction RNA-Seq produces gene expression profiles with much smaller technical variance Gene expression level is measured by the number of reads mapped back to this gene">
+<meta property="og:updated_time" content="2017-05-15T07:32:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kevinzjy&#39;s Blog">
-<meta name="twitter:description" content="Kevinzjy">
+<meta name="twitter:title" content="RNA-Seq中基因的差异表达分析">
+<meta name="twitter:description" content="如何进行基因的差异表达分析Introduction RNA-Seq produces gene expression profiles with much smaller technical variance Gene expression level is measured by the number of reads mapped back to this gene">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://kevinzjy.github.io/archives/2017/04/"/>
+  <link rel="canonical" href="https://kevinzjy.github.io/2017/05/15/Bioinfo-Differential-Expression/"/>
 
 
 
 
 
-  <title> 归档 | Kevinzjy's Blog </title>
+  <title> RNA-Seq中基因的差异表达分析 | Kevinzjy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -156,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -298,66 +299,185 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 16 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://kevinzjy.github.io/2017/05/15/Bioinfo-Differential-Expression/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinyang Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/img/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kevinzjy's Blog">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                RNA-Seq中基因的差异表达分析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T12:49:52+08:00">
+                2017-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
+
+      
+        <h2 id="如何进行基因的差异表达分析"><a href="#如何进行基因的差异表达分析" class="headerlink" title="如何进行基因的差异表达分析"></a>如何进行基因的差异表达分析</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
+<li>RNA-Seq produces gene expression profiles with much smaller technical variance</li>
+<li>Gene expression level is measured by the number of reads mapped back to this gene</li>
+</ul>
+<a id="more"></a>
+<h3 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h3><ul>
+<li>Random sampling of reads</li>
+<li>Other sources of variation including techinical and biological noise</li>
+</ul>
+<h4 id="Variance-of-Random-sampling"><a href="#Variance-of-Random-sampling" class="headerlink" title="Variance of Random sampling"></a>Variance of Random sampling</h4><p>Approximated by <code>Poisson distribution</code></p>
+<p>Consider biological variance: <code>over-dispersed Poisson distribution</code></p>
+<p>Models: </p>
+<ul>
+<li><p>Negative binomial (NB) distribution: </p>
+<p>  edgeR, DESeq, baySeq</p>
+</li>
+<li><p>Other models:</p>
+<ul>
+<li><p>log fold changes obey the normal distribution</p>
+<ul>
+<li><p>MA-based method: M(log fold change) at given A(log intensity sum) obey the normal distribution</p>
+</li>
+<li><p>two-step, generalized Poisson model to fir nt-wide read distribution</p>
+</li>
+<li><p>delta method: estimate variance of log-fold change (Cufflinks)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
       
 
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/14/Linux-Sogou/" rel="next" title="Ubuntu 16.04 LTS 安装搜狗拼音输入法">
+                <i class="fa fa-chevron-left"></i> Ubuntu 16.04 LTS 安装搜狗拼音输入法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
         </div>
       
-      
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/30/Linux-NAS/" itemprop="url">
-              
-                <span itemprop="name">Ubuntu下部署NAS</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-30T16:18:15+08:00"
-              content="2017-04-30" >
-          04-30
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -365,6 +485,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzg4MC80NDU3"></div>
+    
+  </div>
+
 
         </div>
         
@@ -384,8 +510,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/assets/img/avatar.jpeg"
@@ -454,6 +589,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何进行基因的差异表达分析"><span class="nav-number">1.</span> <span class="nav-text">如何进行基因的差异表达分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variance"><span class="nav-number">1.2.</span> <span class="nav-text">Variance</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Variance-of-Random-sampling"><span class="nav-number">1.2.1.</span> <span class="nav-text">Variance of Random sampling</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -581,11 +732,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
 
 
   

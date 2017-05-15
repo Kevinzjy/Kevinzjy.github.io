@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-05-15T02:48:26.000Z</updated>
+  <updated>2017-05-15T07:32:47.000Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -14,6 +14,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RNA-Seq中基因的差异表达分析</title>
+    <link href="https://kevinzjy.github.io/2017/05/15/Bioinfo-Differential-Expression/"/>
+    <id>https://kevinzjy.github.io/2017/05/15/Bioinfo-Differential-Expression/</id>
+    <published>2017-05-15T04:49:52.000Z</published>
+    <updated>2017-05-15T07:32:47.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;如何进行基因的差异表达分析&quot;&gt;&lt;a href=&quot;#如何进行基因的差异表达分析&quot; class=&quot;headerlink&quot; title=&quot;如何进行基因的差异表达分析&quot;&gt;&lt;/a&gt;如何进行基因的差异表达分析&lt;/h2&gt;&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;RNA-Seq produces gene expression profiles with much smaller technical variance&lt;/li&gt;
+&lt;li&gt;Gene expression level is measured by the number of reads mapped back to this gene&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Ubuntu 16.04 LTS 安装搜狗拼音输入法</title>
@@ -80,9 +99,9 @@
       <category term="OS X" scheme="https://kevinzjy.github.io/categories/OS-X/"/>
     
     
-      <category term="Hexo" scheme="https://kevinzjy.github.io/tags/Hexo/"/>
-    
       <category term="MAC" scheme="https://kevinzjy.github.io/tags/MAC/"/>
+    
+      <category term="Hexo" scheme="https://kevinzjy.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -105,9 +124,9 @@
       <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
     
     
-      <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
-    
       <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
+    
+      <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
     
       <category term="Bash on Ubuntu" scheme="https://kevinzjy.github.io/tags/Bash-on-Ubuntu/"/>
     
@@ -236,7 +255,7 @@
     <link href="https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/"/>
     <id>https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/</id>
     <published>2017-03-29T04:55:17.000Z</published>
-    <updated>2017-05-15T02:24:18.000Z</updated>
+    <updated>2017-05-15T10:49:19.000Z</updated>
     
     <summary type="html">
     
@@ -318,11 +337,11 @@
       <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
     
     
-      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
-    
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
       <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
   </entry>
   
@@ -345,9 +364,9 @@
       <category term="Windows" scheme="https://kevinzjy.github.io/categories/windows/"/>
     
     
-      <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
-    
       <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
+    
+      <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
     
       <category term="Hexo" scheme="https://kevinzjy.github.io/tags/Hexo/"/>
     
@@ -370,11 +389,11 @@
       <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
     
     
-      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
-    
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
       <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
   </entry>
   
