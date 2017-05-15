@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kevinzjy.github.io/"/>
-  <updated>2017-05-14T13:39:42.267Z</updated>
+  <updated>2017-05-15T02:48:26.000Z</updated>
   <id>https://kevinzjy.github.io/</id>
   
   <author>
@@ -16,18 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Ubuntu</title>
+    <title>Ubuntu 16.04 LTS 安装搜狗拼音输入法</title>
     <link href="https://kevinzjy.github.io/2017/05/14/Linux-Sogou/"/>
     <id>https://kevinzjy.github.io/2017/05/14/Linux-Sogou/</id>
     <published>2017-05-14T12:00:10.000Z</published>
-    <updated>2017-05-14T13:39:42.267Z</updated>
+    <updated>2017-05-15T02:48:26.000Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法&lt;/p&gt;
+&lt;p&gt;参考:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://sklcc.github.io/blog/2014/11/21/how-to-input-chinese-in-sub/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何在Sublime Text 3中输入中文&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/cywosp/article/details/32350899&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点滴记录——在Ubuntu 14.04中使SublimeText 3支持中文输入法&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="https://kevinzjy.github.io/tags/Ubuntu/"/>
     
   </entry>
   
@@ -56,7 +69,7 @@
     <link href="https://kevinzjy.github.io/2017/05/14/OSX-Dropbox+Hexo/"/>
     <id>https://kevinzjy.github.io/2017/05/14/OSX-Dropbox+Hexo/</id>
     <published>2017-05-14T07:25:13.000Z</published>
-    <updated>2017-05-14T08:30:30.000Z</updated>
+    <updated>2017-05-15T02:23:16.000Z</updated>
     
     <summary type="html">
     
@@ -64,14 +77,12 @@
     
     </summary>
     
-      <category term="MAC" scheme="https://kevinzjy.github.io/categories/MAC/"/>
+      <category term="OS X" scheme="https://kevinzjy.github.io/categories/OS-X/"/>
     
-      <category term="Hexo" scheme="https://kevinzjy.github.io/categories/MAC/Hexo/"/>
-    
-    
-      <category term="MAC" scheme="https://kevinzjy.github.io/tags/MAC/"/>
     
       <category term="Hexo" scheme="https://kevinzjy.github.io/tags/Hexo/"/>
+    
+      <category term="MAC" scheme="https://kevinzjy.github.io/tags/MAC/"/>
     
   </entry>
   
@@ -80,7 +91,7 @@
     <link href="https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/</id>
     <published>2017-05-13T15:02:26.000Z</published>
-    <updated>2017-05-14T08:30:59.000Z</updated>
+    <updated>2017-05-15T02:48:42.000Z</updated>
     
     <summary type="html">
     
@@ -93,12 +104,10 @@
     
       <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
     
-      <category term="Software" scheme="https://kevinzjy.github.io/categories/linux/Software/"/>
-    
-    
-      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
       <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
+    
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
       <category term="Bash on Ubuntu" scheme="https://kevinzjy.github.io/tags/Bash-on-Ubuntu/"/>
     
@@ -109,7 +118,7 @@
     <link href="https://kevinzjy.github.io/2017/05/13/Windows-Autostart/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Windows-Autostart/</id>
     <published>2017-05-13T04:21:52.000Z</published>
-    <updated>2017-05-14T08:31:15.000Z</updated>
+    <updated>2017-05-15T02:24:33.000Z</updated>
     
     <summary type="html">
     
@@ -122,8 +131,6 @@
     
       <category term="Windows" scheme="https://kevinzjy.github.io/categories/windows/"/>
     
-      <category term="Tips" scheme="https://kevinzjy.github.io/categories/windows/Tips/"/>
-    
     
       <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
     
@@ -134,7 +141,7 @@
     <link href="https://kevinzjy.github.io/2017/05/13/Python-Tips/"/>
     <id>https://kevinzjy.github.io/2017/05/13/Python-Tips/</id>
     <published>2017-05-13T03:40:59.000Z</published>
-    <updated>2017-05-14T08:30:28.000Z</updated>
+    <updated>2017-05-15T02:24:22.000Z</updated>
     
     <summary type="html">
     
@@ -144,8 +151,6 @@
     </summary>
     
       <category term="Python" scheme="https://kevinzjy.github.io/categories/python/"/>
-    
-      <category term="Tips" scheme="https://kevinzjy.github.io/categories/python/Tips/"/>
     
     
       <category term="Python" scheme="https://kevinzjy.github.io/tags/Python/"/>
@@ -157,7 +162,7 @@
     <link href="https://kevinzjy.github.io/2017/05/12/Install-WSL/"/>
     <id>https://kevinzjy.github.io/2017/05/12/Install-WSL/</id>
     <published>2017-05-12T15:26:40.000Z</published>
-    <updated>2017-05-14T08:49:55.000Z</updated>
+    <updated>2017-05-15T02:20:50.000Z</updated>
     
     <summary type="html">
     
@@ -171,8 +176,6 @@
     
       <category term="Windows" scheme="https://kevinzjy.github.io/categories/windows/"/>
     
-      <category term="Bash on Ubuntu" scheme="https://kevinzjy.github.io/categories/windows/Bash-on-Ubuntu/"/>
-    
     
       <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
     
@@ -185,7 +188,7 @@
     <link href="https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/"/>
     <id>https://kevinzjy.github.io/2017/05/12/Bioinfo-Sratools/</id>
     <published>2017-05-12T07:56:45.000Z</published>
-    <updated>2017-05-14T08:27:32.000Z</updated>
+    <updated>2017-05-15T02:23:28.000Z</updated>
     
     <summary type="html">
     
@@ -197,12 +200,8 @@
     
       <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
     
-      <category term="Tools" scheme="https://kevinzjy.github.io/categories/Bioinformatics/Tools/"/>
-    
     
       <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
-    
-      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
       <category term="Bioinformatic-Tools" scheme="https://kevinzjy.github.io/tags/Bioinformatic-Tools/"/>
     
@@ -213,7 +212,7 @@
     <link href="https://kevinzjy.github.io/2017/04/30/Linux-NAS/"/>
     <id>https://kevinzjy.github.io/2017/04/30/Linux-NAS/</id>
     <published>2017-04-30T08:18:15.000Z</published>
-    <updated>2017-05-14T08:28:20.000Z</updated>
+    <updated>2017-05-15T02:23:53.000Z</updated>
     
     <summary type="html">
     
@@ -223,10 +222,10 @@
     
       <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
     
-      <category term="NAS" scheme="https://kevinzjy.github.io/categories/linux/NAS/"/>
-    
     
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="https://kevinzjy.github.io/tags/Ubuntu/"/>
     
       <category term="NAS" scheme="https://kevinzjy.github.io/tags/NAS/"/>
     
@@ -234,10 +233,10 @@
   
   <entry>
     <title>Python中的多进程</title>
-    <link href="https://kevinzjy.github.io/2017/03/29/python-Multiprocessing/"/>
-    <id>https://kevinzjy.github.io/2017/03/29/python-Multiprocessing/</id>
+    <link href="https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/"/>
+    <id>https://kevinzjy.github.io/2017/03/29/Python-Multiprocessing/</id>
     <published>2017-03-29T04:55:17.000Z</published>
-    <updated>2017-05-14T08:30:29.000Z</updated>
+    <updated>2017-05-15T02:24:18.000Z</updated>
     
     <summary type="html">
     
@@ -248,10 +247,10 @@
     
       <category term="Python" scheme="https://kevinzjy.github.io/categories/python/"/>
     
-      <category term="Multiprocessing" scheme="https://kevinzjy.github.io/categories/python/Multiprocessing/"/>
-    
     
       <category term="Python" scheme="https://kevinzjy.github.io/tags/Python/"/>
+    
+      <category term="Multiprocessing" scheme="https://kevinzjy.github.io/tags/Multiprocessing/"/>
     
   </entry>
   
@@ -260,7 +259,7 @@
     <link href="https://kevinzjy.github.io/2017/03/26/Linux-Tips/"/>
     <id>https://kevinzjy.github.io/2017/03/26/Linux-Tips/</id>
     <published>2017-03-26T09:29:26.000Z</published>
-    <updated>2017-05-14T08:28:47.000Z</updated>
+    <updated>2017-05-15T02:24:00.000Z</updated>
     
     <summary type="html">
     
@@ -270,8 +269,6 @@
     </summary>
     
       <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
-    
-      <category term="Tips" scheme="https://kevinzjy.github.io/categories/linux/Tips/"/>
     
     
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
@@ -285,7 +282,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot2/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Bioinfo-ggplot2/</id>
     <published>2017-03-24T15:04:04.000Z</published>
-    <updated>2017-05-14T08:29:13.000Z</updated>
+    <updated>2017-05-15T02:23:22.000Z</updated>
     
     <summary type="html">
     
@@ -294,8 +291,6 @@
     </summary>
     
       <category term="Bioinformatics" scheme="https://kevinzjy.github.io/categories/Bioinformatics/"/>
-    
-      <category term="R" scheme="https://kevinzjy.github.io/categories/Bioinformatics/R/"/>
     
     
       <category term="Bioinfomatics" scheme="https://kevinzjy.github.io/tags/Bioinfomatics/"/>
@@ -311,7 +306,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-gcc/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-gcc/</id>
     <published>2017-03-24T13:46:27.000Z</published>
-    <updated>2017-05-14T14:46:34.345Z</updated>
+    <updated>2017-05-15T02:23:39.000Z</updated>
     
     <summary type="html">
     
@@ -320,16 +315,14 @@
     
     </summary>
     
-      <category term="Server" scheme="https://kevinzjy.github.io/categories/Server/"/>
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
     
-      <category term="Software" scheme="https://kevinzjy.github.io/categories/Server/Software/"/>
     
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
       <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
-    
-      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
   </entry>
   
@@ -338,7 +331,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-hexo/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-hexo/</id>
     <published>2017-03-24T13:16:34.000Z</published>
-    <updated>2017-05-14T08:28:55.000Z</updated>
+    <updated>2017-05-15T02:21:57.000Z</updated>
     
     <summary type="html">
     
@@ -351,14 +344,12 @@
     
       <category term="Windows" scheme="https://kevinzjy.github.io/categories/windows/"/>
     
-      <category term="Hexo" scheme="https://kevinzjy.github.io/categories/windows/Hexo/"/>
-    
-    
-      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
       <category term="Windows" scheme="https://kevinzjy.github.io/tags/Windows/"/>
     
-      <category term="Blog" scheme="https://kevinzjy.github.io/tags/Blog/"/>
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
+    
+      <category term="Hexo" scheme="https://kevinzjy.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -367,7 +358,7 @@
     <link href="https://kevinzjy.github.io/2017/03/24/Install-R/"/>
     <id>https://kevinzjy.github.io/2017/03/24/Install-R/</id>
     <published>2017-03-24T12:08:28.000Z</published>
-    <updated>2017-05-14T08:28:56.000Z</updated>
+    <updated>2017-05-15T02:23:47.000Z</updated>
     
     <summary type="html">
     
@@ -376,14 +367,14 @@
     
     </summary>
     
-      <category term="Server" scheme="https://kevinzjy.github.io/categories/Server/"/>
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
     
-      <category term="Software" scheme="https://kevinzjy.github.io/categories/Server/Software/"/>
     
+      <category term="Software" scheme="https://kevinzjy.github.io/tags/Software/"/>
     
       <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
     
-      <category term="R" scheme="https://kevinzjy.github.io/tags/R/"/>
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
     
   </entry>
   

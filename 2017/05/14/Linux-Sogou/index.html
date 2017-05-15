@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Linux,Ubuntu," />
 
 
 
@@ -89,16 +89,17 @@
 
 
 
-<meta name="description" content="记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法">
+<meta name="description" content="记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法 参考:  如何在Sublime Text 3中输入中文  点滴记录——在Ubuntu 14.04中使SublimeText 3支持中文输入法">
+<meta name="keywords" content="Linux,Ubuntu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu">
+<meta property="og:title" content="Ubuntu 16.04 LTS 安装搜狗拼音输入法">
 <meta property="og:url" content="https://kevinzjy.github.io/2017/05/14/Linux-Sogou/index.html">
 <meta property="og:site_name" content="Kevinzjy&#39;s Blog">
-<meta property="og:description" content="记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法">
-<meta property="og:updated_time" content="2017-05-14T13:39:42.267Z">
+<meta property="og:description" content="记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法 参考:  如何在Sublime Text 3中输入中文  点滴记录——在Ubuntu 14.04中使SublimeText 3支持中文输入法">
+<meta property="og:updated_time" content="2017-05-15T02:48:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu">
-<meta name="twitter:description" content="记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法">
+<meta name="twitter:title" content="Ubuntu 16.04 LTS 安装搜狗拼音输入法">
+<meta name="twitter:description" content="记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法 参考:  如何在Sublime Text 3中输入中文  点滴记录——在Ubuntu 14.04中使SublimeText 3支持中文输入法">
 
 
 
@@ -132,7 +133,7 @@
 
 
 
-  <title> Ubuntu | Kevinzjy's Blog </title>
+  <title> Ubuntu 16.04 LTS 安装搜狗拼音输入法 | Kevinzjy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -330,7 +331,7 @@
             
             
               
-                Ubuntu
+                Ubuntu 16.04 LTS 安装搜狗拼音输入法
               
             
           </h1>
@@ -355,6 +356,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -387,8 +410,38 @@
 
       
         <p>记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法</p>
+<p>参考:</p>
+<ul>
+<li><p><a href="http://sklcc.github.io/blog/2014/11/21/how-to-input-chinese-in-sub/" target="_blank" rel="external">如何在Sublime Text 3中输入中文</a></p>
+</li>
+<li><p><a href="http://blog.csdn.net/cywosp/article/details/32350899" target="_blank" rel="external">点滴记录——在Ubuntu 14.04中使SublimeText 3支持中文输入法</a></p>
+</li>
+</ul>
 <a id="more"></a>
-<h3 id="安装Fcitx输入法"><a href="#安装Fcitx输入法" class="headerlink" title="安装Fcitx输入法"></a>安装Fcitx输入法</h3>
+<h3 id="下载安装Sougou输入法"><a href="#下载安装Sougou输入法" class="headerlink" title="下载安装Sougou输入法"></a>下载安装Sougou输入法</h3><p>在搜狗输入法<a href="http://pinyin.sogou.com/linux/?r=pinyin" target="_blank" rel="external">官方页面</a>，下载适合系统的deb安装文件，安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo dpkg -i sogoupinyin_2.1.0.0086_amd64.deb</div><div class="line"><span class="comment"># 如果出现依赖未安装</span></div><div class="line">sudo apt install <span class="_">-f</span></div><div class="line">sudo dpkg -i sogoupinyin_2.1.0.0086_amd64.deb</div></pre></td></tr></table></figure>
+<h3 id="设置Fcitx输入法"><a href="#设置Fcitx输入法" class="headerlink" title="设置Fcitx输入法"></a>设置Fcitx输入法</h3><p>在Ubuntu中，打开System Settings -&gt; Language Support，根据提示安装完整的语言支持，并将Keyboard input method system设为fcitx</p>
+<h3 id="在Fcitx中添加搜狗输入法"><a href="#在Fcitx中添加搜狗输入法" class="headerlink" title="在Fcitx中添加搜狗输入法"></a>在Fcitx中添加搜狗输入法</h3><p>打开Terminal(快捷键 Ctrl + Alt + T)，输入<code>fcitx-configtool</code>，点击添加，去掉勾选的Only Show Current Language，添加Sougou Pinyin</p>
+<p>在System Settings -&gt; Keyboard -&gt; Shortcuts -&gt; Typing中，将Switch to next source和Switch to previous source的选项，都设为Diabled(点击选项后，按Backspace)。这样可以禁用系统的切换输入法快捷键，搜狗拼音输入法的默认快捷键为<code>Ctrl + ,</code></p>
+<h3 id="在Sublime-Text-3中添加搜狗输入法的支持"><a href="#在Sublime-Text-3中添加搜狗输入法的支持" class="headerlink" title="在Sublime Text 3中添加搜狗输入法的支持"></a>在Sublime Text 3中添加搜狗输入法的支持</h3><p>Sublime Text是一款跨平台下十分好用的文本编辑软件，然而在Ubuntu下，默认安装的Sublime Text 3不支持搜狗中文输入法，需要手动编译一个共享库</p>
+<h4 id="安装依赖软件"><a href="#安装依赖软件" class="headerlink" title="安装依赖软件"></a>安装依赖软件</h4><p>安装编译共享库的依赖’build-essential’和’libgtk2.0-dev’</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install build-essential libgtk2.0-dev</div></pre></td></tr></table></figure>
+<h4 id="编写sublime-imfix-c文件"><a href="#编写sublime-imfix-c文件" class="headerlink" title="编写sublime-imfix.c文件"></a>编写sublime-imfix.c文件</h4><p>在随意文件添加一个sublime-imfix.c，内容为</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * sublime-imfix.c</div><div class="line"> * Use LD_PRELOAD to interpose some function to fix sublime input method support for linux.</div><div class="line"> * By Cjacker Huang &lt;jianzhong.huang at i-soft.com.cn&gt; *</div><div class="line"> *</div><div class="line"> * gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC</div><div class="line"> * LD_PRELOAD=./libsublime-imfix.so sublime_text</div><div class="line"> */</div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;gtk/gtk.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;gdk/gdkx.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> GdkSegment GdkRegionBox;</div><div class="line"></div><div class="line"><span class="keyword">struct</span> _GdkRegion</div><div class="line">&#123;</div><div class="line">    <span class="keyword">long</span> size;</div><div class="line">    <span class="keyword">long</span> numRects;</div><div class="line">    GdkRegionBox *rects;</div><div class="line">    GdkRegionBox extents;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">GtkIMContext *local_context;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span></span></div><div class="line"><span class="title">gdk_region_get_clipbox</span> <span class="params">(<span class="keyword">const</span> GdkRegion *region,</span></div><div class="line">                        GdkRectangle    *rectangle)</div><div class="line">&#123;</div><div class="line">    g_return_if_fail (region != <span class="literal">NULL</span>);</div><div class="line">    g_return_if_fail (rectangle != <span class="literal">NULL</span>);</div><div class="line"></div><div class="line">    rectangle-&gt;x = region-&gt;extents.x1;</div><div class="line">    rectangle-&gt;y = region-&gt;extents.y1;</div><div class="line">    rectangle-&gt;width = region-&gt;extents.x2 - region-&gt;extents.x1;</div><div class="line">    rectangle-&gt;height = region-&gt;extents.y2 - region-&gt;extents.y1;</div><div class="line">    GdkRectangle rect;</div><div class="line">    rect.x = rectangle-&gt;x;</div><div class="line">    rect.y = rectangle-&gt;y;</div><div class="line">    rect.width = <span class="number">0</span>;</div><div class="line">    rect.height = rectangle-&gt;height;</div><div class="line"></div><div class="line">    <span class="comment">//The caret width is 2;</span></div><div class="line">    <span class="comment">//Maybe sometimes we will make a mistake, but for most of the time, it should be the caret.</span></div><div class="line">    <span class="keyword">if</span> (rectangle-&gt;width == <span class="number">2</span> &amp;&amp; GTK_IS_IM_CONTEXT(local_context)) &#123;</div><div class="line">        gtk_im_context_set_cursor_location(local_context, rectangle);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//this is needed, for example, if you input something in file dialog and return back the edit area</span></div><div class="line"><span class="comment">//context will lost, so here we set it again.</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">static</span> GdkFilterReturn <span class="title">event_filter</span> <span class="params">(GdkXEvent *xevent, GdkEvent *event, gpointer im_context)</span></span></div><div class="line">&#123;</div><div class="line">    XEvent *xev = (XEvent *)xevent;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (xev-&gt;type == KeyRelease &amp;&amp; GTK_IS_IM_CONTEXT(im_context)) &#123;</div><div class="line">        GdkWindow *win = g_object_get_data(G_OBJECT(im_context), <span class="string">"window"</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (GDK_IS_WINDOW(win)) &#123;</div><div class="line">            gtk_im_context_set_client_window(im_context, win);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> GDK_FILTER_CONTINUE;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">gtk_im_context_set_client_window</span> <span class="params">(GtkIMContext *context,</span></span></div><div class="line">                                       GdkWindow    *window)</div><div class="line">&#123;</div><div class="line">    GtkIMContextClass *klass;</div><div class="line">    g_return_if_fail (GTK_IS_IM_CONTEXT (context));</div><div class="line">    klass = GTK_IM_CONTEXT_GET_CLASS (context);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (klass-&gt;set_client_window) &#123;</div><div class="line">        klass-&gt;set_client_window (context, window);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (!GDK_IS_WINDOW (window)) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    g_object_set_data(G_OBJECT(context), <span class="string">"window"</span>, window);</div><div class="line">    <span class="keyword">int</span> width = gdk_window_get_width(window);</div><div class="line">    <span class="keyword">int</span> height = gdk_window_get_height(window);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (width != <span class="number">0</span> &amp;&amp; height != <span class="number">0</span>) &#123;</div><div class="line">        gtk_im_context_focus_in(context);</div><div class="line">        local_context = context;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    gdk_window_add_filter (window, event_filter, context);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在该文件所在目录下，编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -shared -o libsublime-imfix.so sublime-imfix.c  `pkg-config --libs --cflags gtk+-2.0` <span class="_">-f</span>PIC</div></pre></td></tr></table></figure>
+<p>编译后可以得到libsublime-imfix.so这个共享库</p>
+<h4 id="添加共享库到Sublime-Text-3"><a href="#添加共享库到Sublime-Text-3" class="headerlink" title="添加共享库到Sublime Text 3"></a>添加共享库到Sublime Text 3</h4><p>首先，测试一下是否在Sublime Text 3中可以输入中文</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LD_PRELOAD=./libsublime-imfix.so subl</div></pre></td></tr></table></figure>
+<p>如果可以正常使用搜狗输入法，进行接下来的配置</p>
+<p>将libsublime-imfix.so拷贝到系统库的默认路径下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cp libsumlime-imfix.so /usr/lib</div></pre></td></tr></table></figure>
+<p>修改Sublime的执行文件<code>/usr/bin/subl</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">LD_PRELOAD=/usr/lib/libsublime-imfix.so exec  /opt/sublime_text/sublime_text &quot;$@&quot;</div></pre></td></tr></table></figure>
+<p>修改Sublime的快捷方式<code>/usr/share/applications/sublime_text.desktop</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Exec=/opt/sublime_text/sublime_text %F</span></div><div class="line"><span class="comment"># 修改为</span></div><div class="line">Exec=bash -c <span class="string">'LD_PRELOAD=/usr/lib/libsublime-imfix.so /opt/sublime_text/sublime_text'</span> %F</div><div class="line"></div><div class="line"><span class="comment"># Exec=/opt/sublime_text/sublime_text -n</span></div><div class="line"><span class="comment"># 修改为</span></div><div class="line">Exec=bash -c <span class="string">'LD_PRELOAD=/usr/lib/libsublime-imfix.so /opt/sublime_text/sublime_text'</span> -n</div></pre></td></tr></table></figure>
+<p>这样就可以在命令行<code>subl</code>和系统Application中的Sublime Text 3中输入中文了</p>
+
       
     </div>
 
@@ -414,6 +467,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+        </div>
       
 
       
@@ -517,7 +578,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -528,7 +589,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -570,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Fcitx输入法"><span class="nav-number">1.</span> <span class="nav-text">安装Fcitx输入法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装Sougou输入法"><span class="nav-number">1.</span> <span class="nav-text">下载安装Sougou输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置Fcitx输入法"><span class="nav-number">2.</span> <span class="nav-text">设置Fcitx输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Fcitx中添加搜狗输入法"><span class="nav-number">3.</span> <span class="nav-text">在Fcitx中添加搜狗输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Sublime-Text-3中添加搜狗输入法的支持"><span class="nav-number">4.</span> <span class="nav-text">在Sublime Text 3中添加搜狗输入法的支持</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">4.1.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写sublime-imfix-c文件"><span class="nav-number">4.2.</span> <span class="nav-text">编写sublime-imfix.c文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加共享库到Sublime-Text-3"><span class="nav-number">4.3.</span> <span class="nav-text">添加共享库到Sublime Text 3</span></a></li></ol></li></ol></div>
             
 
           </div>

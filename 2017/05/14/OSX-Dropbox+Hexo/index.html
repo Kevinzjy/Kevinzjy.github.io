@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MAC,Hexo," />
+  <meta name="keywords" content="Hexo,MAC," />
 
 
 
@@ -90,13 +90,13 @@
 
 
 <meta name="description" content="在Mac上许多配置与Linux系统不大相同">
-<meta name="keywords" content="MAC,Hexo">
+<meta name="keywords" content="Hexo,MAC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MAC下使用Dropbox同步更新Hexo博客">
 <meta property="og:url" content="https://kevinzjy.github.io/2017/05/14/OSX-Dropbox+Hexo/index.html">
 <meta property="og:site_name" content="Kevinzjy&#39;s Blog">
 <meta property="og:description" content="在Mac上许多配置与Linux系统不大相同">
-<meta property="og:updated_time" content="2017-05-14T08:30:30.000Z">
+<meta property="og:updated_time" content="2017-05-15T02:23:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MAC下使用Dropbox同步更新Hexo博客">
 <meta name="twitter:description" content="在Mac上许多配置与Linux系统不大相同">
@@ -369,19 +369,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MAC/" itemprop="url" rel="index">
-                    <span itemprop="name">MAC</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MAC/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/OS-X/" itemprop="url" rel="index">
+                    <span itemprop="name">OS X</span>
                   </a>
                 </span>
 
@@ -425,7 +414,7 @@
 <h2 id="OS-X上Hexo博客的搭建"><a href="#OS-X上Hexo博客的搭建" class="headerlink" title="OS X上Hexo博客的搭建"></a>OS X上Hexo博客的搭建</h2><p>本人使用Dropbox同步Github pages目录，这样可以随时随地在设备上编辑博客并更新</p>
 <p>在实际使用中，Ubuntu / Windows (Git bash) / Windows (WSL) 中使用Hexo十分完美，但是在OS X上，遇到了几个小问题</p>
 <h3 id="Dropbox在OS-X中无法实时同步"><a href="#Dropbox在OS-X中无法实时同步" class="headerlink" title="Dropbox在OS X中无法实时同步"></a>Dropbox在OS X中无法实时同步</h3><p>在Mac上修改文件，Windows下面会立即同步文件的更新, 但是反过来，Win下修改文件后，Mac下的Dropbox没有任何反应，必须要关闭后重新打开Dropbox才能开始同步</p>
-<p>目前从官网下载了最新版本。。。过一段时间测试一下。</p>
+<p>目前从官网下载了最新版本，暂时还没重现这个问题，版本号<code>v25.4.28</code></p>
 <h3 id="Hexo-deploy的时候提示Error-Cannot-find-module-39-build-Release-DTraceProviderBindings-39"><a href="#Hexo-deploy的时候提示Error-Cannot-find-module-39-build-Release-DTraceProviderBindings-39" class="headerlink" title="Hexo deploy的时候提示Error: Cannot find module &#39;./build/Release/DTraceProviderBindings&#39;"></a>Hexo deploy的时候提示<code>Error: Cannot find module &#39;./build/Release/DTraceProviderBindings&#39;</code></h3><p>在Mac上，使用Nodejs安装了Hexo之后<code>hexo deploy</code>时，会出现上述报错，可能是因为Hexo版本过低，或者插件没有安装完全</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install hexo --no-optional</div><div class="line"><span class="comment"># 如果仍然不行</span></div><div class="line">npm uninstall hexo-cli -g</div><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
 
@@ -457,9 +446,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MAC/" rel="tag"># MAC</a>
-          
             <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/MAC/" rel="tag"># MAC</a>
           
         </div>
       
@@ -569,7 +558,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -580,7 +569,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
