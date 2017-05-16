@@ -43,6 +43,5 @@ Models:
 
 ### DEGSeq: MA-based method
 
-$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+$$\lambda = x * n * l$$
 
-\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)

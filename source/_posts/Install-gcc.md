@@ -62,9 +62,12 @@ make install
 
 ### 添加新安装的GCC到环境变量
 
+**Note**: `$LD_LIBRARY_PATH`中要加入两个目录
+
 ```bash
 export PATH=/panfs/home/zhao/zhangjy/software/gcc/bin:$PATH
-export LD_LIBRARY_PATH=/panfs/home/zhao/zhangjy/software/gcc/lib/gcc/x86_64-pc-linux-gnu/6.3.0:/panfs/home/zhao/zhangjy/software/gcc/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/panfs/home/zhao/zhangjy/software/gcc/lib/gcc/x86_64-pc-linux-gnu/6.3.0:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/panfs/home/zhao/zhangjy/software/gcc/lib64:$LD_LIBRARY_PATH
 ```
 
 ### 当安装其他软件时，指定调用新版的GCC
