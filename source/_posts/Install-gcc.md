@@ -122,3 +122,10 @@ cd cmake-3.7.2
 ./bootstrap --prefix=/panfs/home/zhao/zhangjy/software/cmake
 gmake
 ```
+
+### 添加到环境变量
+
+```bash
+export PATH=/panfs/home/zhao/zhangjy/software/cmake/bin:$PATH
+```
+
