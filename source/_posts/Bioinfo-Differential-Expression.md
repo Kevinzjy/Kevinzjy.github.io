@@ -41,4 +41,8 @@ Models:
 
         * delta method: estimate variance of log-fold change (Cufflinks)
 
+### DEGSeq: MA-based method
 
+$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+
+\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
