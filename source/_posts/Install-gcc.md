@@ -120,7 +120,7 @@ cd cmake-3.7.2
 
 ```bash
 ./bootstrap --prefix=/panfs/home/zhao/zhangjy/software/cmake
-gmake
+gmake && gmake install
 ```
 
 ### 添加到环境变量
@@ -128,4 +128,3 @@ gmake
 ```bash
 export PATH=/panfs/home/zhao/zhangjy/software/cmake/bin:$PATH
 ```
-
