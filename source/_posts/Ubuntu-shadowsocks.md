@@ -107,7 +107,7 @@ crontab -e
 service crontab restart 
 ```
 
-#### Step3: 进行基本的配置
+#### Step4: 其他的配置
 
 安装常用的oh-my-zsh, htop, glances等软件，参考[Ubuntu软件推荐](https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/)
 
