@@ -58,7 +58,7 @@ min(t,0)|P_Z(z\geq t)=c, if\ mean(Z)<0
 \right.
 $$
 
-其中\\(P_z\\)是\\(z=log_2(y_2/y_1)\\)的后验分布，\\(c\\)是一个自己定义的参数，默认值为0.01。如果该基因表达上调，则\\(mean(Z)\geq 0\\)，log2 fold change大于t的概率是\\(1-c\\)。那么，在默认的c下\\(t< mean(Z)\\)，\\(GFOLD(c)\\)计算时根据\\(max(t,0\\)，将取值为负值的t变成0。
+其中\\(P_z\\)是\\(z=log_2(y_2/y_1)\\)的后验分布，\\(c\\)是一个自己定义的参数，默认值为0.01。如果该基因表达上调，则\\(mean(Z)\geq 0\\)，log2 fold change大于t的概率是\\(1-c\\)。那么，在默认的c下\\(t< mean(Z)\\)，\\(GFOLD(c)\\)计算时根据\\(max(t,0)\\)，将取值为负值的t变成0。
 
 如果\\(GFOLD(c)\\)为0，说明该基因的表达量没有明显变化。而且mean(Z)<0的情况和mean(Z)>0时是对称的，因此可以通过\\(GFOLD(c)\\)来为基因的表达量变化进行降序排名，排名靠前的基因有明显的表达上调，而排名末尾的基因为表达量明显下调。
 
@@ -70,7 +70,11 @@ $$
 
 ### GFOLD的实现方法
 
-在N足够大的时候，可以发现,log2 fold change的后验概率可以近似于正态分布。根据gamma分布的性质，两个gamma分布的比值为beta分布，但是计算闭合形式的方程过于浪费时间，因此可以使用sampling的方法进行粗略的估算。文章中，首先基于Gamma分布对于\\(y_1\\), \\(y_2\\)进行了随机抽样，进而获得\\(z\\)的分布，最终可以算出GFold(c)的值，虽然在小数点精度不是很高，但是与传统的P-value和直接计算Fold change的方法相比，GFOLD的排名应该仍然更可信。
+在N足够大的时候，可以发现,log2 fold change的后验概率可以近似于正态分布。根据[gamma分布的性质](https://en.wikipedia.org/wiki/Gamma_distribution):
+
+>If \\(X\sim Gamma(\alpha, \theta)\\) and \\(Y\sim Gamma(\beta, \theta)\\) are independently distributed, then \\(X/(X+Y)\\) has a beta distribution with parameters α and β.
+
+可以计算出GFOLD的精确值，但是计算闭合形式的方程过于浪费时间，我们可以使用sampling方法进行粗略的估算。文章中，首先基于Gamma分布对于\\(y_1\\), \\(y_2\\)进行了随机抽样，进而获得\\(z\\)的分布，最终可以算出GFold(c)的值，虽然在小数点精度不是很高，但是与传统的P-value和直接计算Fold change的方法相比，GFOLD的排名应该仍然更可信。
 
 
 
