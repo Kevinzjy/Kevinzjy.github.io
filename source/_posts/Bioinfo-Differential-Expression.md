@@ -72,7 +72,7 @@ $$
 
 在N足够大的时候，可以发现,log2 fold change的后验概率可以近似于正态分布。根据[gamma分布的性质](https://en.wikipedia.org/wiki/Gamma_distribution):
 
->If \\(X\sim Gamma(\alpha, \theta)\\) and \\(Y\sim Gamma(\beta, \theta)\\) are independently distributed, then \\(X/(X+Y)\\) has a beta distribution with parameters α and β.
+>If \\(X\sim Gamma(\alpha, \theta)\\) and \\(Y\sim Gamma(\beta, \theta)\\) are independently distributed, then \\(X/(X+Y)\\) has a beta distribution with parameters \\(\alpha\\) and \\(\beta\\).
 
 可以计算出GFOLD的精确值，但是计算闭合形式的方程过于浪费时间，我们可以使用sampling方法进行粗略的估算。文章中，首先基于Gamma分布对于\\(y_1\\), \\(y_2\\)进行了随机抽样，进而获得\\(z\\)的分布，最终可以算出GFold(c)的值，虽然在小数点精度不是很高，但是与传统的P-value和直接计算Fold change的方法相比，GFOLD的排名应该仍然更可信。
 
