@@ -30,6 +30,12 @@ sudo apt install axel
 axel -n 4 -o ./  url
 ```
 
+### Ack: 比grep更强大
+
+```bash
+sudo apt install ack-grep
+```
+
 ### 附: 常用软件包在apt中的名称
 
 | Description | Name  |
