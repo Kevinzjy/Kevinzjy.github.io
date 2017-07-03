@@ -167,7 +167,7 @@ LD_PRELOAD=./libsublime-imfix.so subl
 将libsublime-imfix.so拷贝到系统库的默认路径下：
 
 ```bash
-sudo cp libsumlime-imfix.so /usr/lib
+sudo cp libsublime-imfix.so /usr/lib
 ```
 
 修改Sublime的执行文件`/usr/bin/subl`
