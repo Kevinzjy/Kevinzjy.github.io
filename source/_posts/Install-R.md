@@ -33,7 +33,7 @@ make && make install
 cd $R_SRC
 wget http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz -O ./bzip2-1.0.6.tar.gz
 tar zxvf bzip2-1.0.6.tar.gz
-cd bzip2
+cd bzip2-1.0.6
 make && make install PREFIX=$R_HOME
 ```
 
@@ -41,7 +41,7 @@ make && make install PREFIX=$R_HOME
 
 ```bash
 cd $R_SRC
-wget http://tukaani.org/xz/xz-5.2.3.tar.gz 
+wget --no-check-certificate http://tukaani.org/xz/xz-5.2.3.tar.gz 
 tar zxvf xz-5.2.3.tar.gz
 cd xz-5.2.3
 ./configure --prefix=$R_HOME
