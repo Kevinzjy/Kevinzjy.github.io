@@ -96,6 +96,6 @@ make && make install
 
 ```
 export PATH=/panfs/home/zhao/zhangjy/software/R/bin:$PATH
-export LD_LIBRARY_PATH=/panfs/home/zhao/zhangjy/software/R/lib:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/panfs/home/zhao/zhangjy/software/R/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/panfs/home/zhao/zhangjy/software/R/include:$LD_LIBRARY_PATH
 ```
