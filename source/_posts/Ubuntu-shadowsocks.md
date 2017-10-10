@@ -7,17 +7,22 @@ tags: [Linux, Ubuntu, VPS]
 
 最近把DigitalOcean上的VPS的ssh服务搞挂了。。。重新配置了一个Droplet，记录一下配置过程
 
+更新: DigitalOcean因为下载盗版电影被封了。。。现在换了一个Vultr的
+
 <!-- more -->
 
 #### VPS的系统配置
 
 + 系统：Ubuntu 16.04 LTS
-+ 内存: 512 MB Memory
-+ 硬盘: 20 GB Disk
++ 内存: 1024 MB Memory
++ 硬盘: 25 GB SSD
++ 流量：1000 GB
++ 费用: $5 / 月
 
-#### Step1: 建立Droplet
+#### Step1: 建立Server
 
-在DigitalOcean上面新建一个Droplet
+~~在DigitalOcean上面新建一个Droplet~~
+在Vultr中新建需要的server，这里选择的是日本的机房
 
 #### Step2: 登录VPS进行配置
 
@@ -59,6 +64,7 @@ apt upgrade # 升级
 sudo adduser zhangjy # 新建用户
 sudo usermod -G admin zhangjy # 将用户添加到root
 cp /root/.ssh /home/zhangjy # 复制登录秘钥，开启新用户的远程登录
+chown zhangjy:zhangjy /home/zhangjy/.ssh
 ```
 
 下面的操作可以退出后使用新建的账户进行操作
@@ -69,7 +75,8 @@ DigitalOcean上的VPS最大的作用就是可以同时连接ipv4和ipv6服务，
 
 ```bash
 sudo intall python-pip
-pip install --upgrade pip
+sudo pip install --upgrade pip
+sudo pip install setuptools
 sudo pip install shadowsocks
 ```
 
@@ -86,28 +93,101 @@ sudo pip install shadowsocks
 }
 ```
 
-编辑`vim /root/shadowsocks.sh`，内容
+现在，可以手动开启shadowsocks服务了
 
 ```bash
 ssserver -c /etc/shadowsocks.json -d restart
 ```
 
-配置每天重启
+### Step4: 配置shadowsocks服务开机自动启动
+
+创建脚本 `/etc/init.d/shadowsocks`
+
+```bash
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          shadowsocks
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: start shadowsocks 
+# Description:       start shadowsocks
+### END INIT INFO
+
+ssstart(){
+    /usr/local/bin/ssserver -c /etc/shadowsocks.json -d start
+}
+
+ssstop(){
+    /usr/local/bin/ssserver-d stop
+}
+
+ssreload(){
+    /usr/local/bin/ssserver -c /etc/shadowsocks.json -d restart
+}
+
+case "$1" in
+start)
+    start
+    ;;
+stop)
+    stop
+    ;;
+reload)
+     ssreload
+     ;;
+*)
+    echo "Usage: $0 {start|reload|stop}"
+    exit 1
+    ;;
+esac
+```
+
+增加文件的执行权限，并加入rc.d中，实现开机启动
+
+```
+sudo chmod +x /etc/init.d/shadowsocks
+sudo update-rc.d shadowsocks defaults
+```
+
+手动开启shadowsocks服务
+
+```
+sudo service shadowsocks start
+```
+
+### Step5: shadowsocks自动重连
+
+创建`autostart.sh`
+
+```bash
+#!/bin/bash
+pids="$($_CMD pgrep ssserver)"
+if [ ! $pids ]; then
+        /usr/local/bin/ssserver -c /etc/shadowsocks.json -d start >> /root/ss.log
+        newid="$($_CMD pgrep ssserver)"
+        echo "Shadowsocks restarted at pid: $newid" >> /root/ss.log
+fi
+```
+
+在crontab配置中，配置每天凌晨重启，以及每分钟检测断线重连
 
 ```bash
 crontab -e 
 # 选择[3]: vim.basic
-# 最后一行加入
-0 4 * * * /root/shadowsocks.sh >> /root/cron.log
+# 最后加入
+0 4 * * * ssserver -c /etc/shadowsocks.json -d restart >> /root/ss.log
+*/1 * * * * /root/autostart.sh
 ```
 
 重启Crontab，使定时任务生效
 
 ```
-service crontab restart 
+service cron reload 
 ```
 
-#### Step4: 其他的配置
+#### 其他的配置
 
 安装常用的oh-my-zsh, htop, glances等软件，参考[Ubuntu软件推荐](https://kevinzjy.github.io/2017/05/13/Ubuntu-softwares/)
 
