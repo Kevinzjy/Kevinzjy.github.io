@@ -99,7 +99,7 @@ sudo pip install shadowsocks
 ssserver -c /etc/shadowsocks.json -d restart
 ```
 
-### Step4: 配置shadowsocks服务开机自动启动
+#### Step4: 配置shadowsocks服务开机自动启动
 
 创建脚本 `/etc/init.d/shadowsocks`
 
@@ -157,7 +157,7 @@ sudo update-rc.d shadowsocks defaults
 sudo service shadowsocks start
 ```
 
-### Step5: shadowsocks自动重连
+#### Step5: shadowsocks自动重连
 
 创建`autostart.sh`
 
