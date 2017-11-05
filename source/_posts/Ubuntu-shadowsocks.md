@@ -1,6 +1,6 @@
 ---
 title: Ubuntu VPS上搭建Shadowsocks IPV6代理
-date: 2017-05-19 14:43:36
+date: 2017-11-05 16:31:42
 categories: Linux
 tags: [Linux, Ubuntu, VPS]
 ---
@@ -8,6 +8,8 @@ tags: [Linux, Ubuntu, VPS]
 最近把DigitalOcean上的VPS的ssh服务搞挂了。。。重新配置了一个Droplet，记录一下配置过程
 
 更新: DigitalOcean因为下载盗版电影被封了。。。现在换了一个Vultr的
+
+更新: Vultr VPS的IP被封了。。。国内电信IPV4环境下无法登陆，更换到阿里云美国节点ECS
 
 <!-- more -->
 
@@ -62,9 +64,9 @@ apt upgrade # 升级
 
 ```bash
 sudo adduser zhangjy # 新建用户
-sudo usermod -G admin zhangjy # 将用户添加到root
-cp /root/.ssh /home/zhangjy # 复制登录秘钥，开启新用户的远程登录
-chown zhangjy:zhangjy /home/zhangjy/.ssh
+# 在 /etc/sudoers 中添加root权限
+# User privilege specification
+zhangjy ALL=(ALL) ALL 
 ```
 
 下面的操作可以退出后使用新建的账户进行操作
@@ -74,7 +76,7 @@ chown zhangjy:zhangjy /home/zhangjy/.ssh
 DigitalOcean上的VPS最大的作用就是可以同时连接ipv4和ipv6服务，在搭建Shadowsocks服务后，可以在校园网下用IPV6代理实现直接访问IPV4网址，不需要登录网关，同时避开了流量计费系统。
 
 ```bash
-sudo intall python-pip
+sudo apt intall python-pip
 sudo pip install --upgrade pip
 sudo pip install setuptools
 sudo pip install shadowsocks
@@ -85,7 +87,7 @@ sudo pip install shadowsocks
 ```json
 {
     "server": "::", # 监听IPV6地址
-    "server_port": 18286, # 服务器端口
+    "server_port": 443, # 使用443端口，更加“安全”
     "local_port": 1080,
     "password": "PASSWORD", # 密码
     "timeout": 600,
@@ -129,14 +131,14 @@ ssreload(){
 
 case "$1" in
 start)
-    start
+    ssstart
     ;;
 stop)
-    stop
+    ssstop
     ;;
 reload)
-     ssreload
-     ;;
+    ssreload
+    ;;
 *)
     echo "Usage: $0 {start|reload|stop}"
     exit 1
