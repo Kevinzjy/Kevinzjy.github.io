@@ -20,7 +20,7 @@ wget "http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-cento
 
 ```bash
 # Unpacking the Toolkit 
-tar zxvf sratoolkit.current-centos_linux64.tar.gz
+tar -zxvf sratoolkit.current-centos_linux64.tar.gz
 cd sratoolkit.2.8.2-1-centos_linux64
 ```
 
