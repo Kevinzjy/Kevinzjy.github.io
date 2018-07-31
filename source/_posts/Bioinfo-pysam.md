@@ -1,8 +1,8 @@
 ---
-title: Pysam使用心得
+title: pysam处理bam文件心得
 date: 2018-07-27 11:13:50
 categories: Bioinformatics
-tags: [Bioinfomatics, python]
+tags: [Bioinfomatics, python, pysam]
 ---
 
 # pysam以及Samtools使用心得
