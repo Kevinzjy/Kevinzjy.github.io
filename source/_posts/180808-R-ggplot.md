@@ -1,6 +1,6 @@
 ---
 title: ggplot2作图技巧
-date: 2017-03-24 23:04:04
+date: 2018-08-08 23:04:04
 categories: Bioinformatics
 tags: [Bioinfomatics, R, ggplot2]
 ---

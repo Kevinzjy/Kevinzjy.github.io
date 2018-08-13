@@ -11,7 +11,7 @@ PBS是一种十分常用的集群作业调度系统，主要包括openPBS, PBS P
 
 什么是TORQUE：
 
-    Terascale Open-source Resource and QUEue Manager (TORQUE) 是一个分布式计算节点和批处理作业的资源调度系统，常在高性能计算集群中用于计算作业的提交和管理。用户可以使用TORQUE将计算作业提交到不同计算队列，常用的命令包括qsub(提交作业), qstat(作业状态查询)和qdel(删除作业)
+> Terascale Open-source Resource and QUEue Manager (TORQUE) 是一个分布式计算节点和批处理作业的资源调度系统，常在高性能计算集群中用于计算作业的提交和管理。用户可以使用TORQUE将计算作业提交到不同计算队列，常用的命令包括qsub(提交作业), qstat(作业状态查询)和qdel(删除作业)
 
 官网地址： http://www.adaptivecomputing.com/support/documentation-index/torque-resource-manager-documentation/
 
