@@ -103,9 +103,6 @@ install.packages("ggsci")
 
 使用ggsci中nejm配色作为自动填充后
 
-{% asset_img p1_npg.png %}
-
-
 ```R
 library(ggsci)
 
@@ -164,7 +161,7 @@ p1_legend <- get_legend(p1_npg)
 
 {% asset_img p1_legend.png %}
 
-在提取出图例之后，可以使用plot_layout指定布局列数和每个子图的宽度
+在提取出图例之后，可以使用`plot_layout`指定布局列数和每个子图的宽度
 
 ```R
 p_merged <- p1_npg + guides(color=FALSE) +
