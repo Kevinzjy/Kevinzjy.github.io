@@ -115,13 +115,13 @@ p2_npg <- p2 + scale_fill_npg()
 
 ```
 
-可以看出，绘制出的图片色调明显更加协调了
+可以看出，利用`ggsci`绘制出的图片色调明显更加协调了
 
 {% asset_img p1_npg.png %}
 
 {% asset_img p2_npg.png %}
 
-ggsci提供了多个调色板，可以使用show_col命令进行查看
+ggsci提供了多个调色板，可以使用`sacles`包中`show_col`函数直接查看
 
 ```R
 mypal <- pal_npg("nrc", alpha=0.7)(9)
@@ -135,7 +135,7 @@ show_col(mypal)
 
 ## 利用patchwork合并图片
 
-在实际作图中，我们经常会遇到需要合并图片的需求，这时候之前安装的patchwork就派上用场了
+在实际作图中，我们经常会遇到需要合并图片的需求，这时候之前安装的`patchwork`就派上用场了
 
 ```R
 library(patchwork)
@@ -165,7 +165,7 @@ p1_legend <- get_legend(p1_npg)
 
 {% asset_img p1_legend.png %}
 
-在提取出图例之后，可以使用plot_layout指定布局列数和每个子图的宽度
+在提取出图例之后，可以使用`plot_layout`指定布局列数和每个子图的宽度
 
 ```R
 p_merged <- p1_npg + guides(color=FALSE) +
