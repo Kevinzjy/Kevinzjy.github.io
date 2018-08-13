@@ -23,7 +23,7 @@ sudo pip install glances[action,browser,cloud,cpuinfo,chart,docker,export,folder
 
 <!-- more -->
 
-### Axe: 好用的多线程下载工具
+### Axel: 好用的多线程下载工具
 
 ```bash
 sudo apt install axel
