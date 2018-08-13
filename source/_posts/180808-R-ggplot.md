@@ -116,6 +116,7 @@ p2_npg <- p2 + scale_fill_npg()
 
 {% asset_img p2_npg.png %}
 
+
 可以看出，绘制出的图片色调明显更加协调了，ggsci提供了多个调色板，可以使用`show_col`命令进行查看
 
 ```R
@@ -126,6 +127,7 @@ show_col(mypal)
 ```
 
 {% asset_img ggsci_npg_pal.png %}
+
 
 ## 利用patchwork合并图片
 
@@ -138,6 +140,7 @@ p <- p1_npg + p2_npg
 ```
 
 {% asset_img p_merged.png %}
+
 
 我们可以看到p1和p2直接拼接在一起了
 
