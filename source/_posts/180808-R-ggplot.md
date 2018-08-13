@@ -2,7 +2,7 @@
 title: ggplot2作图技巧
 date: 2018-08-08 23:04:04
 categories: Bioinformatics
-tags: [Bioinfomatics, R, ggplot2]
+tags: [Bioinfomatics, R, ggplot2 ]
 ---
 
 # patchwork实现ggplot多图拼接
@@ -112,9 +112,9 @@ p1_npg <- p1 + scale_color_npg()
 p2_npg <- p2 + scale_fill_npg()
 ```
 
-{% asset_img p1_npg.png %}
+{% asset_img p1.png %}
 
-{% asset_img p2_npg.png %}
+{% asset_img p2.png %}
 
 
 可以看出，绘制出的图片色调明显更加协调了，ggsci提供了多个调色板，可以使用`show_col`命令进行查看
@@ -139,7 +139,7 @@ library(patchwork)
 p <- p1_npg + p2_npg
 ```
 
-{% asset_img p_merged.png %}
+{% asset_img p.png %}
 
 
 我们可以看到p1和p2直接拼接在一起了
@@ -169,7 +169,7 @@ p_merged <- p1_npg + guides(color=FALSE) +
     p1_legend + plot_layout(ncol=3, widths = c(3,3,1))
 ```
 
-{% asset_img p.png %}
+{% asset_img p_merged.png %}
 
 ### Tips: ggplot保存文件
 
