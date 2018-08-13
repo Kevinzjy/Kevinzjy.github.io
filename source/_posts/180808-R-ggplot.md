@@ -104,13 +104,13 @@ install.packages("ggsci")
 
 使用ggsci中nejm配色作为自动填充后
 
-```R
+{% codeblock lang:R %}
 library(ggsci)
 
 p1_npg <- p1 + scale_color_npg()
 
 p2_npg <- p2 + scale_fill_npg()
-```
+{% endcodeblock %}
 
 {% asset_img p1_npg.png %}
 
@@ -133,11 +133,11 @@ show_col(mypal)
 
 在实际作图中，我们经常会遇到需要合并图片的需求，这时候之前安装的patchwork就派上用场了
 
-```R
+{% codeblock lang:R}
 library(patchwork)
 
 p <- p1_npg + p2_npg
-```
+{% endcodeblock %}
 
 {% asset_img p_merged.png %}
 
