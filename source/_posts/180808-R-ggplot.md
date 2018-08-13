@@ -98,7 +98,7 @@ p2 <- ggplot(subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
 
 `ggsci`总结了许多杂志常用的颜色，内置了多个调色板，该模块可以直接通过CRAN安装
 
-<!-- ```R
+```R
 install.packages("ggsci")
 ```
 
@@ -110,14 +110,15 @@ library(ggsci)
 p1_npg <- p1 + scale_color_npg()
 
 p2_npg <- p2 + scale_fill_npg()
-``` -->
+```
+
+可以看出，绘制出的图片色调明显更加协调了
 
 {% asset_img p1.png %}
 
 {% asset_img p2.png %}
 
-
-可以看出，绘制出的图片色调明显更加协调了，ggsci提供了多个调色板，可以使用`show_col`命令进行查看
+ggsci提供了多个调色板，可以使用`show_col`命令进行查看
 
 ```R
 mypal <- pal_npg("nrc", alpha=0.7)(9)
@@ -168,6 +169,8 @@ p_merged <- p1_npg + guides(color=FALSE) +
     p2_npg + guides(fill=FALSE) +
     p1_legend + plot_layout(ncol=3, widths = c(3,3,1))
 ```
+
+可以将p1,p2以及图例完美地拼接在一起
 
 {% asset_img p_merged.png %}
 
