@@ -117,12 +117,11 @@ p2_npg <- p2 + scale_fill_npg()
 
 可以看出，绘制出的图片色调明显更加协调了
 
-ggsci提供了多个调色板，可以使用`show_col`命令进行查看
-
 {% asset_img p1_npg.png %}
 
 {% asset_img p2_npg.png %}
 
+ggsci提供了多个调色板，可以使用show_col命令进行查看
 
 ```R
 mypal <- pal_npg("nrc", alpha=0.7)(9)
@@ -166,7 +165,7 @@ p1_legend <- get_legend(p1_npg)
 
 {% asset_img p1_legend.png %}
 
-在提取出图例之后，可以使用`plot_layout`指定布局列数和每个子图的宽度
+在提取出图例之后，可以使用plot_layout指定布局列数和每个子图的宽度
 
 ```R
 p_merged <- p1_npg + guides(color=FALSE) +
@@ -177,10 +176,6 @@ p_merged <- p1_npg + guides(color=FALSE) +
 {% asset_img p_merged.png %}
 
 可以将p1,p2以及图例完美地拼接在一起
-
-{% asset_img p_merged.png %}
-
-{% asset_img p_merged.png %}
 
 ### Tips: ggplot保存文件
 
