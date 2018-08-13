@@ -91,6 +91,7 @@ p2 <- ggplot(subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
 
 {% asset_img p2.png %}
 
+{% asset_img p1_npg.png %}
 
 我们可以看到，利用默认格式生成的图片配色是非常难看的...
 
@@ -111,8 +112,6 @@ p1_npg <- p1 + scale_color_npg()
 
 p2_npg <- p2 + scale_fill_npg()
 ```
-
-{% asset_img p1_npg.png %}
 
 可以看出，绘制出的图片色调明显更加协调了
 
