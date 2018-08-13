@@ -91,8 +91,6 @@ p2 <- ggplot(subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
 
 {% asset_img p2.png %}
 
-{% asset_img p1_npg.png %}
-
 我们可以看到，利用默认格式生成的图片配色是非常难看的...
 
 ### Tips: 利用ggsci进行颜色图片美化
@@ -105,17 +103,28 @@ install.packages("ggsci")
 
 使用ggsci中nejm配色作为自动填充后
 
+{% asset_img p1_npg.png %}
+
+
 ```R
 library(ggsci)
 
 p1_npg <- p1 + scale_color_npg()
 
 p2_npg <- p2 + scale_fill_npg()
+
 ```
+
+{% asset_img p1_npg.png %}
 
 可以看出，绘制出的图片色调明显更加协调了
 
+{% asset_img p1_npg.png %}
+
 ggsci提供了多个调色板，可以使用`show_col`命令进行查看
+
+{% asset_img p1_npg.png %}
+
 
 ```R
 mypal <- pal_npg("nrc", alpha=0.7)(9)
@@ -167,7 +176,11 @@ p_merged <- p1_npg + guides(color=FALSE) +
     p1_legend + plot_layout(ncol=3, widths = c(3,3,1))
 ```
 
+{% asset_img p_merged.png %}
+
 可以将p1,p2以及图例完美地拼接在一起
+
+{% asset_img p_merged.png %}
 
 {% asset_img p_merged.png %}
 
