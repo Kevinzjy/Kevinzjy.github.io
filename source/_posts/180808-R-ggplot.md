@@ -98,7 +98,7 @@ p2 <- ggplot(subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
 
 `ggsci`总结了许多杂志常用的颜色，内置了多个调色板，该模块可以直接通过CRAN安装
 
-```R
+<!-- ```R
 install.packages("ggsci")
 ```
 
@@ -110,7 +110,7 @@ library(ggsci)
 p1_npg <- p1 + scale_color_npg()
 
 p2_npg <- p2 + scale_fill_npg()
-```
+``` -->
 
 {% asset_img p1.png %}
 
