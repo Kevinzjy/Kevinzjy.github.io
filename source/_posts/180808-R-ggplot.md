@@ -121,7 +121,7 @@ p2_npg <- p2 + scale_fill_npg()
 
 {% asset_img p2_npg.png %}
 
-ggsci提供了多个调色板，可以使用`sacles`包中`show_col`函数直接查看
+ggsci提供了多个调色板，可以使用scales包中`show_col`函数直接查看
 
 ```R
 mypal <- pal_npg("nrc", alpha=0.7)(9)
@@ -143,10 +143,9 @@ library(patchwork)
 p <- p1_npg + p2_npg
 ```
 
+我们可以看到使用`patchwork`包后，一条命令就实现了p1和p2的拼接
+
 {% asset_img p.png %}
-
-
-我们可以看到p1和p2直接拼接在一起了
 
 ### Tips: 使用自定义函数提取图例
 
@@ -165,7 +164,7 @@ p1_legend <- get_legend(p1_npg)
 
 {% asset_img p1_legend.png %}
 
-在提取出图例之后，可以使用`plot_layout`指定布局列数和每个子图的宽度
+在提取出图例之后，可以使用plot_layout指定布局列数和每个子图的宽度
 
 ```R
 p_merged <- p1_npg + guides(color=FALSE) +
