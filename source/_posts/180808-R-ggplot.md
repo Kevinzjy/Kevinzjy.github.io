@@ -112,11 +112,9 @@ p1_npg <- p1 + scale_color_npg()
 p2_npg <- p2 + scale_fill_npg()
 ```
 
+{% asset_img p1_npg.png %}
+
 可以看出，绘制出的图片色调明显更加协调了
-
-{% asset_img p1.png %}
-
-{% asset_img p2.png %}
 
 ggsci提供了多个调色板，可以使用`show_col`命令进行查看
 
