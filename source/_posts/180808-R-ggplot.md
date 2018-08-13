@@ -121,7 +121,7 @@ p2_npg <- p2 + scale_fill_npg()
 
 {% asset_img p2_npg.png %}
 
-ggsci提供了多个调色板，可以使用scales包中`show_col`函数直接查看
+ggsci提供了多个调色板，可以使用`scales`包中`show_col`函数直接查看
 
 ```R
 mypal <- pal_npg("nrc", alpha=0.7)(9)
