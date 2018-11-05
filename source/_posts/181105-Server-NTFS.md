@@ -109,3 +109,8 @@ $ mount.exfat /dev/sdc2 /NAS
 ```
 umount -l /NAS
 ```
+
+***
+
+> 参考链接：
+> [1]. http://docs.gz.ro/node/162
