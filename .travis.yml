@@ -8,6 +8,7 @@ install:
 script:
   - hexo cl
   - hexo g
+  - hexo algolia
 
 after_success:
   - cd public
