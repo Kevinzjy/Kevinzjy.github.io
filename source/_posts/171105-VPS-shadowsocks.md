@@ -36,9 +36,9 @@ sudo passwd root #修改ROOT密码
 ```
 
 > Enter new UNIX password: # 输入新密码
-> 
+>
 > Retype new UNIX password: # 再次输入
-> 
+>
 > passwd: password updated successfully
 
 修改时区
@@ -48,9 +48,9 @@ dpkg-reconfigure tzdata #修改时区，选择Asia/Shanghai
 ```
 
 > Current default time zone: 'Asia/Shanghai'
-> 
+>
 > Local time is now:      Fri May 19 15:19:57 CST 2017.
-> 
+>
 > Universal Time is now:  Fri May 19 07:19:57 UTC 2017.
 
 更新APT源
@@ -66,7 +66,7 @@ apt upgrade # 升级
 sudo adduser zhangjy # 新建用户
 # 在 /etc/sudoers 中添加root权限
 # User privilege specification
-zhangjy ALL=(ALL) ALL 
+zhangjy ALL=(ALL) ALL
 ```
 
 下面的操作可以退出后使用新建的账户进行操作
@@ -95,6 +95,26 @@ sudo pip install shadowsocks
 }
 ```
 
+在 openssl 版本更新后，需要修改一下 shadowsocks 的源代码
+
+编辑 shadowsocks 中调用 openssl 的脚本
+```
+sudo vi /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
+```
+
+将 EVP_CIPHER_CTX_cleanup 替换为 EVP_CIPHER_CTX_reset
+
+```
+52c52
+<     libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
+---
+>     libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,)
+111c111
+<             libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
+---
+>             libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)
+```
+
 现在，可以手动开启shadowsocks服务了
 
 ```bash
@@ -113,7 +133,7 @@ ssserver -c /etc/shadowsocks.json -d restart
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: start shadowsocks 
+# Short-Description: start shadowsocks
 # Description:       start shadowsocks
 ### END INIT INFO
 
@@ -176,7 +196,7 @@ fi
 在crontab配置中，配置每天凌晨重启，以及每分钟检测断线重连
 
 ```bash
-crontab -e 
+crontab -e
 # 选择[3]: vim.basic
 # 最后加入
 0 4 * * * ssserver -c /etc/shadowsocks.json -d restart >> /root/ss.log
@@ -186,7 +206,7 @@ crontab -e
 重启Crontab，使定时任务生效
 
 ```
-service cron reload 
+service cron reload
 ```
 
 #### 其他的配置
