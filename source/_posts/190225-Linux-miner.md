@@ -5,7 +5,9 @@ categories: GitHub
 tags: [GitHub, ]
 ---
 
-今天，在登录服务器时，发现非常卡顿，并且计算中心提醒服务器最近占用了大量的下行带宽，因此怀疑服务器上可能存在异常的程序
+今天，在登录服务器时，发现非常卡顿，并且计算中心提醒服务器最近占用了大量的下行带宽，因此怀疑服务器上可能存在异常的程序，决定进行一波排查
+
+<!-- more -->
 
 #### 检查网络流量
 
@@ -20,7 +22,7 @@ iftop
 #### 通过 top 查看系统 CPU 和内存占用
 
 ```bash
-top
+glances
 ```
 
 #### 检查异常进程相关文件
@@ -86,5 +88,11 @@ total 2556
 ```
 find . -inum 118621437 -exec rm -i {} \;
 ```
+
+#### 总结
+
+最终经过排查发现，服务器上存在 https://github.com/xmrig/xmrig 恶意挖矿程序，并且攻击者都明文记录了 mining server ip 以及 USERNAME/PASSWORD，非常嚣张
+
+---
 
 参考资料: https://blog.51cto.com/qicheng0211/1928738
