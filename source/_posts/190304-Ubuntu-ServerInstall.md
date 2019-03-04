@@ -1,8 +1,8 @@
 ---
 title: Ubuntu Server 18.04 LTS 安装
-date: 2019-02-25 18:57:47
-categories: GitHub
-tags: [GitHub, ]
+date: 2019-03-04 14:22:57
+categories: Ubuntu
+tags: [Ubuntu, ]
 ---
 
 实验室使用的 2011-mid 21.5 iMac 实在太卡，于是找老板更换了新电脑，打算装 Ubuntu 18.04 LTS，这样方便以后学习 ML，
