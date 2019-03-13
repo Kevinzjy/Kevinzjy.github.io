@@ -9,7 +9,7 @@ tags: [Ubuntu, ]
 
 ```bash
 sudo apt install openjdk-8-jdk
-sudo apt isntall openjdk-11-jdk
+sudo apt install openjdk-11-jdk
 ```
 
 可以看到 `/usr/bin/java` 指向的是 java11 的版本，因此我们只需要重新设置成 java8 就好了
