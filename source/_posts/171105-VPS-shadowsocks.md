@@ -79,8 +79,13 @@ DigitalOcean上的VPS最大的作用就是可以同时连接ipv4和ipv6服务，
 sudo apt intall python-pip
 sudo pip install --upgrade pip
 sudo pip install setuptools
-sudo pip install shadowsocks
+#sudo pip install shadowsocks
+
+sudo apt install libsodium-dev
+pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
 ```
+
+更新: 使用github上最新版本的shadowsocks，可以支持chacha20-ietf-poly1305加密方式，更加稳定
 
 编辑`vim /etc/shadowsocks.json`，添加如下内容
 
