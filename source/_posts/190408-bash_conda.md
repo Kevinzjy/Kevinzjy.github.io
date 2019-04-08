@@ -1,5 +1,5 @@
 ---
-title: Ubuntu Server 18.04 LTS 安装
+title: Anaconda3 环境配置
 date: 2019-04-08 16:02:34
 categories: Linux
 tags: [Linux, Server]
