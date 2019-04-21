@@ -33,5 +33,16 @@ unset __conda_setup
 #### 手动添加的配置
 
 ```bash
-export PATH="$HOME/software/anaconda3/bin":$PATH
+. $HOME/software/anaconda3/etc/profile.d/conda.sh
+conda activate
 ```
+
+** 更新 **
+
+经过进一步的检查,发现 virtualenvwrapper 也占用了大量的启动时间,于是也改成了 lazy loading 模式,这样每次输出 `workon` 命令才会加载相关文件,而不需要在登录时就进行长时间的等待了
+
+```bash
+export VIRTUALENVWRAPPER_SCRIPT=/histor/zhao/zhangjy/software/anaconda3/bin/virtualenvwrapper.sh
+source /histor/zhao/zhangjy/software/anaconda3/bin/virtualenvwrapper_lazy.sh
+```
+
