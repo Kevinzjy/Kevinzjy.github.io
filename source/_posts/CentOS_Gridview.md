@@ -312,6 +312,27 @@ service maui restart
 
 ### 其他内容
 
+#### 管理节点禁止其他用户切换到 root 账户
+
+添加管理员到 wheel 用户组
+
+```
+usermod -G wheel admin
+id admin
+```
+
+使用 `id` 命令可以查看 admin 账户的 id 和 group 信息
+
+```
+uid=1000(admin) gid=1000(admin) groups=1000(admin),10(wheel)
+```
+
+修改 /etc/pam.d/su，将这行的注释去掉，使得只有 wheel 组的账户可以使用 su 命令切换到 root 账户
+
+```
+auth		required	pam_wheel.so use_uid
+```
+
 #### 曙光节点重新配置
 
 曙光服务位置在 `/opt/gridview`
