@@ -235,6 +235,15 @@ chkconfig pbs_mom on
 chkconfig trqauthd on
 ```
 
+将 torque 文件夹加入系统环境变量
+
+编辑 `/etc/profile`，在文件末尾加入两行
+
+```bash
+TORQUE=/usr/local/torque-4.2.9
+export PATH=$PATH:/usr/local/torque-4.2.9/bin:/usr/local/torque-4.2.9/sbin
+```
+
 #### 在管理节点增加新节点
 
 配置文件位置 `/var/spool/torque/server_priv`
@@ -310,7 +319,7 @@ USERCFG[jipfnew]  MAXJOB=100 MAXPROC=300 MAXNODE=20
 service maui restart
 ```
 
-### 其他内容
+### 安全设置
 
 #### 管理节点禁止其他用户切换到 root 账户
 
@@ -333,19 +342,117 @@ uid=1000(admin) gid=1000(admin) groups=1000(admin),10(wheel)
 auth		required	pam_wheel.so use_uid
 ```
 
+#### Firewall-cmd 防火墙配置
+
+通过查看 `/var/log/secure` 文件，发现有几个ip在大量尝试暴力破解root密码，因此决定增加防火墙防止被攻击
+
+```bash
+# 安装防火墙服务
+yum install firewalld
+
+# 查看防火墙状态
+firewall-cmd --state
+
+# 设置开机自动启动
+systemctl enable firewalld
+
+# 开启防火墙
+systemctl start firewalld
+```
+
+由于 Torque + MAUI 的配置中，管理节点需要和计算节点进行通信，因此需要开放几个端口
+
+```bash
+firewall-cmd --add-port=15001/tcp --permanent
+firewall-cmd --add-port=15002/tcp --permanent
+firewall-cmd --add-port=15003/tcp --permanent
+firewall-cmd --add-port=42559/tcp --permanent
+firewall-cmd --add-port=8080/tcp --permanent
+
+# 这样配置比较麻烦，设置直接信任内网网卡
+firewall-cmd --zone=trusted --change-interface=enp1s0 --permanent
+
+# 重启防火墙使得配置生效
+firewall-cmd --reload
+```
+
+对于之前发现的ip，进行了手动封禁ip
+
+```bash
+# 查看尝试次数比较多的ip列表
+grep "Failed password" /var/log/secure | awk '{print $11}' | sort | uniq -c | sort -n -r -k 1 | head
+
+# 手动封禁
+firewall-cmd --permanent --add-rich-rule="rule family='ipv4' source address='120.133.22.121' reject"
+```
+
+如果需要解封，可以编辑 `/etc/firewalld/zones/public.xml` 配置文件，删除ip对应的字段
+
+```xml
+  <rule family="ipv4">
+    <source address="178.128.149.100"/>
+    <reject/>
+  </rule>
+```
+
+#### Fail2ban 自动ban ip
+
+手动封禁还是比较麻烦的，因此使用了 Fail2ban 对短时间大量尝试的ip进行自动封禁
+
+```bash
+# 安装服务与开机自启
+yum install fail2ban
+systemctl enable fail2ban
+```
+
+配置文件位于 `/etc/fail2ban/jail.local`
+
+```
+[DEFAULT]
+ignoreip  = 127.0.0.1/8 172.16.0.0/8 127.0.0.1 10.0.0.0/8 192.168.0.0/16 1.2.3.4
+bantime   = 86400
+findtime  = 600
+maxretry  = 10
+banaction = firewallcmd-ipset
+action    = %(action_mwl)s
+
+[sshd]
+enabled = true
+filter  = sshd
+port    = 22
+action  = %(action_mwl)s
+logpath = /var/log/secure
+```
+
+这样配置后，可以禁止在10分钟内 ssh 错误超过10次的ip继续尝试登录
+
+```bash
+# 启动服务
+systemctl start fail2ban
+
+# 查看目前运行状态，可以看到被ban的ip
+fail2ban-client status sshd
+
+# 解封ip
+fail2ban-client set sshd unbanip 172.16.100.1
+```
+
+### 其他设置
+
 #### 曙光节点重新配置
 
-曙光服务位置在 `/opt/gridview`
+**经过测试，这样直接配置可以进行任务投递，但是任务结束时无法获取 Complete 的状态，可能是曙光使用的 Torque 版本号不同所导致，需要对于所有的计算节点重新配置版本号对应的 Torque-client，*但是仍然需要关闭Gridview服务的自启***
 
-通过配置文件可以 `/opt/gridview/pbs/dispatcher/mom_priv/config
-` 为曙光节点重新指定 pbs 管理节点
+~~曙光服务位置在 `/opt/gridview`~~
+
+~~通过配置文件 `/opt/gridview/pbs/dispatcher/mom_priv/config` 可以为曙光节点重新指定 pbs 管理节点~~
 
 ```
 $pbsserver node71
 $restricted *.node71
 ```
 
-修改成功后，重启 `pbs_mom` 服务
+~~修改成功后，重启 `pbs_mom` 服务~~
 
 ```bash
 service pbs_mom restart
