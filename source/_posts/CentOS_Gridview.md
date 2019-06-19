@@ -15,7 +15,7 @@ tags: [Linux, Server, CentOS]
 #### CentOS 7.6 镜像位置
 
 ```
-node71:/root/CentOS-7-x86_64-DVD-1810.iso
+node71:/root/packages/CentOS-7-x86_64-DVD-1810.iso
 ```
 
 #### 在 Linux 下制作 CentOS7 安装盘
@@ -24,7 +24,7 @@ node71:/root/CentOS-7-x86_64-DVD-1810.iso
 
 ```bash
 # 将系统安装镜像写入 /dev/sdc
-sudo dd if=/root/CentOS-7-x86_64-DVD-1810.iso of=/dev/sdc
+sudo dd if=/root/packages/CentOS-7-x86_64-DVD-1810.iso of=/dev/sdc
 ```
 
 在需要安装的节点上，插入安装盘。重启节点即可进入安装界面。
@@ -167,17 +167,17 @@ chmod +x /etc/rc.d/rc.local
 
 #### histor 挂载
 
-驱动程序位于 `/root/Leo-xd-clt-as7.6-64-20180731.tgz`，挂载命令为 `/root/LeoFS.192.168.0.245`
+驱动程序位于 `/root/Leo-xd-clt-as7.6-64-20180731`，挂载命令为 `/root/Leo-xd-clt-as7.6-64-20180731/LeoFS.192.168.0.245`
 
 ```bash
-# 解压驱动
-tar zxvf Leo-xd-clt-as7.6-64-20180731.tgz
-mkdir /LeoCluster
-mkdir /LeoCluster/conf
-mv ./Leo-xd-clt-as7.6-64-20180731 /LeoCluster/bin
+# 同步驱动
+rsync -avP /root/Leo-xd-clt-as7.6-64-20180731 node111:/root/Leo-xd-clt-as7.6-64-20180731
+
+# 在计算节点
+cp -r /root/Leo-xd-clt-as7.6-64-20180731/LeoCluster /LeoCluster
 
 # 配置自启动挂载
-cp ./LeoFS.192.168.0.245 /etc/init.d/LeoFS.192.168.0.245
+cp /root/Leo-xd-clt-as7.6-64-20180731/LeoFS.192.168.0.245 /etc/init.d/LeoFS.192.168.0.245
 chkconfig LeoFS.192.168.0.245 start
 ```
 
@@ -226,6 +226,7 @@ scp contrib/init.d/{pbs_mom,trqauthd} node1:/etc/init.d/
 # 配置环境，编辑/var/spool/torque/mom_priv/config
 $pbsserver node71
 $logevent 225
+$spool_as_final_name true # 日志直接保存到最终位置
 
 # 计算节点启动服务
 for i in pbs_mom trqauthd; do service $i start; done
@@ -340,6 +341,16 @@ uid=1000(admin) gid=1000(admin) groups=1000(admin),10(wheel)
 
 ```
 auth		required	pam_wheel.so use_uid
+```
+
+#### 管理节点禁止其他用户登录
+
+编辑PAM配置文件 `/etc/security/access.conf`
+
+```bash
++ : root : 192.168.0. 11.11.11. # 允许内网 root 账户登录
+- : root : ALL # 禁止其他节点 root 账户登录
+- : ALL  : 192.168.0. # 禁止内网其他用户登录
 ```
 
 #### Firewall-cmd 防火墙配置
