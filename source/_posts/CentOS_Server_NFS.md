@@ -11,7 +11,7 @@ tags: [Linux, Server, CentOS]
 
 ***由于服务器已经部署了 NFS, 因此不记录 NFS 和 rpcbind 服务的安装和配置过程***
 
-#### 启动 NFS 和 rpcbind 服务
+#### 启动 NFS 和 rpcbind 服务 (需要先安装 nfs-utils)
 
 ```
 /etc/init.d/rpcbind start
@@ -28,7 +28,7 @@ mount -t ntfs /dev/sdc1 /media/data
 
 ```
 vi /etc/exports
-/media/data     192.168.0.0/24(rw,no_root_squash)
+/media/data     192.168.0.0/24(rw,sync,no_root_squash,no_all_squash)
 exportfs -r #使配置生效
 exportfs -v #查看已生效配置
 ```
