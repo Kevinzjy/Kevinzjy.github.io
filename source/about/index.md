@@ -6,7 +6,7 @@ comment: false
 
 {% cq %} Stay hungry, Stay foolish {% endcq %}
 
-<img src="/assets/img/avatar.jpeg" width="50%" height="50%">
+<img src="/assets/img/cv.jpg" width="150" height="150">
 
 #### Personal Information
 
