@@ -5,6 +5,10 @@ categories: Python
 tags: [Linux, Python]
 ---
 
+为了方便软件安装和调试，这次在更新 CIRIquant_v1.0.1 版本的同时，尝试了将软件发布在 pypi.org 平台。这样通过一条pip 命令就可以实现软件和依赖的安装了
+
+<!-- more -->
+
 #### 准备工作
 
 1. python 模块中已编写好的 setup.py
