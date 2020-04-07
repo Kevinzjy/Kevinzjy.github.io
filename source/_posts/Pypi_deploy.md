@@ -39,7 +39,7 @@ twine check dist/*
 #### 预发布测试
 
 ```bash
-twine upload -repository-url https://test.pypi.org/legacy/ dist/*
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 ```
 
 `test.pypi.org` 是一个与 `pypi.org` 互相独立的平台，可以用于在正式版本发布前进行测试，这里进行的修改不会影响到 pypi.org 上的内容
