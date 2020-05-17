@@ -126,6 +126,14 @@ AllowUsers root # 只允许 root 账户登录
 PermitRootLogin no # 禁止 root 账户登录
 ```
 
+#### 关闭 SELINUX
+
+关闭SELINUX，否则存储挂载时候会有权限问题
+
+```bash
+sed -i s/SELINUX=enforcing/SELINUX=disabled/ /etc/selinux/config
+```
+
 ### 安装和配置存储服务
 
 #### 在管理节点下载软件安装包
