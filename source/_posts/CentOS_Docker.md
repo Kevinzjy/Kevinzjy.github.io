@@ -73,6 +73,31 @@ Docker Root Dir: /histor/public/docker/login2
 
 #### 给非root用户授权，可以使用 Docker
 
+修改 `/usr/lib/systemd/system/docker.socket` 内容中的 SocketGroup，设为 docker 用户组
+
+```
+[Unit]
+Description=Docker Socket for the API
+PartOf=docker.service
+
+[Socket]
+ListenStream=/var/run/docker.sock
+SocketMode=0660
+SocketUser=root
+SocketGroup=docker
+
+[Install]
+WantedBy=sockets.target
+```
+
+增加 docker 用户组
+
+```bash
+groupadd docker
+```
+
+给用户授权
+
 ```bash
 usermod -aG docker zhangjy
 ```
