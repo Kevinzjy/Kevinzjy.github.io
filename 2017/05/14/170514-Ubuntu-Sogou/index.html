@@ -1,0 +1,930 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Linux,Ubuntu," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Kevinzjy's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法 参考:  如何在Sublime Text 3中输入中文  点滴记录——在Ubuntu 14.04中使SublimeText 3支持中文输入法">
+<meta name="keywords" content="Linux,Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 16.04 LTS 安装搜狗拼音输入法">
+<meta property="og:url" content="https://kevinzjy.github.io/2017/05/14/170514-Ubuntu-Sogou/index.html">
+<meta property="og:site_name" content="Kevinzjy&#39;s Blog">
+<meta property="og:description" content="记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法 参考:  如何在Sublime Text 3中输入中文  点滴记录——在Ubuntu 14.04中使SublimeText 3支持中文输入法">
+<meta property="og:updated_time" content="2020-12-26T08:24:26.689Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu 16.04 LTS 安装搜狗拼音输入法">
+<meta name="twitter:description" content="记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法 参考:  如何在Sublime Text 3中输入中文  点滴记录——在Ubuntu 14.04中使SublimeText 3支持中文输入法">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '0XRIR3MAOI',
+      apiKey: '0fc83cf465f79673aef05f4dbf1506d5',
+      indexName: 'github_pages',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://kevinzjy.github.io/2017/05/14/170514-Ubuntu-Sogou/"/>
+
+
+
+
+
+  <title> Ubuntu 16.04 LTS 安装搜狗拼音输入法 | Kevinzjy's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-99359817-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9ad19e0576674ca28b6ae57a33bb6289";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kevinzjy's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生信狗的个人小站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://kevinzjy.github.io/2017/05/14/170514-Ubuntu-Sogou/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinyang Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kevinzjy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Ubuntu 16.04 LTS 安装搜狗拼音输入法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-14T12:00:10+00:00">
+                2017-05-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>记录一下Ubuntu 16.04 LTS中如何安装搜狗拼音输入法</p>
+<p>参考:</p>
+<ul>
+<li><p><a href="http://sklcc.github.io/blog/2014/11/21/how-to-input-chinese-in-sub/" target="_blank" rel="external">如何在Sublime Text 3中输入中文</a></p>
+</li>
+<li><p><a href="http://blog.csdn.net/cywosp/article/details/32350899" target="_blank" rel="external">点滴记录——在Ubuntu 14.04中使SublimeText 3支持中文输入法</a></p>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="下载安装Sougou输入法"><a href="#下载安装Sougou输入法" class="headerlink" title="下载安装Sougou输入法"></a>下载安装Sougou输入法</h3><p>在搜狗输入法<a href="http://pinyin.sogou.com/linux/?r=pinyin" target="_blank" rel="external">官方页面</a>，下载适合系统的deb安装文件，安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo dpkg -i sogoupinyin_2.1.0.0086_amd64.deb</div><div class="line"><span class="comment"># 如果出现依赖未安装</span></div><div class="line">sudo apt install <span class="_">-f</span></div><div class="line">sudo dpkg -i sogoupinyin_2.1.0.0086_amd64.deb</div></pre></td></tr></table></figure>
+<h3 id="设置Fcitx输入法"><a href="#设置Fcitx输入法" class="headerlink" title="设置Fcitx输入法"></a>设置Fcitx输入法</h3><p>在Ubuntu中，打开System Settings -&gt; Language Support，根据提示安装完整的语言支持，并将Keyboard input method system设为fcitx</p>
+<h3 id="在Fcitx中添加搜狗输入法"><a href="#在Fcitx中添加搜狗输入法" class="headerlink" title="在Fcitx中添加搜狗输入法"></a>在Fcitx中添加搜狗输入法</h3><p>打开Terminal(快捷键 Ctrl + Alt + T)，输入<code>fcitx-configtool</code>，点击添加，去掉勾选的Only Show Current Language，添加Sougou Pinyin</p>
+<p>在System Settings -&gt; Keyboard -&gt; Shortcuts -&gt; Typing中，将Switch to next source和Switch to previous source的选项，都设为Diabled(点击选项后，按Backspace)。这样可以禁用系统的切换输入法快捷键，搜狗拼音输入法的默认快捷键为<code>Ctrl + ,</code></p>
+<h3 id="在Sublime-Text-3中添加搜狗输入法的支持"><a href="#在Sublime-Text-3中添加搜狗输入法的支持" class="headerlink" title="在Sublime Text 3中添加搜狗输入法的支持"></a>在Sublime Text 3中添加搜狗输入法的支持</h3><p>Sublime Text是一款跨平台下十分好用的文本编辑软件，然而在Ubuntu下，默认安装的Sublime Text 3不支持搜狗中文输入法，需要手动编译一个共享库</p>
+<h4 id="安装依赖软件"><a href="#安装依赖软件" class="headerlink" title="安装依赖软件"></a>安装依赖软件</h4><p>安装编译共享库的依赖’build-essential’和’libgtk2.0-dev’</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install build-essential libgtk2.0-dev</div></pre></td></tr></table></figure>
+<h4 id="编写sublime-imfix-c文件"><a href="#编写sublime-imfix-c文件" class="headerlink" title="编写sublime-imfix.c文件"></a>编写sublime-imfix.c文件</h4><p>在随意文件添加一个sublime-imfix.c，内容为</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * sublime-imfix.c</div><div class="line"> * Use LD_PRELOAD to interpose some function to fix sublime input method support for linux.</div><div class="line"> * By Cjacker Huang &lt;jianzhong.huang at i-soft.com.cn&gt; *</div><div class="line"> *</div><div class="line"> * gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC</div><div class="line"> * LD_PRELOAD=./libsublime-imfix.so sublime_text</div><div class="line"> */</div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;gtk/gtk.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;gdk/gdkx.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> GdkSegment GdkRegionBox;</div><div class="line"></div><div class="line"><span class="keyword">struct</span> _GdkRegion</div><div class="line">&#123;</div><div class="line">    <span class="keyword">long</span> size;</div><div class="line">    <span class="keyword">long</span> numRects;</div><div class="line">    GdkRegionBox *rects;</div><div class="line">    GdkRegionBox extents;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">GtkIMContext *local_context;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span></span></div><div class="line"><span class="title">gdk_region_get_clipbox</span> <span class="params">(<span class="keyword">const</span> GdkRegion *region,</span></div><div class="line">                        GdkRectangle    *rectangle)</div><div class="line">&#123;</div><div class="line">    g_return_if_fail (region != <span class="literal">NULL</span>);</div><div class="line">    g_return_if_fail (rectangle != <span class="literal">NULL</span>);</div><div class="line"></div><div class="line">    rectangle-&gt;x = region-&gt;extents.x1;</div><div class="line">    rectangle-&gt;y = region-&gt;extents.y1;</div><div class="line">    rectangle-&gt;width = region-&gt;extents.x2 - region-&gt;extents.x1;</div><div class="line">    rectangle-&gt;height = region-&gt;extents.y2 - region-&gt;extents.y1;</div><div class="line">    GdkRectangle rect;</div><div class="line">    rect.x = rectangle-&gt;x;</div><div class="line">    rect.y = rectangle-&gt;y;</div><div class="line">    rect.width = <span class="number">0</span>;</div><div class="line">    rect.height = rectangle-&gt;height;</div><div class="line"></div><div class="line">    <span class="comment">//The caret width is 2;</span></div><div class="line">    <span class="comment">//Maybe sometimes we will make a mistake, but for most of the time, it should be the caret.</span></div><div class="line">    <span class="keyword">if</span> (rectangle-&gt;width == <span class="number">2</span> &amp;&amp; GTK_IS_IM_CONTEXT(local_context)) &#123;</div><div class="line">        gtk_im_context_set_cursor_location(local_context, rectangle);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//this is needed, for example, if you input something in file dialog and return back the edit area</span></div><div class="line"><span class="comment">//context will lost, so here we set it again.</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">static</span> GdkFilterReturn <span class="title">event_filter</span> <span class="params">(GdkXEvent *xevent, GdkEvent *event, gpointer im_context)</span></span></div><div class="line">&#123;</div><div class="line">    XEvent *xev = (XEvent *)xevent;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (xev-&gt;type == KeyRelease &amp;&amp; GTK_IS_IM_CONTEXT(im_context)) &#123;</div><div class="line">        GdkWindow *win = g_object_get_data(G_OBJECT(im_context), <span class="string">"window"</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (GDK_IS_WINDOW(win)) &#123;</div><div class="line">            gtk_im_context_set_client_window(im_context, win);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> GDK_FILTER_CONTINUE;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">gtk_im_context_set_client_window</span> <span class="params">(GtkIMContext *context,</span></span></div><div class="line">                                       GdkWindow    *window)</div><div class="line">&#123;</div><div class="line">    GtkIMContextClass *klass;</div><div class="line">    g_return_if_fail (GTK_IS_IM_CONTEXT (context));</div><div class="line">    klass = GTK_IM_CONTEXT_GET_CLASS (context);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (klass-&gt;set_client_window) &#123;</div><div class="line">        klass-&gt;set_client_window (context, window);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (!GDK_IS_WINDOW (window)) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    g_object_set_data(G_OBJECT(context), <span class="string">"window"</span>, window);</div><div class="line">    <span class="keyword">int</span> width = gdk_window_get_width(window);</div><div class="line">    <span class="keyword">int</span> height = gdk_window_get_height(window);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (width != <span class="number">0</span> &amp;&amp; height != <span class="number">0</span>) &#123;</div><div class="line">        gtk_im_context_focus_in(context);</div><div class="line">        local_context = context;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    gdk_window_add_filter (window, event_filter, context);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在该文件所在目录下，编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -shared -o libsublime-imfix.so sublime-imfix.c  `pkg-config --libs --cflags gtk+-2.0` <span class="_">-f</span>PIC</div></pre></td></tr></table></figure>
+<p>编译后可以得到libsublime-imfix.so这个共享库</p>
+<h4 id="添加共享库到Sublime-Text-3"><a href="#添加共享库到Sublime-Text-3" class="headerlink" title="添加共享库到Sublime Text 3"></a>添加共享库到Sublime Text 3</h4><p>首先，测试一下是否在Sublime Text 3中可以输入中文</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LD_PRELOAD=./libsublime-imfix.so subl</div></pre></td></tr></table></figure>
+<p>如果可以正常使用搜狗输入法，进行接下来的配置</p>
+<p>将libsublime-imfix.so拷贝到系统库的默认路径下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cp libsublime-imfix.so /usr/lib</div></pre></td></tr></table></figure>
+<p>修改Sublime的执行文件<code>/usr/bin/subl</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">LD_PRELOAD=/usr/lib/libsublime-imfix.so exec  /opt/sublime_text/sublime_text &quot;$@&quot;</div></pre></td></tr></table></figure>
+<p>修改Sublime的快捷方式<code>/usr/share/applications/sublime_text.desktop</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Exec=/opt/sublime_text/sublime_text %F</span></div><div class="line"><span class="comment"># 修改为</span></div><div class="line">Exec=bash -c <span class="string">'LD_PRELOAD=/usr/lib/libsublime-imfix.so /opt/sublime_text/sublime_text'</span> %F</div><div class="line"></div><div class="line"><span class="comment"># Exec=/opt/sublime_text/sublime_text -n</span></div><div class="line"><span class="comment"># 修改为</span></div><div class="line">Exec=bash -c <span class="string">'LD_PRELOAD=/usr/lib/libsublime-imfix.so /opt/sublime_text/sublime_text'</span> -n</div></pre></td></tr></table></figure>
+<p>这样就可以在命令行<code>subl</code>和系统Application中的Sublime Text 3中输入中文了</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/14/170514-Manuscript-Review/" rel="next" title="第一次审稿经验">
+                <i class="fa fa-chevron-left"></i> 第一次审稿经验
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/20/170520-Paper-GFOLD/" rel="prev" title="无重复的RNA-Seq数据进行基因差异表达分析">
+                无重复的RNA-Seq数据进行基因差异表达分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzg4MC80NDU3"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/img/avatar.jpg"
+               alt="Jinyang Zhang" />
+          <p class="site-author-name" itemprop="name">Jinyang Zhang</p>
+           
+              <p class="site-description motion-element" itemprop="description">Kevinzjy</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Kevinzjy" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/kevinzjy317" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://lijxug.github.io/" title="李狗蛋" target="_blank">李狗蛋</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装Sougou输入法"><span class="nav-number">1.</span> <span class="nav-text">下载安装Sougou输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置Fcitx输入法"><span class="nav-number">2.</span> <span class="nav-text">设置Fcitx输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Fcitx中添加搜狗输入法"><span class="nav-number">3.</span> <span class="nav-text">在Fcitx中添加搜狗输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在Sublime-Text-3中添加搜狗输入法的支持"><span class="nav-number">4.</span> <span class="nav-text">在Sublime Text 3中添加搜狗输入法的支持</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">4.1.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写sublime-imfix-c文件"><span class="nav-number">4.2.</span> <span class="nav-text">编写sublime-imfix.c文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加共享库到Sublime-Text-3"><span class="nav-number">4.3.</span> <span class="nav-text">添加共享库到Sublime Text 3</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jinyang Zhang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+</body>
+</html>

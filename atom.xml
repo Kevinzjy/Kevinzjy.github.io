@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Kevinzjy&#39;s Blog</title>
+  <subtitle>生信狗的个人小站</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://kevinzjy.github.io/"/>
+  <updated>2020-12-26T08:24:26.697Z</updated>
+  <id>https://kevinzjy.github.io/</id>
+  
+  <author>
+    <name>Jinyang Zhang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CentOS6 开机自动运行脚本</title>
+    <link href="https://kevinzjy.github.io/2020/12/26/crontab/"/>
+    <id>https://kevinzjy.github.io/2020/12/26/crontab/</id>
+    <published>2020-12-26T08:19:55.000Z</published>
+    <updated>2020-12-26T08:24:26.697Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为了让安装的 Mysql 和 Tomcat6 服务可以重启后自动运行，可以利用 &lt;code&gt;crontab&lt;/code&gt; 命令指定开机后运行自定义脚本&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;脚本 &lt;code&gt;/root/restart_mysql.sh&lt;/code&gt; 内容&lt;/str
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>硬盘报错修复</title>
+    <link href="https://kevinzjy.github.io/2020/12/07/fsck/"/>
+    <id>https://kevinzjy.github.io/2020/12/07/fsck/</id>
+    <published>2020-12-07T08:28:43.000Z</published>
+    <updated>2020-12-26T08:24:26.697Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Linux 开机出现硬盘报错，自动进入恢复模式。可以使用 fsck 命令对硬盘错误进行修复&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>rsync 拷贝指定拓展名文件</title>
+    <link href="https://kevinzjy.github.io/2020/07/28/Rsync/"/>
+    <id>https://kevinzjy.github.io/2020/07/28/Rsync/</id>
+    <published>2020-07-28T01:57:06.000Z</published>
+    <updated>2020-12-26T08:24:26.697Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 rsync 命令拷贝目录下所有具有指定拓展名的文件（&lt;code&gt;*.fastq.gz&lt;/code&gt;, &lt;code&gt;*.fq.gz&lt;/code&gt;)&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Proxmox VE 环境安装</title>
+    <link href="https://kevinzjy.github.io/2020/05/24/PVE_installation/"/>
+    <id>https://kevinzjy.github.io/2020/05/24/PVE_installation/</id>
+    <published>2020-05-24T03:48:23.000Z</published>
+    <updated>2020-12-26T08:24:26.697Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天在家里尝试了下 Proxmox 的安装，记录一下需要注意的内容&lt;/p&gt;
+&lt;p&gt;安装过程参考: &lt;a href=&quot;https://pve.proxmox.com/wiki/Installation，需要注意网络配置静态IP&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://pve.proxmox.com/wiki/Installation，需要注意网络配置静态IP&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 如何配置 gitignore 生效</title>
+    <link href="https://kevinzjy.github.io/2020/04/12/gitignore/"/>
+    <id>https://kevinzjy.github.io/2020/04/12/gitignore/</id>
+    <published>2020-04-12T04:15:22.000Z</published>
+    <updated>2020-12-26T08:24:26.697Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 git 项目仓库中，配置 .gitignore 文件时，需要重新添加所有文件使得增加的规则生效&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line
+    
+    </summary>
+    
+      <category term="git" scheme="https://kevinzjy.github.io/categories/git/"/>
+    
+    
+      <category term="git" scheme="https://kevinzjy.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ssh 跳过身份验证</title>
+    <link href="https://kevinzjy.github.io/2020/03/09/ssh_known_hosts/"/>
+    <id>https://kevinzjy.github.io/2020/03/09/ssh_known_hosts/</id>
+    <published>2020-03-09T11:30:42.000Z</published>
+    <updated>2020-12-26T08:24:26.697Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近遇到了一个奇怪的情况，有用户反映从在服务器上无法用&lt;code&gt;scp&lt;/code&gt;命令向其他所的服务器拷贝数据，报错提示 &lt;code&gt;REMOTE HOST IDENTIFICATION HAS CHANGED!&lt;/code&gt;，可能是身份验证出现了问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>上传 python 模块到 pypi.org</title>
+    <link href="https://kevinzjy.github.io/2020/03/04/Pypi_deploy/"/>
+    <id>https://kevinzjy.github.io/2020/03/04/Pypi_deploy/</id>
+    <published>2020-03-04T10:55:20.000Z</published>
+    <updated>2020-12-26T08:24:26.697Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为了方便软件安装和调试，这次在更新 CIRIquant_v1.0.1 版本的同时，尝试了将软件发布在 pypi.org 平台。这样通过一条pip 命令就可以实现软件和依赖的安装了&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://kevinzjy.github.io/categories/python/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Python" scheme="https://kevinzjy.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7 安装 pdftk</title>
+    <link href="https://kevinzjy.github.io/2019/11/10/CentOS_pdftk/"/>
+    <id>https://kevinzjy.github.io/2019/11/10/CentOS_pdftk/</id>
+    <published>2019-11-10T10:54:15.000Z</published>
+    <updated>2020-12-26T08:24:26.697Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们在文章投稿的时候，会需要提供一个包括所有 Figure 的 pdf 文件。此时，&lt;code&gt;pdftk&lt;/code&gt; 这个工具可以帮助我们快速合并已有的 pdf，并生成一个无压缩的合并文件。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+      <category term="CentOS" scheme="https://kevinzjy.github.io/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7 调整 lvm 分区大小</title>
+    <link href="https://kevinzjy.github.io/2019/07/22/CentOS_lvm/"/>
+    <id>https://kevinzjy.github.io/2019/07/22/CentOS_lvm/</id>
+    <published>2019-07-22T08:06:03.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Centos7 系统在安装时，会默认使用 lvm 创建三个逻辑卷&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Volume&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;FS&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Mount Point&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;Size&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;/dev/centos/home&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;xfs&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;/home&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;157.20 GB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;/dev/centos/root&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;xfs&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;/root&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;50.00 GB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;/dev/centos/swap&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;4.00 GB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;默认分配给挂载点 /home 的空间大小较大，而由于在集群中，用户的目录都在存储阵列上，并且 root 账户拥有 /root 目录，因此 /home 目录几乎不会使用到，因此需要在安装时调整默认的分区大小&lt;/p&gt;
+&lt;p&gt;同时我们可以看到，交换空间分区 swap 的大小只有 4G， 可能是安装时考虑到节点内存较大 (128GB)，因此默认没有更大的分配交换空间。然而经过实际使用证明，swap 分区的大小是远远不够的，很多软件会在使用内存的同时使用swap空间，并且当交换空间占满后，系统的IO性能会有所降低。&lt;/p&gt;
+&lt;p&gt;由于之前节点重装时，没有考虑到以上两点，因此现在需要对 lvm 分区大小进行调整。所以我准备使用 lvm 管理命令结合 system-storage-manager 软件，实现对 /home 分区空间的缩减，并重新分配到 Swap 交换空间以及 / 根目录中&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+      <category term="CentOS" scheme="https://kevinzjy.github.io/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7 集群配置 Docker</title>
+    <link href="https://kevinzjy.github.io/2019/06/15/CentOS_Docker/"/>
+    <id>https://kevinzjy.github.io/2019/06/15/CentOS_Docker/</id>
+    <published>2019-06-15T08:57:39.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;集群中 Docker 的安装和配置&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+      <category term="CentOS" scheme="https://kevinzjy.github.io/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7 配置 Torque + MAUI 作业调度系统</title>
+    <link href="https://kevinzjy.github.io/2019/06/14/CentOS_Gridview/"/>
+    <id>https://kevinzjy.github.io/2019/06/14/CentOS_Gridview/</id>
+    <published>2019-06-14T04:01:20.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前两天曙光的 Gridview 管理系统配置出现了问题，导致管理节点无法正常使用。因此重新配置了一套 Torque 管理系统，正好一起配置新重装的 CentOS7 节点&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+      <category term="CentOS" scheme="https://kevinzjy.github.io/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务器使用 NFS 挂载移动硬盘</title>
+    <link href="https://kevinzjy.github.io/2019/05/29/CentOS_Server_NFS/"/>
+    <id>https://kevinzjy.github.io/2019/05/29/CentOS_Server_NFS/</id>
+    <published>2019-05-29T06:30:34.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在服务器上, 经常需要挂载硬盘进行数据拷贝的工作. 然而由于 home 目录 USB 接口数量有限,每次只能通过将硬盘插入计算节点的方式进行挂载. 因此每次需要使用 qsub 提交交互式任务到计算节点上进行数据拷贝, 十分不方便. 因此打算使用 NFS 的方法, 把计算节点上挂载的数据目录挂载在主节点, 进行数据拷贝的工作.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+      <category term="CentOS" scheme="https://kevinzjy.github.io/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anaconda 构建本地 channel</title>
+    <link href="https://kevinzjy.github.io/2019/05/21/Anaconda_Offline_Mirror/"/>
+    <id>https://kevinzjy.github.io/2019/05/21/Anaconda_Offline_Mirror/</id>
+    <published>2019-05-21T07:49:53.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;根据 Anaconda 软件源上的说明，Anaconda 和 Miniconda 是 Anaconda, Inc. 的商标，任何未经授权的公开镜像都是不允许的。此方法只适用于个人用途,国内的清华镜像也因此已经停止服务 (&lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/news/close-anaconda-service/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://mirrors.tuna.tsinghua.edu.cn/news/close-anaconda-service/&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为了缩短 Anaconda 各种第三方包的安装时间, 最近在服务器上构建了 free / main 两个 channel 的本地镜像, 可以安装大部分常用的模块&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+      <category term="CentOS" scheme="https://kevinzjy.github.io/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS 配置网络环境</title>
+    <link href="https://kevinzjy.github.io/2019/05/21/CentOS_Network_Config/"/>
+    <id>https://kevinzjy.github.io/2019/05/21/CentOS_Network_Config/</id>
+    <published>2019-05-21T07:49:53.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 CentOS 安装过程中,如果选择了 minimal 安装,默认是没有安装 net-tools 的,因此 iwconfig 等命令无法正常使用,配置网络环境十分麻烦,查阅了很多资料,终于发现其实自带了一个命令行的网络管理工具 &lt;code&gt;nmtui&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+      <category term="CentOS" scheme="https://kevinzjy.github.io/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anaconda3 环境配置</title>
+    <link href="https://kevinzjy.github.io/2019/04/08/190408-bash_conda/"/>
+    <id>https://kevinzjy.github.io/2019/04/08/190408-bash_conda/</id>
+    <published>2019-04-08T08:02:34.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;背景:&lt;/em&gt; 最近院里集群存储出现了一点问题，导致 .bashrc 文件无法打开，因此需要重新配置环境。&lt;/p&gt;
+&lt;p&gt;在配置环境的过程中，先安装了 anaconda3，然而配置好环境变量之后，发现每次登录服务器需要等待 4-5 秒后才会出现命令行提示符，十分难
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu Server 18.04 LTS 安装</title>
+    <link href="https://kevinzjy.github.io/2019/03/04/190304-Ubuntu-ServerInstall/"/>
+    <id>https://kevinzjy.github.io/2019/03/04/190304-Ubuntu-ServerInstall/</id>
+    <published>2019-03-04T06:22:57.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;实验室使用的 2011-mid 21.5 iMac 实在太卡，于是找老板更换了新电脑，打算装 Ubuntu 18.04 LTS，这样方便以后学习 ML，&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="https://kevinzjy.github.io/categories/Ubuntu/"/>
+    
+    
+      <category term="Ubuntu" scheme="https://kevinzjy.github.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 服务器中异常排查</title>
+    <link href="https://kevinzjy.github.io/2019/02/25/190225-Linux-miner/"/>
+    <id>https://kevinzjy.github.io/2019/02/25/190225-Linux-miner/</id>
+    <published>2019-02-25T10:57:47.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天，在登录服务器时，发现非常卡顿，并且计算中心提醒服务器最近占用了大量的下行带宽，因此怀疑服务器上可能存在异常的程序，决定进行一波排查&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="GitHub" scheme="https://kevinzjy.github.io/categories/GitHub/"/>
+    
+    
+      <category term="GitHub" scheme="https://kevinzjy.github.io/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RedHat6 升级 GLIBC</title>
+    <link href="https://kevinzjy.github.io/2019/01/17/190117-Server-gcc/"/>
+    <id>https://kevinzjy.github.io/2019/01/17/190117-Server-gcc/</id>
+    <published>2019-01-17T13:13:09.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;在安装 Nanopore 测序平台需要的 Guppy 等软件时，发现集群上系统是 RHEL6.3，自带 gcc 4.4.6和 glibc 2.12，已经远远落后于时代了，新软件编译时经常报错，提示需要 GLIBC 2.17，因此今天着手升级了一下 gcc 和 glibc 的版本&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/categories/Server/"/>
+    
+    
+      <category term="Server" scheme="https://kevinzjy.github.io/tags/Server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub撤销已提交的commit</title>
+    <link href="https://kevinzjy.github.io/2019/01/16/190116-gitReset/"/>
+    <id>https://kevinzjy.github.io/2019/01/16/190116-gitReset/</id>
+    <published>2019-01-16T08:46:06.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在向 GitHub 提交某个 commit 时，发现不小心将 Key 配置直接写在了配置文件内，为了安全起见，需要撤销这个 commit&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;
+    
+    </summary>
+    
+      <category term="GitHub" scheme="https://kevinzjy.github.io/categories/GitHub/"/>
+    
+    
+      <category term="GitHub" scheme="https://kevinzjy.github.io/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux解决根目录ls无响应问题</title>
+    <link href="https://kevinzjy.github.io/2019/01/15/190115-Linux-lsNotResponding/"/>
+    <id>https://kevinzjy.github.io/2019/01/15/190115-Linux-lsNotResponding/</id>
+    <published>2019-01-15T08:47:15.000Z</published>
+    <updated>2020-12-26T08:24:26.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天发现服务器某节点，在根目录执行ls时会卡死&lt;/p&gt;
+&lt;p&gt;首先用 &lt;code&gt;which ls&lt;/code&gt; 命令查看 &lt;code&gt;ls&lt;/code&gt; 命令的alias&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/categories/linux/"/>
+    
+    
+      <category term="Linux" scheme="https://kevinzjy.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+</feed>

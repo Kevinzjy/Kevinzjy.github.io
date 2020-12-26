@@ -1,0 +1,938 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Bioinfomatics,python,pysam," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Kevinzjy's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="pysam以及Samtools使用心得pysam简介pysam 是一个基于 htslib 的 C++ API 进行封装的 python 模块,实现了对 SAM / BAM / CRAM 文件的便捷操作,可以简化 bam 文件处理的代码复杂度，同时也可以处理 VCF / BCF 等其他文件 pysam 的安装pysam 已经在 pypi 中包含，可以直接使用 pip 命令安装 1pip instal">
+<meta name="keywords" content="Bioinfomatics,python,pysam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pysam处理bam文件心得">
+<meta property="og:url" content="https://kevinzjy.github.io/2018/07/27/180727-Python-pysam/index.html">
+<meta property="og:site_name" content="Kevinzjy&#39;s Blog">
+<meta property="og:description" content="pysam以及Samtools使用心得pysam简介pysam 是一个基于 htslib 的 C++ API 进行封装的 python 模块,实现了对 SAM / BAM / CRAM 文件的便捷操作,可以简化 bam 文件处理的代码复杂度，同时也可以处理 VCF / BCF 等其他文件 pysam 的安装pysam 已经在 pypi 中包含，可以直接使用 pip 命令安装 1pip instal">
+<meta property="og:updated_time" content="2020-12-26T08:24:26.689Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pysam处理bam文件心得">
+<meta name="twitter:description" content="pysam以及Samtools使用心得pysam简介pysam 是一个基于 htslib 的 C++ API 进行封装的 python 模块,实现了对 SAM / BAM / CRAM 文件的便捷操作,可以简化 bam 文件处理的代码复杂度，同时也可以处理 VCF / BCF 等其他文件 pysam 的安装pysam 已经在 pypi 中包含，可以直接使用 pip 命令安装 1pip instal">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '0XRIR3MAOI',
+      apiKey: '0fc83cf465f79673aef05f4dbf1506d5',
+      indexName: 'github_pages',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://kevinzjy.github.io/2018/07/27/180727-Python-pysam/"/>
+
+
+
+
+
+  <title> pysam处理bam文件心得 | Kevinzjy's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-99359817-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9ad19e0576674ca28b6ae57a33bb6289";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kevinzjy's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生信狗的个人小站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://kevinzjy.github.io/2018/07/27/180727-Python-pysam/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinyang Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kevinzjy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                pysam处理bam文件心得
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T03:13:50+00:00">
+                2018-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bioinformatics/" itemprop="url" rel="index">
+                    <span itemprop="name">Bioinformatics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="pysam以及Samtools使用心得"><a href="#pysam以及Samtools使用心得" class="headerlink" title="pysam以及Samtools使用心得"></a>pysam以及Samtools使用心得</h1><h2 id="pysam简介"><a href="#pysam简介" class="headerlink" title="pysam简介"></a>pysam简介</h2><p>pysam 是一个基于 htslib 的 C++ API 进行封装的 python 模块,实现了对 SAM / BAM / CRAM 文件的便捷操作,可以简化 bam 文件处理的代码复杂度，同时也可以处理 VCF / BCF 等其他文件</p>
+<h2 id="pysam-的安装"><a href="#pysam-的安装" class="headerlink" title="pysam 的安装"></a>pysam 的安装</h2><p>pysam 已经在 <a href="https://pypi.org/project/pysam/" target="_blank" rel="external">pypi</a> 中包含，可以直接使用 <code>pip</code> 命令安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install pysam</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="pysam-的使用"><a href="#pysam-的使用" class="headerlink" title="pysam 的使用"></a>pysam 的使用</h2><h3 id="统计-bam-文件中总-reads-数目以及比对到参考基因组上的-reads-数目"><a href="#统计-bam-文件中总-reads-数目以及比对到参考基因组上的-reads-数目" class="headerlink" title="统计 bam 文件中总 reads 数目以及比对到参考基因组上的 reads 数目"></a>统计 bam 文件中总 reads 数目以及比对到参考基因组上的 reads 数目</h3><p>利用 <code>pysam.AlignmentFile</code> 对象，我们可以使用 <code>pysam.AlignmentFile.count()</code> 方法快速统计其中的比对片段数目，然而由于存在一条 read 比对到基因组中多个位置的情况，因此直接统计的比对片段数目与 reads 数是不同的</p>
+<p>可以使用 <code>read_callback</code> 参数，使用callback函数对比对片段进行筛选，具体细节请参考<a href="http://pysam.readthedocs.io/en/latest/api.html" target="_blank" rel="external">pysam API</a></p>
+<p><code>read_callback (string or function)</code> –</p>
+<blockquote>
+<p>select a call-back to ignore reads when counting. It can be either a string with the following values:</p>
+</blockquote>
+<p><code>all</code> -</p>
+<blockquote>
+<p>skip reads in which any of the following flags are set: BAM_FUNMAP, BAM_FSECONDARY, BAM_FQCFAIL, BAM_FDUP</p>
+</blockquote>
+<p><code>nofilter</code> -</p>
+<blockquote>
+<p>uses every single read</p>
+</blockquote>
+<p>使用<code>read_callback</code>结合自定义callback函数，我们可以方便地统计总 reads 数目以及比对到基因组上的reads数</p>
+<p><strong>Note</strong>: 默认情况下，<code>pysam.AlignmentFile.count()</code> 只统计比对上的片段，因此统计 total reads 数目时需要指定 <code>until_eof=True</code> 参数，才可以包含未比对上的片段信息</p>
+<p>下面是一个使用 pysam 统计 total reads 与 mapped reads 数目的实例程序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pysam</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(bam_file)</span>:</span></div><div class="line">    sam = pysam.AlignmentFile(bam_file, <span class="string">'rb'</span>)</div><div class="line">    total = sam.count(read_callback=total_callback, until_eof=<span class="keyword">True</span>)</div><div class="line">    unmapped = sam.count(read_callback=unmapped_callback)</div><div class="line">    mapped = total - unmapped</div><div class="line">    <span class="keyword">return</span> total, mapped</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">unmapped_callback</span><span class="params">(read)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    callback function for mapped reads</div><div class="line">    """</div><div class="line">    <span class="keyword">return</span> read.is_unmapped <span class="keyword">or</span> read.mate_is_unmapped <span class="keyword">and</span> <span class="keyword">not</span> read.is_supplementary <span class="keyword">and</span> <span class="keyword">not</span> read.is_secondary</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">total_callback</span><span class="params">(read)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    callback function for total reads</div><div class="line">    """</div><div class="line">    <span class="keyword">return</span> <span class="keyword">not</span> read.is_supplementary <span class="keyword">and</span> <span class="keyword">not</span> read.is_secondary</div></pre></td></tr></table></figure>
+<h3 id="pysam-多进程处理-bam-文件"><a href="#pysam-多进程处理-bam-文件" class="headerlink" title="pysam 多进程处理 bam 文件"></a>pysam 多进程处理 bam 文件</h3><p>pysam中多进程处理需要注意一些事情</p>
+<h4 id="如何多进程处理bam文件"><a href="#如何多进程处理bam文件" class="headerlink" title="- 如何多进程处理bam文件"></a>- 如何多进程处理bam文件</h4><p>通过<code>pysam.AlignmentFile.fetch()</code>方法，可以提取出比对到指定染色体或者指定区域的比对片段，因此可以多进程同时处理多个染色体上的比对结果</p>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="- 注意事项"></a>- 注意事项</h4><ol>
+<li><p>利用同一个<code>pysam.AlignmentFile</code>句柄同时进行<code>fetch</code>操作可能发生冲突，因此每个进程需要重新打开自己的新句柄，并使用<code>fetch(multiple_iterators=True)</code>参数，使得句柄之间相互独立，可以避免文件读取时发生问题</p>
+</li>
+<li><p><code>pysam.AlignedSegment</code>对象不能pickle化，因此无法在多进程中作为其他函数的参数，需要自己构建tuple/list用于参数传递</p>
+</li>
+<li><p>如果每个子进程都需要相同的辅助数据，可以使用initializer进行全局对象的共享，效率比为每个进程提供相同参数要高很多</p>
+</li>
+</ol>
+<p>实例程序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pysam</div><div class="line"><span class="keyword">from</span> multiprocess <span class="keyword">import</span> Pool</div><div class="line"></div><div class="line"></div><div class="line">AUX_DATA=<span class="keyword">None</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">initializer</span><span class="params">(aux_data)</span>:</span></div><div class="line">    <span class="keyword">global</span> AUX_DATA</div><div class="line">    AUX_DATA=aux_data</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">worker</span><span class="params">(bam_file, chrom)</span>:</span></div><div class="line">    sam = pysam.AlignmentFile(bam_file, <span class="string">'rb'</span>)</div><div class="line">    cnt = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> read <span class="keyword">in</span> sam.fetch(chrom, multiple_iterators=<span class="keyword">True</span>):</div><div class="line">        <span class="comment"># use tuple to process AlignedSegment</span></div><div class="line">        proc(read_query_name, read_is_mapped)</div><div class="line">        cnt += <span class="number">1</span></div><div class="line">    <span class="comment"># use aux_data</span></div><div class="line">    <span class="keyword">print</span> AUX_DATA</div><div class="line">    <span class="keyword">return</span> cnt</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">proc</span><span class="params">(query_name, is_mapped)</span>:</span></div><div class="line">    <span class="keyword">pass</span>:</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(bam_file)</span>:</span></div><div class="line">    sam = pysam.AlignmentFile(bam_file, <span class="string">'rb'</span>)</div><div class="line">    header = sam.header[<span class="string">'SQ'</span>]</div><div class="line">    sam.close()</div><div class="line"></div><div class="line">    aux_data = [<span class="string">'chr1'</span>, ;<span class="string">'chr2'</span>, <span class="string">'chr3'</span>, ]</div><div class="line"></div><div class="line">    pool = Pool(thread, initializer, (aux_data, ))</div><div class="line">    jobs = []</div><div class="line">    <span class="keyword">for</span> chrom <span class="keyword">in</span> header:</div><div class="line">        jobs.append(pool.apply_async(worker, (bam_file, chrom, )))</div><div class="line">    pool.close()</div><div class="line">    pool.join()</div><div class="line"></div><div class="line">    <span class="keyword">for</span> job <span class="keyword">in</span> jobs:</div><div class="line">        ret = job.get()</div></pre></td></tr></table></figure>
+<h2 id="pysam与samtools结合使用"><a href="#pysam与samtools结合使用" class="headerlink" title="pysam与samtools结合使用"></a>pysam与samtools结合使用</h2><p>在<code>pysam.AlignmentFile()</code>打开bam文件时，一般需要bam文件已经排序并且已建立好index</p>
+<p>可以使用<code>sort --threads</code>以及<code>index -@</code>多进程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">samtools sort --threads 10 -o test.sorted.bam test.bam</div><div class="line">samtools index -@ 10 test.sorted.bam</div></pre></td></tr></table></figure></p>
+<p>需要注意，<code>samtools index</code>多进程运行之后生成的index文件的时间戳会出现异常，在程序里需要等待几秒后再使用pysam继续处理，否则会提示<code>index file is older than data</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> subprocess</div><div class="line">subprocess.call(<span class="string">'samtools index -@ 10 test.sorted.bam'</span>, shell=<span class="keyword">True</span>)</div><div class="line">sam = pysam.AlignmentFile(<span class="string">'test.sorted.bam'</span>)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Bioinfomatics/" rel="tag"># Bioinfomatics</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/pysam/" rel="tag"># pysam</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/05/171105-VPS-shadowsocks/" rel="next" title="Ubuntu VPS上搭建Shadowsocks IPV6代理">
+                <i class="fa fa-chevron-left"></i> Ubuntu VPS上搭建Shadowsocks IPV6代理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/08/180808-R-ggplot/" rel="prev" title="ggplot2作图技巧">
+                ggplot2作图技巧 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzg4MC80NDU3"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/img/avatar.jpg"
+               alt="Jinyang Zhang" />
+          <p class="site-author-name" itemprop="name">Jinyang Zhang</p>
+           
+              <p class="site-description motion-element" itemprop="description">Kevinzjy</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Kevinzjy" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/kevinzjy317" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://lijxug.github.io/" title="李狗蛋" target="_blank">李狗蛋</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pysam以及Samtools使用心得"><span class="nav-number">1.</span> <span class="nav-text">pysam以及Samtools使用心得</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pysam简介"><span class="nav-number">1.1.</span> <span class="nav-text">pysam简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pysam-的安装"><span class="nav-number">1.2.</span> <span class="nav-text">pysam 的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pysam-的使用"><span class="nav-number">1.3.</span> <span class="nav-text">pysam 的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#统计-bam-文件中总-reads-数目以及比对到参考基因组上的-reads-数目"><span class="nav-number">1.3.1.</span> <span class="nav-text">统计 bam 文件中总 reads 数目以及比对到参考基因组上的 reads 数目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pysam-多进程处理-bam-文件"><span class="nav-number">1.3.2.</span> <span class="nav-text">pysam 多进程处理 bam 文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何多进程处理bam文件"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">- 如何多进程处理bam文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意事项"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">- 注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pysam与samtools结合使用"><span class="nav-number">1.4.</span> <span class="nav-text">pysam与samtools结合使用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jinyang Zhang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+</body>
+</html>

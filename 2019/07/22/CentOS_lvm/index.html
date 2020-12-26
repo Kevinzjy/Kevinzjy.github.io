@@ -1,0 +1,966 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Linux,Server,CentOS," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Kevinzjy's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Centos7 系统在安装时，会默认使用 lvm 创建三个逻辑卷    Volume FS Mount Point Size     /dev/centos/home xfs /home 157.20 GB   /dev/centos/root xfs /root 50.00 GB   /dev/centos/swap   4.00 GB    默认分配给挂载点 /home 的空间大小较大，而由于">
+<meta name="keywords" content="Linux,Server,CentOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS7 调整 lvm 分区大小">
+<meta property="og:url" content="https://kevinzjy.github.io/2019/07/22/CentOS_lvm/index.html">
+<meta property="og:site_name" content="Kevinzjy&#39;s Blog">
+<meta property="og:description" content="Centos7 系统在安装时，会默认使用 lvm 创建三个逻辑卷    Volume FS Mount Point Size     /dev/centos/home xfs /home 157.20 GB   /dev/centos/root xfs /root 50.00 GB   /dev/centos/swap   4.00 GB    默认分配给挂载点 /home 的空间大小较大，而由于">
+<meta property="og:updated_time" content="2020-12-26T08:24:26.693Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS7 调整 lvm 分区大小">
+<meta name="twitter:description" content="Centos7 系统在安装时，会默认使用 lvm 创建三个逻辑卷    Volume FS Mount Point Size     /dev/centos/home xfs /home 157.20 GB   /dev/centos/root xfs /root 50.00 GB   /dev/centos/swap   4.00 GB    默认分配给挂载点 /home 的空间大小较大，而由于">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '0XRIR3MAOI',
+      apiKey: '0fc83cf465f79673aef05f4dbf1506d5',
+      indexName: 'github_pages',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://kevinzjy.github.io/2019/07/22/CentOS_lvm/"/>
+
+
+
+
+
+  <title> CentOS7 调整 lvm 分区大小 | Kevinzjy's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-99359817-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9ad19e0576674ca28b6ae57a33bb6289";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kevinzjy's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生信狗的个人小站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://kevinzjy.github.io/2019/07/22/CentOS_lvm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinyang Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kevinzjy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CentOS7 调整 lvm 分区大小
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-22T08:06:03+00:00">
+                2019-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Centos7 系统在安装时，会默认使用 lvm 创建三个逻辑卷</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Volume</th>
+<th style="text-align:right">FS</th>
+<th style="text-align:left">Mount Point</th>
+<th style="text-align:right">Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">/dev/centos/home</td>
+<td style="text-align:right">xfs</td>
+<td style="text-align:left">/home</td>
+<td style="text-align:right">157.20 GB</td>
+</tr>
+<tr>
+<td style="text-align:left">/dev/centos/root</td>
+<td style="text-align:right">xfs</td>
+<td style="text-align:left">/root</td>
+<td style="text-align:right">50.00 GB</td>
+</tr>
+<tr>
+<td style="text-align:left">/dev/centos/swap</td>
+<td style="text-align:right"></td>
+<td style="text-align:left"></td>
+<td style="text-align:right">4.00 GB</td>
+</tr>
+</tbody>
+</table>
+<p>默认分配给挂载点 /home 的空间大小较大，而由于在集群中，用户的目录都在存储阵列上，并且 root 账户拥有 /root 目录，因此 /home 目录几乎不会使用到，因此需要在安装时调整默认的分区大小</p>
+<p>同时我们可以看到，交换空间分区 swap 的大小只有 4G， 可能是安装时考虑到节点内存较大 (128GB)，因此默认没有更大的分配交换空间。然而经过实际使用证明，swap 分区的大小是远远不够的，很多软件会在使用内存的同时使用swap空间，并且当交换空间占满后，系统的IO性能会有所降低。</p>
+<p>由于之前节点重装时，没有考虑到以上两点，因此现在需要对 lvm 分区大小进行调整。所以我准备使用 lvm 管理命令结合 system-storage-manager 软件，实现对 /home 分区空间的缩减，并重新分配到 Swap 交换空间以及 / 根目录中</p>
+<a id="more"></a>
+<p><strong><em>在执行下文所述操作之前，需要确定节点上没有正在运行的任务</em></strong></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h4 id="先将节点下线，防止有任务出现"><a href="#先将节点下线，防止有任务出现" class="headerlink" title="先将节点下线，防止有任务出现"></a>先将节点下线，防止有任务出现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbsnodes -o node5</div></pre></td></tr></table></figure>
+<h4 id="下载-system-storage-manager"><a href="#下载-system-storage-manager" class="headerlink" title="下载 system-storage-manager"></a>下载 system-storage-manager</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yumdownloader --resolve --downloadonly --downloaddir=/dir/to/download system-storage-manager-0.4-8.el7.noarch.rpm</div></pre></td></tr></table></figure>
+<h4 id="安装-system-storage-manager"><a href="#安装-system-storage-manager" class="headerlink" title="安装 system-storage-manager"></a>安装 system-storage-manager</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -ivh system-storage-manager-0.4-8.el7.noarch.rpm</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">警告：system-storage-manager-0.4-8.el7.noarch.rpm: 头V3 RSA/SHA256 Signature, 密钥 ID f4a80eb5: NOKEY</div><div class="line">准备中...                          ################################# [100%]</div><div class="line">正在升级/安装...</div><div class="line">   1:system-storage-manager-0.4-8.el7 ################################# [100%]</div></pre></td></tr></table></figure>
+<h4 id="关闭-SWAP-分区"><a href="#关闭-SWAP-分区" class="headerlink" title="关闭 SWAP 分区"></a>关闭 SWAP 分区</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">swapoff -a</div></pre></td></tr></table></figure>
+<h4 id="卸载-home-分区"><a href="#卸载-home-分区" class="headerlink" title="卸载 /home 分区"></a>卸载 /home 分区</h4><p><strong><em>如果 /home 分区内有用户目录，则需要先备份到其他位置，等调整完毕后，拷贝回 /home 目录即可</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">umount /home</div></pre></td></tr></table></figure>
+<h4 id="使用-system-storage-manager-查看-lvm-分区情况"><a href="#使用-system-storage-manager-查看-lvm-分区情况" class="headerlink" title="使用 system-storage-manager 查看 lvm 分区情况"></a>使用 <code>system-storage-manager</code> 查看 lvm 分区情况</h4><p>ssm list</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">----------------------------------------------------------------</div><div class="line">Device           Free       Used      Total  Pool    Mount point</div><div class="line">----------------------------------------------------------------</div><div class="line">/dev/loop0                        100.00 GB</div><div class="line">/dev/loop1                          2.00 GB</div><div class="line">/dev/md126p1                      200.00 MB          /boot/efi</div><div class="line">/dev/md126p2                        1.00 GB          /boot</div><div class="line">/dev/md126p3  0.00 KB  211.20 GB  211.20 GB  centos</div><div class="line">/dev/sda      0.00 KB  212.40 GB  223.57 GB</div><div class="line">/dev/sdb      0.00 KB  212.40 GB  223.57 GB</div><div class="line">----------------------------------------------------------------</div><div class="line">----------------------------------------------------</div><div class="line">Pool    Type  Devices     Free       Used      Total</div><div class="line">----------------------------------------------------</div><div class="line">centos  lvm   1        0.00 KB  211.20 GB  211.20 GB</div><div class="line">----------------------------------------------------</div><div class="line">---------------------------------------------------------------------------------------</div><div class="line">Volume            Pool    Volume size  FS       FS size       Free  Type    Mount point</div><div class="line">---------------------------------------------------------------------------------------</div><div class="line">/dev/centos/root  centos     50.00 GB  xfs     49.98 GB   48.67 GB  linear  /</div><div class="line">/dev/centos/swap  centos      4.00 GB                               linear</div><div class="line">/dev/centos/home  centos    157.20 GB  xfs    157.12 GB  157.12 GB  linear  /home</div><div class="line">/dev/md126        md        212.40 GB                               raid1</div><div class="line">/dev/md126p1                200.00 MB  vfat                                 /boot/efi</div><div class="line">/dev/md126p2                  1.00 GB  xfs   1014.00 MB  875.35 MB          /boot</div><div class="line">---------------------------------------------------------------------------------------</div></pre></td></tr></table></figure>
+<h2 id="释放-home-空间"><a href="#释放-home-空间" class="headerlink" title="释放 /home 空间"></a>释放 /home 空间</h2><h4 id="删除-dev-centos-home-逻辑卷"><a href="#删除-dev-centos-home-逻辑卷" class="headerlink" title="删除 /dev/centos/home 逻辑卷"></a>删除 /dev/centos/home 逻辑卷</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssm remove /dev/centos/home</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Do you really want to remove active logical volume centos/home? [y/n]: y</div><div class="line">  Logical volume &quot;home&quot; successfully removed</div></pre></td></tr></table></figure>
+<h2 id="增加-SWAP-空间容量"><a href="#增加-SWAP-空间容量" class="headerlink" title="增加 SWAP 空间容量"></a>增加 SWAP 空间容量</h2><h4 id="增加-dev-centos-swap-逻辑卷容量"><a href="#增加-dev-centos-swap-逻辑卷容量" class="headerlink" title="增加 /dev/centos/swap 逻辑卷容量"></a>增加 /dev/centos/swap 逻辑卷容量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssm resize -s +28G /dev/centos/swap</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Size of logical volume centos/swap changed from 4.00 GiB (1024 extents) to 32.00 GiB (8192 extents).</div><div class="line">Logical volume centos/swap successfully resized.</div></pre></td></tr></table></figure>
+<h4 id="重设-SWAP-空间大小"><a href="#重设-SWAP-空间大小" class="headerlink" title="重设 SWAP 空间大小"></a>重设 SWAP 空间大小</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkswap /dev/centos/swap</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkswap: /dev/centos/swap: warning: wiping old swap signature.</div><div class="line">正在设置交换空间版本 1，大小 = 33554428 KiB</div><div class="line">无标签，UUID=f235320f-7bfd-4f58-8a0c-15dddb935624</div></pre></td></tr></table></figure>
+<h4 id="启用-SWAP"><a href="#启用-SWAP" class="headerlink" title="启用 SWAP"></a>启用 SWAP</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">swapon -a</div></pre></td></tr></table></figure>
+<h4 id="查看-SWAP-空间容量"><a href="#查看-SWAP-空间容量" class="headerlink" title="查看 SWAP 空间容量"></a>查看 SWAP 空间容量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">free -m</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">              total        used        free      shared  buff/cache   available</div><div class="line">Mem:         128652        2411      124346          26        1894      125328</div><div class="line">Swap:         32767           0       32767</div></pre></td></tr></table></figure>
+<h2 id="增加根目录-容量"><a href="#增加根目录-容量" class="headerlink" title="增加根目录 / 容量"></a>增加根目录 / 容量</h2><h4 id="增加-dev-centos-root-逻辑卷容量"><a href="#增加-dev-centos-root-逻辑卷容量" class="headerlink" title="增加 /dev/centos/root 逻辑卷容量"></a>增加 /dev/centos/root 逻辑卷容量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lvresize -l +100%FREE /dev/centos/root</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Size of logical volume centos/root changed from 50.00 GiB (12800 extents) to &lt;179.20 GiB (45875 extents).</div><div class="line">Logical volume centos/root successfully resized.</div></pre></td></tr></table></figure>
+<h4 id="使用的-XFS-文件系统，需要手动扩容，否则分配的容量仍然无法使用"><a href="#使用的-XFS-文件系统，需要手动扩容，否则分配的容量仍然无法使用" class="headerlink" title="/ 使用的 XFS 文件系统，需要手动扩容，否则分配的容量仍然无法使用"></a>/ 使用的 XFS 文件系统，需要手动扩容，否则分配的容量仍然无法使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xfs_growfs /dev/centos/root</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">meta-data=/dev/mapper/centos-root isize=512    agcount=4, agsize=3276800 blks</div><div class="line">         =                       sectsz=4096  attr=2, projid32bit=1</div><div class="line">         =                       crc=1        finobt=0 spinodes=0</div><div class="line">data     =                       bsize=4096   blocks=13107200, imaxpct=25</div><div class="line">         =                       sunit=0      swidth=0 blks</div><div class="line">naming   =version 2              bsize=4096   ascii-ci=0 ftype=1</div><div class="line">log      =internal               bsize=4096   blocks=6400, version=2</div><div class="line">         =                       sectsz=4096  sunit=1 blks, lazy-count=1</div><div class="line">realtime =none                   extsz=4096   blocks=0, rtextents=0</div><div class="line">data blocks changed from 13107200 to 46976000</div></pre></td></tr></table></figure>
+<h2 id="修改其他配置"><a href="#修改其他配置" class="headerlink" title="修改其他配置"></a>修改其他配置</h2><h4 id="调整默认挂载选项"><a href="#调整默认挂载选项" class="headerlink" title="调整默认挂载选项"></a>调整默认挂载选项</h4><p>编辑 <code>/etc/fstab</code>，删除文件内这一行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/dev/mapper/centos-home /home                   xfs     defaults        0 0</div></pre></td></tr></table></figure>
+<h4 id="测试挂载文件内容是否正确"><a href="#测试挂载文件内容是否正确" class="headerlink" title="测试挂载文件内容是否正确"></a>测试挂载文件内容是否正确</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount -a</div></pre></td></tr></table></figure>
+<h4 id="节点上线"><a href="#节点上线" class="headerlink" title="节点上线"></a>节点上线</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbsnodes -c node5</div></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>参考资料<br>[1]. <a href="https://blog.csdn.net/shenyue_sam/article/details/77175637" target="_blank" rel="external">https://blog.csdn.net/shenyue_sam/article/details/77175637</a><br>[2]. <a href="https://blog.csdn.net/yexiangCSDN/article/details/83182259" target="_blank" rel="external">https://blog.csdn.net/yexiangCSDN/article/details/83182259</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Server/" rel="tag"># Server</a>
+          
+            <a href="/tags/CentOS/" rel="tag"># CentOS</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/15/CentOS_Docker/" rel="next" title="CentOS7 集群配置 Docker">
+                <i class="fa fa-chevron-left"></i> CentOS7 集群配置 Docker
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/10/CentOS_pdftk/" rel="prev" title="CentOS7 安装 pdftk">
+                CentOS7 安装 pdftk <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzg4MC80NDU3"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/img/avatar.jpg"
+               alt="Jinyang Zhang" />
+          <p class="site-author-name" itemprop="name">Jinyang Zhang</p>
+           
+              <p class="site-description motion-element" itemprop="description">Kevinzjy</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Kevinzjy" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/kevinzjy317" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://lijxug.github.io/" title="李狗蛋" target="_blank">李狗蛋</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#先将节点下线，防止有任务出现"><span class="nav-number">1.0.1.</span> <span class="nav-text">先将节点下线，防止有任务出现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载-system-storage-manager"><span class="nav-number">1.0.2.</span> <span class="nav-text">下载 system-storage-manager</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-system-storage-manager"><span class="nav-number">1.0.3.</span> <span class="nav-text">安装 system-storage-manager</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭-SWAP-分区"><span class="nav-number">1.0.4.</span> <span class="nav-text">关闭 SWAP 分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卸载-home-分区"><span class="nav-number">1.0.5.</span> <span class="nav-text">卸载 /home 分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-system-storage-manager-查看-lvm-分区情况"><span class="nav-number">1.0.6.</span> <span class="nav-text">使用 system-storage-manager 查看 lvm 分区情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#释放-home-空间"><span class="nav-number">2.</span> <span class="nav-text">释放 /home 空间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-dev-centos-home-逻辑卷"><span class="nav-number">2.0.1.</span> <span class="nav-text">删除 /dev/centos/home 逻辑卷</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加-SWAP-空间容量"><span class="nav-number">3.</span> <span class="nav-text">增加 SWAP 空间容量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#增加-dev-centos-swap-逻辑卷容量"><span class="nav-number">3.0.1.</span> <span class="nav-text">增加 /dev/centos/swap 逻辑卷容量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重设-SWAP-空间大小"><span class="nav-number">3.0.2.</span> <span class="nav-text">重设 SWAP 空间大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用-SWAP"><span class="nav-number">3.0.3.</span> <span class="nav-text">启用 SWAP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看-SWAP-空间容量"><span class="nav-number">3.0.4.</span> <span class="nav-text">查看 SWAP 空间容量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加根目录-容量"><span class="nav-number">4.</span> <span class="nav-text">增加根目录 / 容量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#增加-dev-centos-root-逻辑卷容量"><span class="nav-number">4.0.1.</span> <span class="nav-text">增加 /dev/centos/root 逻辑卷容量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用的-XFS-文件系统，需要手动扩容，否则分配的容量仍然无法使用"><span class="nav-number">4.0.2.</span> <span class="nav-text">/ 使用的 XFS 文件系统，需要手动扩容，否则分配的容量仍然无法使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改其他配置"><span class="nav-number">5.</span> <span class="nav-text">修改其他配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#调整默认挂载选项"><span class="nav-number">5.0.1.</span> <span class="nav-text">调整默认挂载选项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试挂载文件内容是否正确"><span class="nav-number">5.0.2.</span> <span class="nav-text">测试挂载文件内容是否正确</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#节点上线"><span class="nav-number">5.0.3.</span> <span class="nav-text">节点上线</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jinyang Zhang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+</body>
+</html>

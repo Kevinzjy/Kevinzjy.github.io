@@ -1,0 +1,964 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Bioinfomatics,R,ggplot2," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Kevinzjy's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="patchwork实现ggplot多图拼接patchwork介绍ggplot2是大家使用R语言作图时常用的一个模块，而patchwork可以将多个ggplot图片通过简洁的语法进行拼接，类似功能的模块还有gridExtra::grid.arrange和cowplot::plot_grid，不过个人认为patchwork更好用一些，因为其语法更加贴近普通用户的使用习惯 Github项目地址: htt">
+<meta name="keywords" content="Bioinfomatics,R,ggplot2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ggplot2作图技巧">
+<meta property="og:url" content="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/index.html">
+<meta property="og:site_name" content="Kevinzjy&#39;s Blog">
+<meta property="og:description" content="patchwork实现ggplot多图拼接patchwork介绍ggplot2是大家使用R语言作图时常用的一个模块，而patchwork可以将多个ggplot图片通过简洁的语法进行拼接，类似功能的模块还有gridExtra::grid.arrange和cowplot::plot_grid，不过个人认为patchwork更好用一些，因为其语法更加贴近普通用户的使用习惯 Github项目地址: htt">
+<meta property="og:image" content="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/p1.png">
+<meta property="og:image" content="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/p2.png">
+<meta property="og:image" content="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/p1_npg.png">
+<meta property="og:image" content="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/p2_npg.png">
+<meta property="og:image" content="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/ggsci_npg_pal.png">
+<meta property="og:image" content="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/p.png">
+<meta property="og:image" content="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/p1_legend.png">
+<meta property="og:image" content="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/p_merged.png">
+<meta property="og:updated_time" content="2020-12-26T08:24:26.689Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ggplot2作图技巧">
+<meta name="twitter:description" content="patchwork实现ggplot多图拼接patchwork介绍ggplot2是大家使用R语言作图时常用的一个模块，而patchwork可以将多个ggplot图片通过简洁的语法进行拼接，类似功能的模块还有gridExtra::grid.arrange和cowplot::plot_grid，不过个人认为patchwork更好用一些，因为其语法更加贴近普通用户的使用习惯 Github项目地址: htt">
+<meta name="twitter:image" content="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/p1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '0XRIR3MAOI',
+      apiKey: '0fc83cf465f79673aef05f4dbf1506d5',
+      indexName: 'github_pages',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/"/>
+
+
+
+
+
+  <title> ggplot2作图技巧 | Kevinzjy's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-99359817-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9ad19e0576674ca28b6ae57a33bb6289";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kevinzjy's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生信狗的个人小站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinyang Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kevinzjy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ggplot2作图技巧
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T15:04:04+00:00">
+                2018-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bioinformatics/" itemprop="url" rel="index">
+                    <span itemprop="name">Bioinformatics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="patchwork实现ggplot多图拼接"><a href="#patchwork实现ggplot多图拼接" class="headerlink" title="patchwork实现ggplot多图拼接"></a>patchwork实现ggplot多图拼接</h1><h2 id="patchwork介绍"><a href="#patchwork介绍" class="headerlink" title="patchwork介绍"></a>patchwork介绍</h2><p>ggplot2是大家使用R语言作图时常用的一个模块，而patchwork可以将多个ggplot图片通过简洁的语法进行拼接，类似功能的模块还有<code>gridExtra::grid.arrange</code>和<code>cowplot::plot_grid</code>，不过个人认为patchwork更好用一些，因为其语法更加贴近普通用户的使用习惯</p>
+<p>Github项目地址: <a href="https://github.com/thomasp85/patchwork" target="_blank" rel="external">https://github.com/thomasp85/patchwork</a></p>
+<p>详细使用说明可以查看项目中<code>README.md</code></p>
+<a id="more"></a>
+<h2 id="Patchwork的安装"><a href="#Patchwork的安装" class="headerlink" title="Patchwork的安装"></a>Patchwork的安装</h2><p>1 - 下载并安装Rtools</p>
+<p>首先，我们需要下载 <code>Rtools</code> ，一个windows系统下用来编译R模块的程序</p>
+<p>rtools下载地址：<a href="https://cran.r-project.org/bin/windows/Rtools/" target="_blank" rel="external">https://cran.r-project.org/bin/windows/Rtools/</a></p>
+<p>下载并安装与系统R版本对应的exe文件即可（程序安装包较大，100MB+）</p>
+<p>2 - 安装devtools</p>
+<p><code>devtools</code> 是用来帮助我们安装第三方开发的R模块的R package</p>
+<p>项目地址: <a href="https://cran.r-project.org/web/packages/devtools/index.html" target="_blank" rel="external">https://cran.r-project.org/web/packages/devtools/index.html</a></p>
+<p>可以直接使用 <code>install.packages()</code> 安装</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">install.packages(<span class="string">"devtools"</span>)</div></pre></td></tr></table></figure>
+<p>3 - 升级rlang版本（非必须）</p>
+<p>如果rlang版本较低，在安装 <code>patchwork</code> 时会出现以下报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">* installing *source* package &apos;patchwork&apos; ...</div><div class="line">** R</div><div class="line">** preparing package for lazy loading</div><div class="line">Error : object &apos;enexprs&apos; is not exported by &apos;namespace:rlang&apos;</div><div class="line">ERROR: lazy loading failed for package &apos;patchwork&apos;</div></pre></td></tr></table></figure>
+<p>升级rlang版本即可解决：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devtools::install_github(<span class="string">"r-lib/rlang"</span>, build_vignettes = <span class="literal">TRUE</span>)</div></pre></td></tr></table></figure>
+<p>4 - 安装Patchwork</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devtools::install_github(<span class="string">"thomasp85/patchwork"</span>)</div></pre></td></tr></table></figure>
+<p>不要觉得安装过程过于麻烦，当你用上Patchwork的时候就会发现一切都是值得的…</p>
+<h2 id="使用diamonds测试数据集绘图"><a href="#使用diamonds测试数据集绘图" class="headerlink" title="使用diamonds测试数据集绘图"></a>使用diamonds测试数据集绘图</h2><p>以diamonds数据集为例，我们可以简单地绘制两个figure</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(<span class="string">"ggplot2"</span>)</div><div class="line">data(diamonds)</div><div class="line"></div><div class="line">p1 &lt;- ggplot(subset(diamonds, carat &gt;= <span class="number">2.2</span>),</div><div class="line">            aes(x = table, y = price, colour = cut)) +</div><div class="line">    geom_point(alpha = <span class="number">0.7</span>) +</div><div class="line">    geom_smooth(method = <span class="string">"loess"</span>, alpha = <span class="number">0.05</span>, size = <span class="number">1</span>, span = <span class="number">1</span>) +</div><div class="line">    theme_bw() +</div><div class="line">    theme(aspect.ratio = <span class="number">1</span>)</div><div class="line"></div><div class="line">p2 &lt;- ggplot(subset(diamonds, carat &gt; <span class="number">2.2</span> &amp; depth &gt; <span class="number">55</span> &amp; depth &lt; <span class="number">70</span>),</div><div class="line">            aes(x = depth, fill = cut)) +</div><div class="line">    geom_histogram(colour = <span class="string">"black"</span>, binwidth = <span class="number">1</span>, position = <span class="string">"dodge"</span>) +</div><div class="line">    theme_bw() +</div><div class="line">    theme(aspect.ratio = <span class="number">1</span>)</div></pre></td></tr></table></figure>
+<img src="/2018/08/08/180808-R-ggplot/p1.png" alt="p1.png" title="">
+<img src="/2018/08/08/180808-R-ggplot/p2.png" alt="p2.png" title="">
+<p>我们可以看到，利用默认格式生成的图片配色是非常难看的…</p>
+<h3 id="Tips-利用ggsci进行颜色图片美化"><a href="#Tips-利用ggsci进行颜色图片美化" class="headerlink" title="Tips: 利用ggsci进行颜色图片美化"></a>Tips: 利用ggsci进行颜色图片美化</h3><p><code>ggsci</code>总结了许多杂志常用的颜色，内置了多个调色板，该模块可以直接通过CRAN安装</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">install.packages(<span class="string">"ggsci"</span>)</div></pre></td></tr></table></figure>
+<p>使用ggsci中nejm配色作为自动填充后</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(ggsci)</div><div class="line"></div><div class="line">p1_npg &lt;- p1 + scale_color_npg()</div><div class="line"></div><div class="line">p2_npg &lt;- p2 + scale_fill_npg()</div></pre></td></tr></table></figure>
+<p>可以看出，利用<code>ggsci</code>绘制出的图片色调明显更加协调了</p>
+<img src="/2018/08/08/180808-R-ggplot/p1_npg.png" alt="p1_npg.png" title="">
+<img src="/2018/08/08/180808-R-ggplot/p2_npg.png" alt="p2_npg.png" title="">
+<p>ggsci提供了多个调色板，可以使用scales包中show_col函数直接查看</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mypal &lt;- pal_npg(<span class="string">"nrc"</span>, alpha=<span class="number">0.7</span>)(<span class="number">9</span>)</div><div class="line"></div><div class="line"><span class="keyword">library</span>(scales)</div><div class="line">show_col(mypal)</div></pre></td></tr></table></figure>
+<img src="/2018/08/08/180808-R-ggplot/ggsci_npg_pal.png" alt="ggsci_npg_pal.png" title="">
+<h2 id="利用patchwork合并图片"><a href="#利用patchwork合并图片" class="headerlink" title="利用patchwork合并图片"></a>利用patchwork合并图片</h2><p>在实际作图中，我们经常会遇到需要合并图片的需求，这时候之前安装的patchwork就派上用场了</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(patchwork)</div><div class="line"></div><div class="line">p &lt;- p1_npg + p2_npg</div></pre></td></tr></table></figure>
+<p>我们可以看到使用patchwork包后，一条命令就实现了p1和p2的拼接</p>
+<img src="/2018/08/08/180808-R-ggplot/p.png" alt="p.png" title="">
+<h3 id="Tips-使用自定义函数提取图例"><a href="#Tips-使用自定义函数提取图例" class="headerlink" title="Tips: 使用自定义函数提取图例"></a>Tips: 使用自定义函数提取图例</h3><p>对于p1和p2,我们可以提取其中的图例并进行单独排版</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">get_legend &lt;- <span class="keyword">function</span>(p) &#123;</div><div class="line">    tmp &lt;- ggplot_gtable(ggplot_build(p))</div><div class="line">    leg &lt;- which(sapply(tmp$grobs, <span class="keyword">function</span>(x) x$name) == <span class="string">"guide-box"</span>)</div><div class="line">    legend &lt;- tmp$grobs[[leg]]</div><div class="line">    <span class="keyword">return</span>(legend)</div><div class="line">&#125;</div><div class="line"></div><div class="line">p1_legend &lt;- get_legend(p1_npg)</div></pre></td></tr></table></figure>
+<img src="/2018/08/08/180808-R-ggplot/p1_legend.png" alt="p1_legend.png" title="">
+<p>在提取出图例之后，可以使用plot_layout指定布局列数和每个子图的宽度</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p_merged &lt;- p1_npg + guides(color=<span class="literal">FALSE</span>) +</div><div class="line">    p2_npg + guides(fill=<span class="literal">FALSE</span>) +</div><div class="line">    p1_legend + plot_layout(ncol=<span class="number">3</span>, widths = c(<span class="number">3</span>,<span class="number">3</span>,<span class="number">1</span>))</div></pre></td></tr></table></figure>
+<img src="/2018/08/08/180808-R-ggplot/p_merged.png" alt="p_merged.png" title="">
+<p>可以将p1,p2以及图例完美地拼接在一起</p>
+<h3 id="Tips-ggplot保存文件"><a href="#Tips-ggplot保存文件" class="headerlink" title="Tips: ggplot保存文件"></a>Tips: ggplot保存文件</h3><p>ggplot2 中，将 plot 存为 eps 格式可以更加方便地使用 AI 进行后续的编辑和修图</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ggsave(<span class="string">"./plot.eps"</span>, p_merged)</div></pre></td></tr></table></figure>
+<p>但是默认的 eps 输出格式不能保存透明度，当图片使用了不同的透明度时，会出现报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Warning message:</div><div class="line">In grid.Call.graphics(L_rect, x$x, x$y, x$width, x$height, resolveHJust(x$just,  :</div><div class="line">  此装置不支持半透明：每一页将被报告一次</div></pre></td></tr></table></figure>
+<p>此时可以使用 ggsave 中指定 <code>device=cairo_ps</code>,使用 cairo_ps 类型保存图片</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ggsave(<span class="string">"./plot.eps"</span>, p_merged, device=cairo_ps)</div></pre></td></tr></table></figure>
+<p>同样，对于使用pdf格式保存的图片，当出现格式问题时，也可以使用cairo_pdf作为保存设备</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ggsave(<span class="string">'./plot.pdf'</span>, p, device=cairo_pdf)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Bioinfomatics/" rel="tag"># Bioinfomatics</a>
+          
+            <a href="/tags/R/" rel="tag"># R</a>
+          
+            <a href="/tags/ggplot2/" rel="tag"># ggplot2</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/27/180727-Python-pysam/" rel="next" title="pysam处理bam文件心得">
+                <i class="fa fa-chevron-left"></i> pysam处理bam文件心得
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/13/180813-Server-PBS/" rel="prev" title="PBS作业管理系统使用技巧">
+                PBS作业管理系统使用技巧 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzg4MC80NDU3"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/img/avatar.jpg"
+               alt="Jinyang Zhang" />
+          <p class="site-author-name" itemprop="name">Jinyang Zhang</p>
+           
+              <p class="site-description motion-element" itemprop="description">Kevinzjy</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Kevinzjy" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/kevinzjy317" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://lijxug.github.io/" title="李狗蛋" target="_blank">李狗蛋</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#patchwork实现ggplot多图拼接"><span class="nav-number">1.</span> <span class="nav-text">patchwork实现ggplot多图拼接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#patchwork介绍"><span class="nav-number">1.1.</span> <span class="nav-text">patchwork介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Patchwork的安装"><span class="nav-number">1.2.</span> <span class="nav-text">Patchwork的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用diamonds测试数据集绘图"><span class="nav-number">1.3.</span> <span class="nav-text">使用diamonds测试数据集绘图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips-利用ggsci进行颜色图片美化"><span class="nav-number">1.3.1.</span> <span class="nav-text">Tips: 利用ggsci进行颜色图片美化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用patchwork合并图片"><span class="nav-number">1.4.</span> <span class="nav-text">利用patchwork合并图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips-使用自定义函数提取图例"><span class="nav-number">1.4.1.</span> <span class="nav-text">Tips: 使用自定义函数提取图例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tips-ggplot保存文件"><span class="nav-number">1.4.2.</span> <span class="nav-text">Tips: ggplot保存文件</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jinyang Zhang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+</body>
+</html>

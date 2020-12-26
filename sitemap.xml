@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/11/10/CentOS_pdftk/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2020/05/24/PVE_installation/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2020/03/04/Pypi_deploy/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2020/07/28/Rsync/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2020/12/26/crontab/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2020/12/07/fsck/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2020/04/12/gitignore/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2020/03/09/ssh_known_hosts/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/about/index.html</loc>
+    
+    <lastmod>2020-12-26T08:24:26.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/categories/index.html</loc>
+    
+    <lastmod>2020-12-26T08:24:26.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/tags/index.html</loc>
+    
+    <lastmod>2020-12-26T08:24:26.697Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2018/08/13/180813-Server-PBS/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2018/11/05/181105-Server-NTFS/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/01/15/190115-Linux-lsNotResponding/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/01/15/190115-Ubuntu-javaVersionSwitch/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/01/16/190116-gitReset/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/01/17/190117-Server-gcc/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/02/25/190225-Linux-miner/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/03/04/190304-Ubuntu-ServerInstall/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/04/08/190408-bash_conda/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/05/21/Anaconda_Offline_Mirror/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/06/15/CentOS_Docker/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/06/14/CentOS_Gridview/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/05/21/CentOS_Network_Config/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/05/29/CentOS_Server_NFS/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2019/07/22/CentOS_lvm/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/170324-Github-pages-Hexo/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/170324-Install-R/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/24/170324-Install-gcc/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/26/170326-Linux-Tips/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/04/30/170430-Linux-NAS/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/12/170512-Sratoolkit/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/12/170512-WSL/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/13/170513-Ubuntu-Software/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/13/170513-Windows-Autostart/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/14/170514-Manuscript-Review/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/14/170514-OSX-Dropbox/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/14/170514-Ubuntu-Sogou/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/20/170520-Paper-GFOLD/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/03/29/170714-Python-Multiprocessing/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/11/05/171105-VPS-shadowsocks/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/08/21/171115-VPS-deploy/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2017/05/12/171123-Shadowsocks/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2018/07/27/180727-Python-pysam/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/2018/08/08/180808-R-ggplot/</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://kevinzjy.github.io/404.html</loc>
+    
+    <lastmod>2020-12-26T08:24:26.689Z</lastmod>
+    
+  </url>
+  
+</urlset>
